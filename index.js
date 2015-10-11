@@ -1,1 +1,2 @@
-module.exports = require('./lib/generate-site');
+exports.generate = require('./lib/generate-site'); // generate static files from a spec
+exports.pageify = require('./lib/pageify'); // generate pagify router from a spec

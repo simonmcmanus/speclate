@@ -11,5 +11,8 @@
   "dependencies": {
     "async": "^1.4.2",
     "sizlate": "^0.9.0"
+  },
+  "browser": {
+    "fs": "./client/read-file-override.js"
   }
 }

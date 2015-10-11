@@ -1,0 +1,1 @@
+exports = doRender = function() {};
