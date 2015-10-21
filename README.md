@@ -17,7 +17,7 @@ Generate static html pages.
                 },
                 '.lnug-content': {
                     component: 'speaker',
-                    data: require('./data/speaker-selectors')()
+                    data: require('./data/speaker-selectors')
                 },
                 '.lnug-mailing-list': {
                     component: 'sign-up'

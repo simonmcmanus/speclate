@@ -26,10 +26,8 @@ window.setupPage = function(pageName, context, page) {
 
     var pageLayoutPath =  '/public//pages/' + pageName + '/' + pageName + '.html';
     getFile(pageLayoutPath, function(error, file) {
-        console.log('fff', file)
-
+        console.log('spec is', page.spec);
         loadComponents(page.spec, function(e,d) {
-
             var html = doSizlate({
                 spec: page.spec
             }, file, d);
