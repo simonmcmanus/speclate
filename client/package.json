@@ -10,8 +10,7 @@
   "author": "",
   "license": "ISC",
   "browser": {
-    "fs": "./read-file-override.js",
-    "sizlate": "./sizlate-override.js"
+    "fs": "./read-file-override.js"
   },
   "dependencies": {
     "browserify": "^11.2.0"

@@ -10,7 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "async": "^1.4.2",
-    "sizlate": "^0.9.0"
+    "pageify": "^5.0.0",
+    "sizlate": "^1"
   },
   "browser": {
     "fs": "./client/read-file-override.js"

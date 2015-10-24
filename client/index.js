@@ -17,6 +17,20 @@ var getFile = require('../lib/read-file');
 
 window.setupPage = function(pageName, context, page) {
 
+    $.get(context.path.replace(/.html/, '.json'), {}, function(e, status, data) {
+        var pageLayoutPath =  '/public//pages/' + pageName + '/' + pageName + '.html';
+        getFile(pageLayoutPath, function(error, file) {
+            console.log('spec is', data.responseJSON.spec);
+            loadComponents(data.responseJSON.spec, function(e,d) {
+                var html = doSizlate({
+                    spec: page.spec
+                }, file, d);
+                $('#container').html(html);
+            });
+        });
+    }, 'json');
+
+
     // getPage(page, function(error, layout) {
     //
     //     $('#container').html(layout);
@@ -24,16 +38,6 @@ window.setupPage = function(pageName, context, page) {
     // });
 
 
-    var pageLayoutPath =  '/public//pages/' + pageName + '/' + pageName + '.html';
-    getFile(pageLayoutPath, function(error, file) {
-        console.log('spec is', page.spec);
-        loadComponents(page.spec, function(e,d) {
-            var html = doSizlate({
-                spec: page.spec
-            }, file, d);
-            $('#container').html(html);
-        })
-    })
 
     // load the layout.
     // do layout first.
