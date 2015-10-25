@@ -3,6 +3,10 @@ Given a spec (a collection of pages)
 
 Generate static html pages.
 
+For a full example please see:
+
+https://github.com/simonmcmanus/speclate-lnug
+
 ```js
     {
         '/public/index.html': {
