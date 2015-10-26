@@ -7,6 +7,8 @@ For a full example please see:
 
 https://github.com/simonmcmanus/speclate-lnug
 
+https://github.com/simonmcmanus/speclate-lnug/blob/master/index.js
+
 ```js
     {
         '/public/index.html': {
