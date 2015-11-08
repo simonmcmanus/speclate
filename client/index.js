@@ -16,7 +16,7 @@ var getFile = require('../lib/read-file');
 
 
 window.setupPage = function(pageName, context, page) {
-
+    console.log(context);
     $.get(context.path.replace(/.html/, '.json'), {}, function(e, status, data) {
         var pageLayoutPath =  '/public//pages/' + pageName + '/' + pageName + '.html';
         getFile(pageLayoutPath, function(error, file) {
