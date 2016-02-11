@@ -1,6 +1,6 @@
 {
   "name": "speclate",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -20,11 +20,15 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "standard": "^6.0.4"
-    },
-    "standard": {
-      "ignore": [
-        "client"
-      ],
-			"globals": [ "describe", "before", "it"]
-    }
+  },
+  "standard": {
+    "ignore": [
+      "client"
+    ],
+    "globals": [
+      "describe",
+      "before",
+      "it"
+    ]
+  }
 }
