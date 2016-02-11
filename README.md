@@ -19,14 +19,52 @@ A very simple spec looks like the following:
 That will generate an index.html file using the home template.
 
 
-#Pages with data
+#Pages with selectors
+
+
+!not implemented.
+
+
+```js
+    var spec = {
+        '/public/index.html': {
+            page: 'home',
+            selectors: {
+                h1: 'welcome',
+                title: 'hellow'
+            }
+        }
+    };
+    speclate.generate(spec);
+```
+
+That will generate an index.html file using the home template.
+
 
 
 
 #Page with components
 
 
+
+
+```js
+    var spec = {
+        '/public/index.html': {
+            page: 'home',
+            spec: {
+                component: 'cat'
+                data: {
+                    li: 'hello kitty'
+                }
+            }
+        }
+    };
+    speclate.generate(spec);
+```
+
 #Page with components and data
+
 
 
 #Page with components and array of data
@@ -41,6 +79,33 @@ For a full example please see:
 https://github.com/simonmcmanus/speclate-lnug
 
 https://github.com/simonmcmanus/speclate-lnug/blob/master/index.js
+
+
+
+
+```js
+    {
+        'PAGEURL': {
+            page: 'home',
+            spec: {
+                '.lnug-ticket': {
+                    component: 'ticket',
+                    data: {
+                        '.lnug-nextmeetup': '12th October 2014',
+                        '.venue': 'Royal Albert Hall'
+                    }
+                },
+                '.lnug-content': {
+                    component: 'speaker',
+                    data: require('./data/speaker-selectors')
+                },
+                '.lnug-mailing-list': {
+                    component: 'sign-up'
+                }
+            }
+        }
+    }
+```
 
 ```js
     {

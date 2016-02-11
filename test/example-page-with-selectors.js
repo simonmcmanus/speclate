@@ -7,7 +7,13 @@ describe('given a simple index.html page', () => {
     before((next) => {
         var spec = {
             'index.html': {
-                page: 'home'
+                page: 'home',
+                spec: {
+                    '#bacon': {
+                        component: 'cat'
+
+                    }
+                }
             }
         };
         loader(spec, (e, d) => {

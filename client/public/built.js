@@ -69,6 +69,7 @@ module.exports = function(str, selectors) {
     if (!selectors){
         return str;
     }
+    console.log('sel', selectors);
     selectors = ( typeof selectors[0] === 'undefined' ) ? [selectors] : selectors; // make sure we have an array.
     var selectorCount = selectors.length;
     var out = [];
@@ -9904,9 +9905,9 @@ Response.prototype.setHeaderProperties = function(header){
 
 /**
  * Force given parser
- * 
+ *
  * Sets the body parser no matter type.
- * 
+ *
  * @param {Function}
  * @api public
  */
@@ -10885,7 +10886,7 @@ Emitter.prototype.hasListeners = function(event){
  * TODO: combatible error handling?
  */
 
-module.exports = function(arr, fn, initial){  
+module.exports = function(arr, fn, initial){
   var idx = 0;
   var len = arr.length;
   var curr = arguments.length == 3
@@ -10895,7 +10896,7 @@ module.exports = function(arr, fn, initial){
   while (idx < len) {
     curr = fn.call(null, curr, arr[idx], ++idx, arr);
   }
-  
+
   return curr;
 };
 },{}],17:[function(require,module,exports){
