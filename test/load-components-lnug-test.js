@@ -6,7 +6,7 @@ describe('When load components is called requesting the animals layout ', () => 
     var out;
     beforeEach((next) => {
         loadComponents(sponsors, (err, data) => {
-            console.log('out', data);
+            console.log('out', err, data);
             out = data;
             next();
         });
