@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "test": "NODE_ENV=test mocha --reporter spec",
-      "watch": "NODE_ENV=test mocha --watch --reporter spec"
+    "test": "standard && NODE_ENV=test mocha --reporter spec",
+    "watch": "NODE_ENV=test mocha --watch --reporter spec"
   },
   "author": "",
   "license": "ISC",
@@ -18,6 +18,13 @@
     "fs": "./client/read-file-override.js"
   },
   "devDependencies": {
-    "chai": "^3.5.0"
-  }
+    "chai": "^3.5.0",
+    "standard": "^6.0.4"
+    },
+    "standard": {
+      "ignore": [
+        "client"
+      ],
+			"globals": [ "describe", "before", "it"]
+    }
 }
