@@ -20,6 +20,7 @@ describe('When load components is called requesting the animals layout ', () => 
     });
 
     it('should pass the callback an object', () => {
+        console.log('out', out)
         expect(out).to.be.an('object');
     });
     it('should load the cat componentand update using the selectors specified', () => {
@@ -58,3 +59,8 @@ describe('When load components is called requesting with an array the animals la
         expect(out.cat).to.equal('<li>Simon</li>\n<li>Bob</li>\n');
     });
 });
+
+
+describe('given the lnug sponsors example', () => {
+
+})
