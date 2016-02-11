@@ -26,7 +26,7 @@ describe('example / selectors', () => {
     })
 
     it('the first item returned should have a markup property containing the outer layout and the page layout ', () => {
-      expect(out[0].markup).to.equal('<html>\n<div id=\"container\"><h1>Homepage</h1>\n\n<div id=\"bacon\">\n</div></div>\n</html>\n')
+      expect(out[0].markup).to.equal('<html>\n<div id=\"container\"><h1>Homepage</h1>\n<div id=\"bacon\">\n</div>\n</div>\n</html>\n')
     })
   })
 })
