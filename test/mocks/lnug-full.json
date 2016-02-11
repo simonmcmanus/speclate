@@ -1,0 +1,57 @@
+{
+    ".gold-sponsor": {
+        "component": "sponsor",
+        "data": [
+            {
+                "a": "holla"
+            },
+            {
+                "a": "sdsdsd"
+            }
+        ]
+    },
+    ".silver-sponsor": {
+        "component": "sponsor",
+        "data": [
+            {
+                "a": {
+                    "title": "artificial labs",
+                    "href": "https://artificial.io/"
+                },
+                "img": {
+                    "src": "./public/artificial-labs.jpg",
+                    "alt": "artificial labs"
+                }
+            },
+            {
+                "a": {
+                    "title": "JScrambler",
+                    "href": "https://jscrambler.com/"
+                },
+                "img": {
+                    "src": "./public/jscramble.png",
+                    "alt": "JScrambler"
+                }
+            }
+        ]
+    },
+    ".bronze-sponsor": {
+        "component": "sponsor",
+        "data": []
+    },
+    ".community-sponsor": {
+        "component": "sponsor",
+        "data": [
+            {
+                "a": {
+                    "title": "Nexttick",
+                    "href": "http://nexttick.io"
+                },
+                "img": {
+                    "src": "./public/nexttick.jpg",
+                    "alt": "Nexttick"
+                }
+            }
+        ]
+    }
+}

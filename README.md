@@ -1,7 +1,40 @@
-Given a spec (a collection of pages)
+Given a spec (a collection of pages) Generate static html pages.
 
 
-Generate static html pages.
+
+
+A very simple spec looks like the following:
+
+#Pages
+
+```js
+    var spec = {
+        '/public/index.html': {
+            page: 'home'
+        }
+    };
+    speclate.generate(spec);
+```
+
+That will generate an index.html file using the home template.
+
+
+#Pages with data
+
+
+
+#Page with components
+
+
+#Page with components and data
+
+
+#Page with components and array of data
+
+
+#Page with components and array of complex data
+
+
 
 For a full example please see:
 
