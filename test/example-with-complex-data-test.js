@@ -30,7 +30,6 @@ describe('example / complex data', () => {
                 }
             };
             loader(spec, (e, d) => {
-                console.log(d)
                 out = d;
                 next();
             });
