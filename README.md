@@ -9,25 +9,23 @@ A very simple spec looks like the following:
 
 ```js
     var spec = {
-        '/public/index.html': {
+        'index.html': {
             page: 'home'
         }
     };
-    speclate.generate(spec);
 ```
 
-That will generate an index.html file using the home template.
+Take the home page (/pages/home/home.html) and append it to the #container domNode in the layout.html.
+
+Save the resulting file as index.html.
 
 
 #Pages with selectors
 
 
-!not implemented.
-
-
 ```js
     var spec = {
-        '/public/index.html': {
+        'index.html': {
             page: 'home',
             selectors: {
                 h1: 'welcome',
@@ -35,22 +33,20 @@ That will generate an index.html file using the home template.
             }
         }
     };
-    speclate.generate(spec);
 ```
 
-That will generate an index.html file using the home template.
 
+Take /pages/home/home.html and add it to the layout #container.
+Replace any h1 with innerHTML welcome and set the title to hellow.
 
-
+Save the resulting file as index.html.
 
 #Page with components
 
 
-
-
 ```js
     var spec = {
-        '/public/index.html': {
+        'index.html': {
             page: 'home',
             spec: {
                 component: 'cat'
@@ -60,8 +56,11 @@ That will generate an index.html file using the home template.
             }
         }
     };
-    speclate.generate(spec);
 ```
+
+Take the /pages/home/home.html and append it to the #container div in the layout.html.
+
+Get the cat component and append it to the li, changing the innerHTML to helllo kitty.
 
 #Page with components and data
 
