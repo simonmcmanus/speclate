@@ -35,11 +35,27 @@ Save the resulting file as index.html.
     };
 ```
 
-
 Take /pages/home/home.html and add it to the layout #container.
 Replace any h1 with innerHTML welcome and set the title to hellow.
 
 Save the resulting file as index.html.
+
+
+
+#Page as a function
+
+```js
+    var spec = {
+        'index.html': {
+            page: function(params, callback) {
+                callback('<div> here is your page </div>');
+            }
+        }
+    };
+```
+
+Provide a function that when called generates the markup required for the page.
+
 
 #Page with components
 
