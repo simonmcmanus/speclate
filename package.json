@@ -7,6 +7,9 @@
     "test": "standard && NODE_ENV=test mocha --reporter spec",
     "watch": "NODE_ENV=test mocha --watch --reporter spec"
   },
+  "bin": {
+    "speclate": "./lib/do-generate-site.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
