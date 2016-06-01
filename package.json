@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "standard && NODE_ENV=test mocha --reporter spec",
-    "watch": "NODE_ENV=test mocha --watch --reporter spec"
+    "test": "NODE_ENV=test mocha --reporter spec && standard",
+    "watch": "NODE_ENV=test mocha --watch --reporter spec",
+    "build-client": "watchify ./client/client.js -o ./testRunner/compiled/speclate-client.js",
+    "": "browserify ./client",
+    "test-server": "node ./testRunner/test-server"
   },
   "bin": {
     "speclate": "./lib/do-generate-site.js"
@@ -22,8 +25,12 @@
     "fs": "./client/read-file-override.js"
   },
   "devDependencies": {
+    "browserify-middleware": "^7.0.0",
     "chai": "^3.5.0",
-    "standard": "^6.0.4"
+    "express": "^4.14.0",
+    "sinon": "^1.17.4",
+    "standard": "^6.0.4",
+    "watchify": "*"
   },
   "standard": {
     "ignore": [

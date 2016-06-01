@@ -10,7 +10,6 @@ var getFile = require('../lib/read-file');
 window.setupPage = function(pageName, context, page) {
     var pageLayoutPath =  '/pages/' + pageName + '/' + pageName + '.html';
     var pageJSPath =  '/pages/' + pageName + '/' + pageName + '.js';
-    console.log(pageJSPath)
     getFile(pageLayoutPath, function(error, file) {
             var html = doSizlate({
                 spec: page.spec
