@@ -18,19 +18,13 @@
   "dependencies": {
     "async": "^1.4.2",
     "lodash": "^4.5.1",
-    "pageify": "^5.0.0",
     "sizlate": "^1"
   },
   "browser": {
     "fs": "./client/read-file-override.js"
   },
   "devDependencies": {
-    "browserify-middleware": "^7.0.0",
-    "chai": "^3.5.0",
-    "express": "^4.14.0",
-    "sinon": "^1.17.4",
     "standard": "^6.0.4",
-    "watchify": "*"
   },
   "standard": {
     "ignore": [
