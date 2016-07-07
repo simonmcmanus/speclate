@@ -24,7 +24,7 @@
     "fs": "./client/read-file-override.js"
   },
   "devDependencies": {
-    "standard": "^6.0.4",
+    "standard": "^6.0.4"
   },
   "standard": {
     "ignore": [

@@ -60,9 +60,9 @@ describe('page - loader', () => {
             });
         })
 
-        //it('should update the page title', () => {
-        //    expect(out).toEqual('<div id="container"><div>\n    <h1>welcome</h1>\n<div id="bacon">\n</div>\n</div></div>');
-        //});
+        it('should update the page title', () => {
+            expect(document.title).toEqual('welcome');
+        });
     })
 
     // describe('Given a page spec which specifies a component and some data', () => {
