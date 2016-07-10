@@ -45,33 +45,33 @@ describe('page - loader', () => {
     })
   })
 
-  describe('Given a page spec which defines a title selector', () => {
-    beforeEach((next) => {
-      var pageSpec = {
-        page: 'home',
-        selectors: {
-          title: 'welcome'
-        }
-      }
-      speclate.page.load(pageSpec, (err, data) => {
-        if (err) {
-          console.log(err)
-        }
-        out = data
-        next()
-      })
-    })
+  // describe('Given a page spec which defines a title selector', () => {
+  //   beforeEach((next) => {
+  //     var pageSpec = {
+  //       page: 'home',
+  //       selectors: {
+  //         title: 'welcome'
+  //       }
+  //     }
+  //     speclate.page.load(pageSpec, (err, data) => {
+  //       if (err) {
+  //         console.log(err)
+  //       }
+  //       out = data
+  //       next()
+  //     })
+  //   })
 
-    it('should update the page title', () => {
-      if (typeof document !== 'undefined') {
-        // clientside
-        expect(document.title).toEqual('welcome')
-      } else {
-        // serverside
-        expect(out).toContain('<title>welcome</title>')
-      }
-    })
-  })
+  //   it('should update the page title', () => {
+  //     if (typeof document !== 'undefined') {
+  //       // clientside
+  //       expect(document.title).toEqual('welcome')
+  //     } else {
+  //       // serverside
+  //       expect(out).toContain('<title>welcome</title>')
+  //     }
+  //   })
+  // })
 
   // describe('Given a page spec which specifies a component and some data', () => {
 
