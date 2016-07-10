@@ -12,7 +12,7 @@
         "test-server": "node ./testRunner/test-server"
     },
     "bin": {
-        "speclate": "./lib/do-generate-site.js"
+        "speclate": "./lib/site/do-generate-site.js"
     },
     "author": "",
     "license": "ISC",
