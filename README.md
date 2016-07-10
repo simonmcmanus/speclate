@@ -158,11 +158,33 @@ https://github.com/simonmcmanus/speclate-lnug/blob/master/index.js
 ```
 
 
-# Generate
+#Generate
 
-# Load
+```js
 
-Tests:
+require('speclate');
+
+var spec = {
+    'index.html': {
+        page: 'home'
+    }
+};
+speclate.site.markup(spec, (error) => {
+    if(!error) {
+        console.log('Site build complete.');
+    }
+});
+
+```
+
+
+#ClientSide Routing:
+
+see:
+https://github.com/simonmcmanus/speclate-router
+
+
+#Tests:
 
 
 /spec
