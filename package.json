@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha --reporter spec && standard",
+    "test": "NODE_ENV=test jasmine && standard",
+    "mocha-test": "NODE_ENV=test mocha --reporter spec && standard",
     "watch": "NODE_ENV=test mocha --watch --reporter spec",
     "build-client": "watchify ./client/client.js -o ./testRunner/compiled/speclate-client.js",
     "": "browserify ./client",
@@ -28,11 +29,15 @@
   },
   "standard": {
     "ignore": [
-      "client"
+      "client",
+      "testRunner",
+      "test"
     ],
     "globals": [
       "describe",
       "before",
+      "beforeEach",
+      "expect",
       "it"
     ]
   }

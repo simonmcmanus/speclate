@@ -1,4 +1,4 @@
-var loader = require('../lib/loader')
+var loader = require('../lib/site/loader')
 var expect = require('chai').expect
 
 describe('example / toplevel selectors', () => {
@@ -24,7 +24,7 @@ describe('example / toplevel selectors', () => {
     })
 
     it('the first item returned should have a markup property containing the outer layout and the page layout ', () => {
-      expect(out[0].markup).to.equal('<html>\n<div id=\"container\">HTMLOVERRIDE</div>\n</html>\n')
+      expect(out[0].markup).to.contain('<div id=\"container\">HTMLOVERRIDE</div>')
     })
   })
 })

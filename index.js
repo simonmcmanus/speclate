@@ -7,13 +7,10 @@ exports.site = {
 }
 
 exports.page = {
-    load: require('./lib/page/loader')
+  load: require('./lib/page/loader')
 }
 
 exports.components = {
-  load:  require('./lib/page/load-components')
+  load: require('./lib/page/load-components')
 }
 
-// exports.components = {
-//   load
-// }

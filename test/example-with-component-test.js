@@ -1,4 +1,4 @@
-var loader = require('../lib/loader')
+var loader = require('../lib/site/loader')
 var expect = require('chai').expect
 
 describe('example/component', () => {
@@ -22,7 +22,7 @@ describe('example/component', () => {
     })
 
     it('should add the component to the appropriate place in the DOM', () => {
-      expect(out[0].markup).to.equal('<html>\n<div id=\"container\"><h1>Homepage</h1>\n<div id=\"bacon\"><li>\n    Hello i am a cat.\n</li>\n<img>\n</div>\n</div>\n</html>\n')
+      expect(out[0].markup).to.contain('<div id=\"container\"><h1>Homepage</h1>\n<div id=\"bacon\"><li>\n    Hello i am a cat.\n</li>\n<img>\n</div>\n</div>')
     })
   })
 })
