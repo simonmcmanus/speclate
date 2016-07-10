@@ -96,8 +96,6 @@ https://github.com/simonmcmanus/speclate-lnug
 https://github.com/simonmcmanus/speclate-lnug/blob/master/index.js
 
 
-
-
 ```js
     {
         'PAGEURL': {
@@ -163,3 +161,21 @@ https://github.com/simonmcmanus/speclate-lnug/blob/master/index.js
 # Generate
 
 # Load
+
+Tests:
+
+
+/spec
+Contains tests to run against server and client
+
+These tests can be run in the browser using the repo:
+
+https://github.com/simonmcmanus/laterunner
+
+
+
+
+/test
+Contains mocha test which just work on the server.
+
+These need to be moved into the spec folder and reworked to fit with the new api structure (sites, pages and components)
