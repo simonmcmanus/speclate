@@ -19,7 +19,7 @@
     "dependencies": {
         "async": "^1.4.2",
         "lodash": "^4.5.1",
-        "sizlate": "^1"
+        "sizlate": ">=1.1.1"
     },
     "browser": {
         "fs": "./client/read-file-override.js"
