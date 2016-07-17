@@ -1,5 +1,17 @@
 
 
+# 5.0.1
+
+mocha tests as part of the build [view commit](http://github.com/$3/$4/commit/7bc236f59518e918d32becd6df52c4e8ea6428ae) 
+
+add chai back to depends so we can still run the mocha tests [view commit](http://github.com/$3/$4/commit/99bae69ad1158bcc9168811b59ed4d08c22981b4) 
+
+catch errors in read file [view commit](http://github.com/$3/$4/commit/127238a903b4d4ae145ad5265870f56db42de13b) 
+
+adding mocha tests to to test command [view commit](http://github.com/$3/$4/commit/ab77e4beea097f98679c1c6f722dbd0dde7ddc61) 
+
+ 
+
 # 5.0.0
 
 linting fix [view commit](http://github.com/$3/$4/commit/0c97de48fc917ede792e16ecd642665fe326e2b1)

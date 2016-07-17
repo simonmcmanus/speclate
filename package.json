@@ -1,50 +1,51 @@
 {
-  "name": "speclate",
-  "version": "5.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "NODE_ENV=test jasmine && NODE_ENV=test npm run mocha-test &&  standard",
-    "mocha-test": "NODE_ENV=test mocha --reporter spec && standard",
-    "watch": "NODE_ENV=test mocha --watch --reporter spec",
-    "build-client": "watchify ./client/client.js -o ./testRunner/compiled/speclate-client.js",
-    "": "browserify ./client",
-    "test-server": "node ./testRunner/test-server"
-  },
-  "bin": {
-    "speclate": "./lib/site/do-generate-site.js"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "async": "^1.4.2",
-    "chai": "^3.5.0",
-    "lodash": "^4.5.1",
-    "sizlate": "1.x.x"
-  },
-  "browser": {
-    "fs": "./client/read-file-override.js"
-  },
-  "devDependencies": {
-    "standard": "^6.0.4"
-  },
-  "standard": {
-    "ignore": [
-      "client",
-      "testRunner",
-      "test"
-    ],
-    "globals": [
-      "describe",
-      "before",
-      "beforeEach",
-      "expect",
-      "it"
+    "name": "speclate",
+    "version": "5.0.1",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "NODE_ENV=test jasmine && NODE_ENV=test npm run mocha-test &&  standard",
+        "mocha-test": "NODE_ENV=test mocha --reporter spec && standard",
+        "watch": "NODE_ENV=test mocha --watch --reporter spec",
+        "build-client": "watchify ./client/client.js -o ./testRunner/compiled/speclate-client.js",
+        "": "browserify ./client",
+        "test-server": "node ./testRunner/test-server"
+    },
+    "bin": {
+        "speclate": "./lib/site/do-generate-site.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "async": "^1.4.2",
+        "chai": "^3.5.0",
+        "lodash": "^4.5.1",
+        "sizlate": "1.x.x"
+    },
+    "browser": {
+        "fs": "./client/read-file-override.js"
+    },
+    "devDependencies": {
+        "standard": "^6.0.4"
+    },
+    "standard": {
+        "ignore": [
+            "client",
+            "testRunner",
+            "test"
+        ],
+        "globals": [
+            "describe",
+            "before",
+            "beforeEach",
+            "expect",
+            "it"
+        ]
+    },
+    "bundledDependencies": [
+        "async",
+        "chai",
+        "lodash",
+        "sizlate"
     ]
-  },
-  "bundledDependencies": [
-    "async",
-    "lodash",
-    "sizlate"
-  ]
 }
