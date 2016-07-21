@@ -17,9 +17,11 @@ adding mocha tests to to test command [view commit](http://github.com/$3/$4/comm
 linting fix [view commit](http://github.com/$3/$4/commit/0c97de48fc917ede792e16ecd642665fe326e2b1)
 moving doSizlate onto the page object as it only operates against a page [view commit](http://github.com/$3/$4/commit/e80003c38f03b1c273f827be01c125572687b343)
 
+
  # 4.1.0 
  
  not so strict about the sizlate version [view commit](http://github.com/$3/$4/commit/427d53d2c77549a46b7bbfcd4804c4aa50da2e8b) 
+ 
  
  # 4.0.2 
  
