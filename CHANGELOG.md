@@ -1,5 +1,19 @@
 
 
+# 5.1.0
+
+linting [view commit](http://github.com/$3/$4/commit/2e1e89851714e3ae9eca34ae7913740ce3a00530) 
+
+Merge branch 'master' of github.com:simonmcmanus/speclate [view commit](http://github.com/$3/$4/commit/e7160dfb344ac4b7101ab2c6efb4a163161d8297) 
+
+handle / in spec by replacing with index.html [view commit](http://github.com/$3/$4/commit/1ea42417889fea369b8aef3c7a7bc224b38ab937) 
+
+Update CHANGELOG.md [view commit](http://github.com/$3/$4/commit/36116580f179c2152421844f902d82cca864430f) 
+
+Update CHANGELOG.md [view commit](http://github.com/$3/$4/commit/b14cc772f98a2a9da267a8273eebc1d2ed41b2f3) 
+
+ 
+
 # 5.0.1
 
 mocha tests as part of the build [view commit](http://github.com/$3/$4/commit/7bc236f59518e918d32becd6df52c4e8ea6428ae) 
