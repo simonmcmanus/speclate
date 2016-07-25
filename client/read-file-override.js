@@ -1,19 +1,7 @@
 'use strict';
 
-var superagent = require('superagent');
+var speclateFetch = require('speclate-fetch');
 
-exports.readFile = function(file, options, callback) {
-    superagent.get( window.location.origin +  file )
-    .end(function(err, res) {
 
-        if(err) {
-            return callback(err);
-        }
-
-        if (res.ok) {
-            callback(null, res.text); // passing null error param to keep same interface as fs.readfile.
-        } else {
-            callback(res.body);
-        }
-    });
-};
+// override readfile with request to fetch.
+exports.readFile = speclateFetch.readFile;
