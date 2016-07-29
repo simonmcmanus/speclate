@@ -30,7 +30,6 @@ Save the resulting file as index.html.
 
 #Page with selectors
 
-
 ```js
     var spec = {
         '/': {
@@ -106,11 +105,6 @@ Get the cat component and append it to the li, changing the innerHTML to helllo 
         }
     };
 ```
-
-
-#Page with components and array of complex data
-
-
 
 #API
 
