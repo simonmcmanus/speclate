@@ -5,7 +5,7 @@ var loadLayout = require('../lib/page/load-layout');
 describe('When load layout is called requesting the animals layout ', function () {
     var layout = 'animals'
     var markup = ''
-    beforeEach((next) => {
+    beforeEach(function (next) {
         loadLayout(layout, (err, data) => {
             markup = data
             next()

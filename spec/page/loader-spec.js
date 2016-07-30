@@ -5,7 +5,7 @@ describe('page - loader', function () {
   var out
 
   describe('Given a simple spec which only defines the page', function () {
-    beforeEach((next) => {
+    beforeEach(function (next) {
       var pageSpec = {
         page: 'home'
       }
@@ -24,7 +24,7 @@ describe('page - loader', function () {
   })
 
   describe('Given a page spec which defines selectors', function () {
-    beforeEach((next) => {
+    beforeEach(function (next) {
       var pageSpec = {
         page: 'home',
         selectors: {
@@ -45,7 +45,7 @@ describe('page - loader', function () {
     })
   })
   // describe('Given a page spec which defines a title selector', function () {
-  //   beforeEach((next) => {
+  //   beforeEach(function (next) {
   //     var pageSpec = {
   //       page: 'home',
   //       selectors: {

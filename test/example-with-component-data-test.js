@@ -5,7 +5,7 @@ describe('example / component - data /', function () {
   describe('given a simple index.html page', function () {
     var spec
     var out
-    before((next) => {
+    before(function (next) {
       spec = {
         'index.html': {
           page: 'home',

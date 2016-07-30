@@ -3,7 +3,7 @@ var expect = require('chai').expect
 
 describe('given a simple index.html page', function () {
   var out
-  before((next) => {
+  before(function (next) {
     var spec = {
       'index.html': {
         page: 'sponsors',
