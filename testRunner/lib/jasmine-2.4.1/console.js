@@ -33,7 +33,7 @@ getJasmineRequireObj().console = function(jRequire, j$) {
   j$.ConsoleReporter = jRequire.ConsoleReporter();
 };
 
-getJasmineRequireObj().ConsoleReporter = function() {
+getJasmineRequireObj().ConsoleReporter = function () {
 
   var noopTimer = {
     start: function(){},
@@ -43,7 +43,7 @@ getJasmineRequireObj().ConsoleReporter = function() {
   function ConsoleReporter(options) {
     var print = options.print,
       showColors = options.showColors || false,
-      onComplete = options.onComplete || function() {},
+      onComplete = options.onComplete || function () {},
       timer = options.timer || noopTimer,
       specCount,
       failureCount,
@@ -59,7 +59,7 @@ getJasmineRequireObj().ConsoleReporter = function() {
 
     print('ConsoleReporter is deprecated and will be removed in a future version.');
 
-    this.jasmineStarted = function() {
+    this.jasmineStarted = function () {
       specCount = 0;
       failureCount = 0;
       pendingCount = 0;
@@ -68,7 +68,7 @@ getJasmineRequireObj().ConsoleReporter = function() {
       timer.start();
     };
 
-    this.jasmineDone = function() {
+    this.jasmineDone = function () {
       printNewline();
       for (var i = 0; i < failedSpecs.length; i++) {
         specFailureDetails(failedSpecs[i]);

@@ -1,8 +1,8 @@
 var loader = require('../lib/site/loader')
 var expect = require('chai').expect
 
-describe('example / toplevel selectors', () => {
-  describe('given a simple index.html page', () => {
+describe('example / toplevel selectors', function () {
+  describe('given a simple index.html page', function () {
     var out
     before((next) => {
       var spec = {
@@ -19,11 +19,11 @@ describe('example / toplevel selectors', () => {
       })
     })
 
-    it('the first item returned should have a name property of index.html', () => {
+    it('the first item returned should have a name property of index.html', function () {
       expect(out[0].name).to.equal('index.html')
     })
 
-    it('the first item returned should have a markup property containing the outer layout and the page layout ', () => {
+    it('the first item returned should have a markup property containing the outer layout and the page layout ', function () {
       expect(out[0].markup).to.contain('<div id=\"container\">HTMLOVERRIDE</div>')
     })
   })

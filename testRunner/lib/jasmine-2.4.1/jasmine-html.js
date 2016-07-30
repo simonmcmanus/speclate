@@ -30,8 +30,8 @@ jasmineRequire.html = function(j$) {
 jasmineRequire.HtmlReporter = function(j$) {
 
   var noopTimer = {
-    start: function() {},
-    elapsed: function() { return 0; }
+    start: function () {},
+    elapsed: function () { return 0; }
   };
 
   function HtmlReporter(options) {
@@ -39,9 +39,9 @@ jasmineRequire.HtmlReporter = function(j$) {
       getContainer = options.getContainer,
       createElement = options.createElement,
       createTextNode = options.createTextNode,
-      onRaiseExceptionsClick = options.onRaiseExceptionsClick || function() {},
-      onThrowExpectationsClick = options.onThrowExpectationsClick || function() {},
-      onRandomClick = options.onRandomClick || function() {},
+      onRaiseExceptionsClick = options.onRaiseExceptionsClick || function () {},
+      onThrowExpectationsClick = options.onThrowExpectationsClick || function () {},
+      onRandomClick = options.onRandomClick || function () {},
       addToExistingQueryString = options.addToExistingQueryString || defaultQueryString,
       timer = options.timer || noopTimer,
       results = [],
@@ -52,7 +52,7 @@ jasmineRequire.HtmlReporter = function(j$) {
       symbols,
       failedSuites = [];
 
-    this.initialize = function() {
+    this.initialize = function () {
       clearPrior();
       htmlReporterMain = createDom('div', {className: 'jasmine_html-reporter'},
         createDom('div', {className: 'jasmine-banner'},
@@ -199,7 +199,7 @@ jasmineRequire.HtmlReporter = function(j$) {
           optionsPayload = optionsMenu.querySelector('.jasmine-payload'),
           isOpen = /\bjasmine-open\b/;
 
-      optionsTrigger.onclick = function() {
+      optionsTrigger.onclick = function () {
         if (isOpen.test(optionsPayload.className)) {
           optionsPayload.className = optionsPayload.className.replace(isOpen, '');
         } else {
@@ -299,10 +299,10 @@ jasmineRequire.HtmlReporter = function(j$) {
             createDom('a', {className: 'jasmine-spec-list-menu', href: '#'}, 'Spec List'),
             createDom('span', {}, ' | Failures ')));
 
-        find('.jasmine-failures-menu').onclick = function() {
+        find('.jasmine-failures-menu').onclick = function () {
           setMenuModeTo('jasmine-failure-list');
         };
-        find('.jasmine-spec-list-menu').onclick = function() {
+        find('.jasmine-spec-list-menu').onclick = function () {
           setMenuModeTo('jasmine-spec-list');
         };
 
@@ -387,7 +387,7 @@ jasmineRequire.HtmlReporter = function(j$) {
   return HtmlReporter;
 };
 
-jasmineRequire.HtmlSpecFilter = function() {
+jasmineRequire.HtmlSpecFilter = function () {
   function HtmlSpecFilter(options) {
     var filterString = options && options.filterString() && options.filterString().replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&');
     var filterPattern = new RegExp(filterString);
@@ -400,7 +400,7 @@ jasmineRequire.HtmlSpecFilter = function() {
   return HtmlSpecFilter;
 };
 
-jasmineRequire.ResultsNode = function() {
+jasmineRequire.ResultsNode = function () {
   function ResultsNode(result, type, parent) {
     this.result = result;
     this.type = type;
@@ -412,7 +412,7 @@ jasmineRequire.ResultsNode = function() {
       this.children.push(new ResultsNode(result, type, this));
     };
 
-    this.last = function() {
+    this.last = function () {
       return this.children[this.children.length - 1];
     };
   }
@@ -420,7 +420,7 @@ jasmineRequire.ResultsNode = function() {
   return ResultsNode;
 };
 
-jasmineRequire.QueryString = function() {
+jasmineRequire.QueryString = function () {
   function QueryString(options) {
 
     this.navigateWithNewParam = function(key, value) {
