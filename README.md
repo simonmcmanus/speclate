@@ -1,4 +1,4 @@
-
+[![Build Status](https://travis-ci.org/simonmcmanus/speclate.svg?branch=master)](https://travis-ci.org/simonmcmanus/speclate)
 
 #Speclate
 
