@@ -9,7 +9,7 @@ describe('example - simple ', function () {
           page: 'home'
         }
       }
-      loader(spec, (e, d) => {
+      loader(spec, function (e, d) {
         out = d
         next()
       })

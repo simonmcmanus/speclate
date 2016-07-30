@@ -9,7 +9,7 @@ describe('page - loader', function () {
       var pageSpec = {
         page: 'home'
       }
-      speclate.page.load(pageSpec, (err, data) => {
+      speclate.page.load(pageSpec, function (err, data) {
         if (err) {
           console.log(err)
         }
@@ -31,7 +31,7 @@ describe('page - loader', function () {
           h1: 'welcome'
         }
       }
-      speclate.page.load(pageSpec, (err, data) => {
+      speclate.page.load(pageSpec, function (err, data) {
         if (err) {
           console.log(err)
         }

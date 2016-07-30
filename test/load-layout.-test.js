@@ -6,7 +6,7 @@ describe('When load layout is called requesting the animals layout ', function (
     var layout = 'animals'
     var markup = ''
     beforeEach(function (next) {
-        loadLayout(layout, (err, data) => {
+        loadLayout(layout, function (err, data) {
             markup = data
             next()
         })

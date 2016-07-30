@@ -21,7 +21,7 @@ describe('example / component - data /', function () {
           }
         }
       }
-      loader(spec, (e, d) => {
+      loader(spec, function (e, d) {
         out = d
         next()
       })
