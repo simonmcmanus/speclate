@@ -8,16 +8,13 @@ Define your website using a javascript spec, render it anywhere.
 
 Portable specs that can render at build time, on the server or in the browser.
 
-This was originally built to support the LNUG website.
-
 
 ##Specs
 
 
+###Simple site spec
 
-#Simple Page
-
-A very simple spec looks like the following:
+A very simple site spec containing just one page looks like this:
 
 ```js
     var spec = {
