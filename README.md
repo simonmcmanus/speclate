@@ -3,78 +3,92 @@
 
 #Speclate
 
-Define your website using a javascript spec, render it anywhere.
+Define sites and pages using a javascript spec.
 
-Portable specs that can render at build time, on the server or in the browser.
+Portable specs that can render at build time, on the server and/or in the browser.
 
+
+##Folder Structure
+
+You need a a outer page layout:
+
+/pages/layout.html
+
+The html file for the home page sit at:
+
+/pages/home/home.html
+
+and components use the same structure:
+
+/components/contact/contact.html
 
 ##Specs
 
-
-###Simple site spec
-
-A very simple site spec containing just one page looks like this:
+###Site Spec
 
 ```js
-    var spec = {
-        '/': {
-            page: 'home'¡
+    var siteSpec = {
+        '/': homePageSpec,
+        '/contact': contactPageSpec,
+        '/about': aboutPageSpec,
+        options: {
+            container: '#newContainer',
+            layout: 'different-layout-file.html'
         }
     };
 ```
 
-Take the home page (/pages/home/home.html) and append it to the #container domNode in the layout.html.
+note: options object is not supported yet.
 
-Save the resulting file as index.html.
+###Simple page spec
 
-
-#Page with selectors
+A very simple page spec looks like this:
 
 ```js
-    var spec = {
-        '/': {
-            page: 'home',
-            selectors: {
-                h1: 'welcome',
-                title: 'hellow'
-            }
+    var homePageSpec = {
+        page: 'home'
+    };
+```
+
+Take the home page (/pages/home/home.html) and append it to #container domNode in the layout.html.
+
+
+#Page spec with selectors
+
+```js
+    var contactPageSpec = {
+        page: 'contact',
+        selectors: {
+            h1: 'Contact us',
+            title: 'Contact us'
         }
     };
 ```
 
-Take /pages/home/home.html and add it to the layout #container.
-Replace any h1 with innerHTML welcome and set the title to hellow.
-
-Save the resulting file as index.html.
-
+Take /pages/contact/contact.html and add it to the layout #container.
+Replace any h1 innerHTML text and set the title to hellow.
 
 
 #Page as a function
 
 ```js
-    var spec = {
-        '/': {
-            page: function(callback) {
-                callback('<div> here is your page </div>');
-            }
+    var aboutPageSpec = {
+        page: function(callback) {
+            callback('<div> Some info about us </div>');
         }
     };
 ```
 
 Provide a function that when called generates the markup required for the page.
 
-
 #Page with simple component
 
-
 ```js
-    var spec = {
-        '/': {
-            page: 'home',
-            spec: {
-                '#bacon': {
-                    component: 'cat'
-                }
+    var pageSpec = {
+        page: 'home',
+        spec: {
+            '#bacon': {
+                component: 'cat'
             }
         }
     };
@@ -82,38 +96,37 @@ Provide a function that when called generates the markup required for the page.
 
 Take the /pages/home/home.html and append it to the #container div in the layout.html.
 
-Get the cat component and append it to the li, changing the innerHTML to helllo kitty.
-
-
 #Page with component and array of data
 
 ```js
-    var spec = {
-        '/': {
-            page: 'home',
-            spec: {
-                '#pets': {
-                    component: 'cat'
-                    data: [{
-                        li: 'hello kitty'
+    var petsPageSpec = {
+        page: 'pets',
+        spec: {
+            '#pets': {
+                component: 'cat'
+                data: [
+                    {
+                        li: 'Bob'
                     },
                     {
-                        li: 'item two'
+                        li: 'Jane'
                     }
-                    ]
-                }
+                ]
             }
         }
     };
 ```
 
+Get the cat component and append it to the li for each item in the data array.
+
+
 #API
 
 ##Site
 
-###speclate.site.markup(spec, callback)
+###speclate.site.markup(siteSpec, callback)
 
-Given a spec (a collection of pages) Generate static html pages.
+Given a site spec, Generate static html pages.
 
 
 ```js
@@ -141,3 +154,9 @@ https://github.com/simonmcmanus/speclate-router
 For a full example please see:
 
 https://github.com/lnug/lnug.github.io
+
+
+#About
+
+
+Speclate uses sizzle selectors with sizlate.
