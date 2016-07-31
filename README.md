@@ -54,7 +54,7 @@ Save the resulting file as index.html.
 ```js
     var spec = {
         '/': {
-            page: function(params, callback) {
+            page: function(callback) {
                 callback('<div> here is your page </div>');
             }
         }
