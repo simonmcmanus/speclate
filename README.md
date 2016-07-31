@@ -12,13 +12,15 @@ This was originally built to support the LNUG website.
 ##Specs
 
 
-A very simple spec looks like the following:
 
+#Simple Page
+
+A very simple spec looks like the following:
 
 ```js
     var spec = {
         '/': {
-            page: 'home'
+            page: 'home'¡
         }
     };
 ```
@@ -64,7 +66,7 @@ Save the resulting file as index.html.
 Provide a function that when called generates the markup required for the page.
 
 
-#Page with components
+#Page with simple component
 
 
 ```js
@@ -72,9 +74,8 @@ Provide a function that when called generates the markup required for the page.
         '/': {
             page: 'home',
             spec: {
-                component: 'cat'
-                data: {
-                    li: 'hello kitty'
+                '#bacon': {
+                    component: 'cat'
                 }
             }
         }
@@ -93,14 +94,16 @@ Get the cat component and append it to the li, changing the innerHTML to helllo 
         '/': {
             page: 'home',
             spec: {
-                component: 'cat'
-                data: [{
-                    li: 'hello kitty'
-                },
-                {
-                    li: 'item two'
+                '#pets': {
+                    component: 'cat'
+                    data: [{
+                        li: 'hello kitty'
+                    },
+                    {
+                        li: 'item two'
+                    }
+                    ]
                 }
-                ]
             }
         }
     };

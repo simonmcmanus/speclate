@@ -13,7 +13,7 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'spec/page/*.js',
+      'spec/*/*-spec.js',
        { pattern: 'spec/sample/*/**.html', included: false, served: true },
        { pattern: 'spec/sample/*/*/*.html', included: false, served: true }
     ],
@@ -27,7 +27,7 @@ module.exports = function (config) {
     exclude: [
     ],
     preprocessors: {
-      'spec/page/*': 'browserify'
+      'spec/*/*-spec.js': 'browserify'
     },
     plugins: [
       'karma-browserify',
