@@ -27,27 +27,21 @@ and components use the same structure:
 ###Site Spec
 
 ```js
-    var siteSpec = {
-        '/': homePageSpec,
-        '/contact': contactPageSpec,
-        '/about': aboutPageSpec,
-        options: {
-            container: '#newContainer',
-            layout: 'different-layout-file.html'
-        }
-    };
+var siteSpec = {
+    '/': homePageSpec,
+    '/contact': contactPageSpec,
+    '/about': aboutPageSpec,
+};
 ```
-
-note: options object is not supported yet.
 
 ###Simple page spec
 
 A very simple page spec looks like this:
 
 ```js
-    var homePageSpec = {
-        page: 'home'
-    };
+var homePageSpec = {
+    page: 'home'
+};
 ```
 
 Take the home page (/pages/home/home.html) and append it to #container domNode in the layout.html.
@@ -56,13 +50,13 @@ Take the home page (/pages/home/home.html) and append it to #container domNode i
 #Page spec with selectors
 
 ```js
-    var contactPageSpec = {
-        page: 'contact',
-        selectors: {
-            h1: 'Contact us',
-            title: 'Contact us'
-        }
-    };
+var contactPageSpec = {
+    page: 'contact',
+    selectors: {
+        h1: 'Contact us',
+        title: 'Contact us'
+    }
+};
 ```
 
 Take /pages/contact/contact.html and add it to the layout #container.
@@ -72,11 +66,11 @@ Replace any h1 innerHTML text and set the title to hellow.
 #Page as a function
 
 ```js
-    var aboutPageSpec = {
-        page: function(callback) {
-            callback('<div> Some info about us </div>');
-        }
-    };
+var aboutPageSpec = {
+    page: function(callback) {
+        callback('<div> Some info about us </div>');
+    }
+};
 ```
 
 Provide a function that when called generates the markup required for the page.
@@ -84,14 +78,14 @@ Provide a function that when called generates the markup required for the page.
 #Page with simple component
 
 ```js
-    var pageSpec = {
-        page: 'home',
-        spec: {
-            '#bacon': {
-                component: 'cat'
-            }
+var pageSpec = {
+    page: 'home',
+    spec: {
+        '#bacon': {
+            component: 'cat'
         }
-    };
+    }
+};
 ```
 
 Take the /pages/home/home.html and append it to the #container div in the layout.html.
@@ -99,22 +93,22 @@ Take the /pages/home/home.html and append it to the #container div in the layout
 #Page with component and array of data
 
 ```js
-    var petsPageSpec = {
-        page: 'pets',
-        spec: {
-            '#pets': {
-                component: 'cat'
-                data: [
-                    {
-                        li: 'Bob'
-                    },
-                    {
-                        li: 'Jane'
-                    }
-                ]
-            }
+var petsPageSpec = {
+    page: 'pets',
+    spec: {
+        '#pets': {
+            component: 'cat'
+            data: [
+                {
+                    li: 'Bob'
+                },
+                {
+                    li: 'Jane'
+                }
+            ]
         }
-    };
+    }
+};
 ```
 
 Get the cat component and append it to the li for each item in the data array.
@@ -130,17 +124,17 @@ Given a site spec, Generate static html pages.
 
 
 ```js
-    var speclate = require('speclate');
-    var spec = {
-        '/': {
-            page: 'home'
-        }
-    };
-    speclate.site.markup(spec, function(errors) {
-        if(!error) {
-            console.log('done generating site');
-        }
-    });
+var speclate = require('speclate');
+var spec = {
+    '/': {
+        page: 'home'
+    }
+};
+speclate.site.markup(spec, function(errors) {
+    if(!error) {
+        console.log('done generating site');
+    }
+});
 ```
 
 #Clientside Routing:
