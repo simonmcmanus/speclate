@@ -1,9 +1,9 @@
-var loader = require('../lib/site/loader')
-var expect = require('chai').expect
+var loader = require('../../lib/site/loader')
+
 describe('example - simple ', function () {
   describe('given a simple index.html page', function () {
     var out
-    before(function (next) {
+    beforeEach(function (next) {
       var spec = {
         'index.html': {
           page: 'home'
@@ -16,11 +16,11 @@ describe('example - simple ', function () {
     })
 
     it('the first item returned should have a name property of index.html', function () {
-      expect(out[0].name).to.equal('index.html')
+      expect(out[0].name).toEqual('index.html')
     })
 
     it('the first item returned should have a markup property containing the outer layout and the page layout ', function () {
-      expect(out[0].markup).to.contain('<div id=\"container\"><h1>Homepage</h1>\n<div id=\"bacon\">\n</div>\n</div>')
+      expect(out[0].markup).toContain('<div id=\"container\"><h1>Homepage</h1>\n<div id=\"bacon\">\n</div>\n</div>')
     })
   })
 })

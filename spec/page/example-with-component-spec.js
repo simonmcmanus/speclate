@@ -1,10 +1,9 @@
-var loader = require('../lib/site/loader')
-var expect = require('chai').expect
+var loader = require('../../lib/site/loader')
 
 describe('example/component', function () {
   describe('given a simple index.html page', function () {
     var out
-    before(function (next) {
+    beforeEach(function (next) {
       var spec = {
         'index.html': {
           page: 'home',
@@ -22,7 +21,11 @@ describe('example/component', function () {
     })
 
     it('should add the component to the appropriate place in the DOM', function () {
-      expect(out[0].markup).to.contain('<div id=\"container\"><h1>Homepage</h1>\n<div id=\"bacon\"><li>\n    Hello i am a cat.\n</li>\n<img>\n</div>\n</div>')
+      // client side does not always have the same line breaks so we strip em to be sure.
+      var lineFreeMarkup = out[0].markup.replace(/[\r\n]/g, '')
+      var lineFreeExpected = '<div id=\"container\"><h1>Homepage</h1>\n<div id=\"bacon\"><li>\n    Hello i am a cat.\n</li>\n<img>\n</div>\n</div>'.replace(/[\r\n]/g, '')
+
+      expect(lineFreeMarkup).toContain(lineFreeExpected)
     })
   })
 })

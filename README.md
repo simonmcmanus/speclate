@@ -135,25 +135,6 @@ see:
 https://github.com/simonmcmanus/speclate-router
 
 
-#Tests:
-
-
-/spec
-Contains tests to run against server and client
-
-These tests can be run in the browser using the repo:
-
-https://github.com/simonmcmanus/laterunner
-
-
-
-
-/test
-Contains mocha test which just work on the server.
-
-These need to be moved into the spec folder and reworked to fit with the new api structure (sites, pages and components)
-
-
 #Examples
 
 For a full example please see:

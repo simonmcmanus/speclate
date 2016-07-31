@@ -11,7 +11,7 @@ describe('page - loader', function () {
       }
       speclate.page.load(pageSpec, function (err, data) {
         if (err) {
-          console.log(err)
+          console.log('ERR:', err)
         }
         out = data
         next()
@@ -31,6 +31,7 @@ describe('page - loader', function () {
           h1: 'welcome'
         }
       }
+
       speclate.page.load(pageSpec, function (err, data) {
         if (err) {
           console.log(err)
@@ -44,31 +45,33 @@ describe('page - loader', function () {
       expect(out).toContain('<h1>welcome</h1>')
     })
   })
-  // describe('Given a page spec which defines a title selector', function () {
-  //   beforeEach(function (next) {
-  //     var pageSpec = {
-  //       page: 'home',
-  //       selectors: {
-  //         title: 'welcome'
-  //       }
-  //     }
-  //     speclate.page.load(pageSpec, (err, data) => {
-  //       if (err) {
-  //         console.log(err)
-  //       }
-  //       out = data
-  //       next()
-  //     })
-  //   })
 
-  //   it('should update the page title', function () {
-  //     if (typeof document !== 'undefined') {
-  //       // clientside
-  //       expect(document.title).toEqual('welcome')
-  //     } else {
-  //       // serverside
-  //       expect(out).toContain('<title>welcome</title>')
-  //     }
-  //   })
-  // })
+//   describe('Given a page spec which defines a title selector', function () {
+//     beforeEach(function (next) {
+//       var pageSpec = {
+//         page: 'home',
+//         selectors: {
+//           title: 'welcome'
+//         }
+//       }
+//       speclate.page.load(pageSpec, (err, data) => {
+//         if (err) {
+//           console.log(err)
+//         }
+//         out = data
+//         next()
+//       })
+//     })
+
+//     it('should update the page title', function () {
+//       if (typeof document !== 'undefined') {
+//         // clientside
+//         console.log(document.title, window.document.title);
+//         expect(document.title).toEqual('welcome')
+//       } else {
+//         // serverside
+//         expect(out).toContain('<title>welcome</title>')
+//       }
+//     })
+// })
 })
