@@ -1,4 +1,6 @@
 [![Build Status](https://travis-ci.org/simonmcmanus/speclate.svg?branch=master)](https://travis-ci.org/simonmcmanus/speclate)
+[![Dependency Status](https://dependencyci.com/github/simonmcmanus/speclate/badge)](https://dependencyci.com/github/simonmcmanus/speclate)
+
 
 #Speclate
 
@@ -87,7 +89,7 @@ Take the /pages/home/home.html and append it to the #container div in the layout
 Get the cat component and append it to the li, changing the innerHTML to helllo kitty.
 
 
-#Page with components and array of data
+#Page with component and array of data
 
 ```js
     var spec = {
