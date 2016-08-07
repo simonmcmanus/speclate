@@ -15,7 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "async": "^1.4.2",
+    "async": "^2.0.1",
     "speclate-fetch": "1.x.x",
     "lodash": "^4.5.1",
     "sizlate": "1.x.x"
@@ -35,8 +35,8 @@
     "karma-opera-launcher": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.1",
     "karma-serve-static": "^1.0.12",
-    "mocha": "^2.5.3",
-    "standard": "^6.0.4",
+    "mocha": "^3.0.1",
+    "standard": "^7.1.2",
     "watchify": "^3.7.0"
   },
   "standard": {
