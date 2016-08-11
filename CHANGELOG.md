@@ -1,5 +1,13 @@
 
 
+# 6.1.0
+
+updated speclate command in package.json [view commit](http://github.com/$3/$4/commit/56a15cbb8fcdc12cbd66435bed1a645b726354d9) 
+
+moved do generate site back into bin folder [view commit](http://github.com/$3/$4/commit/94592b93c8a6b4ed9f18360e8238327d204b6d3c) 
+
+ 
+
 # 6.0.0
 
 fixed linting issues [view commit](http://github.com/$3/$4/commit/88742ef3f23bd71567190357b7de40e1d978b46a) 
