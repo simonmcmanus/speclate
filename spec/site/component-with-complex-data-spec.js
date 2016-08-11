@@ -35,7 +35,7 @@ describe('example / complex data', function () {
     it('should add the component to the appropriate place in the DOM', function () {
         // stripping the line breaks should not be necessary here.
       var lineFreeMarkup = out[0].markup.replace(/[\r\n]/g, '')
-      var lineFreeExpected = '<div id=\"container\"><h1>Homepage</h1>\n<div id=\"bacon\"><li>\n    Hello i am a cat.\n</li>\n<img src=\"IMGPATH\">\n<li>\n    Hello i am a cat.\n</li>\n<img src=\"IMGPATH2\"></div>\n</div>'.replace(/[\r\n]/g, '')
+      var lineFreeExpected = '<div id="container"><h1>Homepage</h1>\n<div id="bacon"><li>\n    Hello i am a cat.\n</li>\n<img src="IMGPATH">\n<li>\n    Hello i am a cat.\n</li>\n<img src="IMGPATH2"></div>\n</div>'.replace(/[\r\n]/g, '')
       expect(lineFreeMarkup).toContain(lineFreeExpected)
     })
   })

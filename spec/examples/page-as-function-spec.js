@@ -22,7 +22,7 @@ describe('example - simple ', function () {
     })
 
     it('the first item returned should have a markup property should contain the generated page ', function () {
-      expect(out[0].markup).toContain('<div id=\"container\"><h1>GENERATEPAGE</h1></div>')
+      expect(out[0].markup).toContain('<div id="container"><h1>GENERATEPAGE</h1></div>')
     })
   })
 })

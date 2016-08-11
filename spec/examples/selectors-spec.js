@@ -23,7 +23,7 @@ describe('example / toplevel selectors', function () {
     })
 
     it('the first item returned should have a markup property containing the outer layout and the page layout ', function () {
-      expect(out[0].markup).toContain('<div id=\"container\">HTMLOVERRIDE</div>')
+      expect(out[0].markup).toContain('<div id="container">HTMLOVERRIDE</div>')
     })
   })
 })
