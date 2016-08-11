@@ -1,5 +1,67 @@
 
 
+# 6.0.0
+
+fixed linting issues [view commit](http://github.com/$3/$4/commit/88742ef3f23bd71567190357b7de40e1d978b46a) 
+
+Merge branch 'master' of github.com:simonmcmanus/speclate [view commit](http://github.com/$3/$4/commit/4a4204fd6b44020a382a6bf018eef0b50b896c4e) 
+
+fixed do-generate-site [view commit](http://github.com/$3/$4/commit/0f27863bdd142c4808d29cf7427cbd13f0834856) 
+
+Update README.md [view commit](http://github.com/$3/$4/commit/32569b959611fbaa0d870361bc80599c6a8075d1) 
+
+Merge pull request #5 from simonmcmanus/greenkeeper-update-all [view commit](http://github.com/$3/$4/commit/b49628ba9ee1cb2c3526a328ee5299b008009b93) 
+
+chore(package): update dependencies [view commit](http://github.com/$3/$4/commit/2e61fe3916dfb4d98f28f83ce198da926a59e735) 
+
+better white spacing in readme [view commit](http://github.com/$3/$4/commit/cf611788c4891c8b151a5f0b12edd9860c6c189b) 
+
+readme updates [view commit](http://github.com/$3/$4/commit/8830882b32ab8ef1a1f2cbb1c7ed705ba32ce6f1) 
+
+remove dependencyci.com/ badge [view commit](http://github.com/$3/$4/commit/ba3e8853200437cf39ff3b15766412ff9ef84d96) 
+
+update readme [view commit](http://github.com/$3/$4/commit/1fd282c26414b1527b6cbf33d6827c0966d48121) 
+
+adding dependencyci to readme [view commit](http://github.com/$3/$4/commit/6601ef9fecc176ef96433c2a51ec2f0b2132514f) 
+
+renaming test files [view commit](http://github.com/$3/$4/commit/27a5fc495b29375b9e5a0a998a3007aa031c3c92) 
+
+adding test for page as a function [view commit](http://github.com/$3/$4/commit/7024bb161bc39706c51051595209ce05e83fce0d) 
+
+Merge pull request #4 from simonmcmanus/karma [view commit](http://github.com/$3/$4/commit/02f50031f11a27ed14dc516935501fba8054c2a1) 
+
+adding karma tests [view commit](http://github.com/$3/$4/commit/294c4e162d35c60b3bd2cb34d3c823f453bd0ad0) 
+
+adding node 5 and 6 to tests [view commit](http://github.com/$3/$4/commit/06229cf5288990aa345d09623c602844df4800df) 
+
+function [view commit](http://github.com/$3/$4/commit/9b10a3fa5e7dfd5a18fb50b34f57a33fb6cae312) 
+
+(next) => becomes function (next) [view commit](http://github.com/$3/$4/commit/5fdd01952907e3afffa4f9df24af6d054b153853) 
+
+using function instead of () => to support node 4 [view commit](http://github.com/$3/$4/commit/b33599a6a68f2072e778ebf4c0e9fee4e33c7b18) 
+
+adding back mocha and chai for CI [view commit](http://github.com/$3/$4/commit/bed2ad3751705077e7af669c57c32e74241d600e) 
+
+adding jasmine to node deps [view commit](http://github.com/$3/$4/commit/669acc8e04dfaabacf267c89f885060dc212904f) 
+
+Update README.md [view commit](http://github.com/$3/$4/commit/0499f7d6b73e5229b5fb417f234598a295365857) 
+
+adding travis.yml [view commit](http://github.com/$3/$4/commit/0bb7d0cc998595556446612f9585c5de512a8669) 
+
+updating readme [view commit](http://github.com/$3/$4/commit/469ef5b08d2ed41f83817970ce8e967507425705) 
+
+pass get files utf-8 in options [view commit](http://github.com/$3/$4/commit/baafeeda47589042ac2538b7bae1e4df0a5fdfac) 
+
+avoid // in load component [view commit](http://github.com/$3/$4/commit/abc3154aaf1c4dfa9c6bdda1d87ef7567ebccb43) 
+
+using speclate-fetch [view commit](http://github.com/$3/$4/commit/02212bda5d504b43318a01fad7ccdae3f0c7aa12) 
+
+remove fs.js [view commit](http://github.com/$3/$4/commit/7826c7caa878617396341e757cdb285f4f137d88) 
+
+fs instead of ./fs [view commit](http://github.com/$3/$4/commit/4436ba63a6ec4352bd6409a5c4557c134278bf16) 
+
+ 
+
 # 5.1.0
 
 linting [view commit](http://github.com/$3/$4/commit/2e1e89851714e3ae9eca34ae7913740ce3a00530) 
