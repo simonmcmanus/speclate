@@ -10,7 +10,7 @@
         "build-client": "watchify ./client/client.js -o ./testRunner/compiled/speclate-client.js"
     },
     "bin": {
-        "speclate": "./lib/site/do-generate-site.js"
+        "speclate": "./bin/do-generate-site.js"
     },
     "author": "",
     "license": "ISC",
