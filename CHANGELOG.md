@@ -1,5 +1,11 @@
 
 
+# 6.2.1
+
+correct link to index in generate site [view commit](http://github.com/$3/$4/commit/70d736980f054971d28437142dab0f1775d09a1e) 
+
+ 
+
 # 6.2.0
 
 renamed bin/do-generate-site to bin/generate-site [view commit](http://github.com/$3/$4/commit/6f3c337a234b1373849cc8e8b37106f5f7d99bac) 
