@@ -1,5 +1,11 @@
 
 
+# 6.2.0
+
+renamed bin/do-generate-site to bin/generate-site [view commit](http://github.com/$3/$4/commit/6f3c337a234b1373849cc8e8b37106f5f7d99bac) 
+
+ 
+
 # 6.1.0
 
 updated speclate command in package.json [view commit](http://github.com/$3/$4/commit/56a15cbb8fcdc12cbd66435bed1a645b726354d9) 
