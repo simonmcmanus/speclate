@@ -2,7 +2,7 @@
 
 # 6.2.1
 
-correct link to index in generate site [view commit](http://github.com/$3/$4/commit/70d736980f054971d28437142dab0f1775d09a1e) 
+correct link to index in generate site [view commit](./commit/70d736980f054971d28437142dab0f1775d09a1e) 
 
  
 
