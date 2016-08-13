@@ -1,5 +1,11 @@
 
 
+# 6.2.2
+
+Update CHANGELOG.md [view commit](http://github.com/$3/$packageName/commit/7407fd981e0d314c37e8647fb2f201890f9f4806) 
+
+ 
+
 # 6.2.1
 
 correct link to index in generate site [view commit](./commit/70d736980f054971d28437142dab0f1775d09a1e) 
