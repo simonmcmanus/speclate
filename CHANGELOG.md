@@ -1,5 +1,11 @@
 
 
+# 6.2.4
+
+fix version patch [view commit](http://github.com/$3/$packageName/commit/684ae7ded025fa78579ef903c42e0b86cf55b23e) 
+
+ 
+
 # 6.2.3
 
 use speclate-fetch greater that 1.5 [view commit](http://github.com/$3/$packageName/commit/468365658642766853969fc05bcf5414c5d05792) 
