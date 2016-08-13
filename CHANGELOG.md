@@ -1,5 +1,11 @@
 
 
+# 6.2.3
+
+use speclate-fetch greater that 1.5 [view commit](http://github.com/$3/$packageName/commit/468365658642766853969fc05bcf5414c5d05792) 
+
+ 
+
 # 6.2.2
 
 Update CHANGELOG.md [view commit](http://github.com/$3/$packageName/commit/7407fd981e0d314c37e8647fb2f201890f9f4806) 
