@@ -6,8 +6,7 @@
     "scripts": {
         "test": "npm run test-server && npm run test-client && standard",
         "test-client": "NODE_ENV=test ./node_modules/karma/bin/karma  start  --single-run",
-        "test-server": "NODE_ENV=test jasmine",
-        "build-client": "watchify ./client/client.js -o ./testRunner/compiled/speclate-client.js"
+        "test-server": "NODE_ENV=test jasmine"
     },
     "bin": {
         "speclate": "./bin/generate-site.js"
