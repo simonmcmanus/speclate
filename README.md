@@ -4,9 +4,16 @@
 
 #Speclate
 
-Define sites and pages using a javascript spec.
+Define your website using a javascript spec, render it anywhere.
 
-Portable specs that can render at build time, on the server and/or in the browser.
+Portable specs that can render at build time, on the server or in the browser.
+
+This was originally built to support the LNUG website.
+
+
+##Specs
+
+Specs that can render at build time, on the server and/or in the browser.
 
 
 ##Folder Structure
@@ -15,7 +22,20 @@ You need a a outer page layout:
 
 /pages/layout.html
 
-The html file for the home page sit at:
+#Page with selectors
+
+
+```js
+    var spec = {
+        '/': {
+            page: 'home',
+            selectors: {
+                h1: 'welcome',
+                title: 'hellow'
+            }
+        }
+    };
+```
 
 /pages/home/home.html
 
@@ -115,33 +135,59 @@ var petsPageSpec = {
 Get the cat component and append it to the li for each item in the data array.
 
 
+#Clientside Routing:
+Take the /pages/home/home.html and append it to the #container div in the layout.html.
+
+Get the cat component and append it to the li, changing the innerHTML to helllo kitty.
+
+
+#Page with components and array of data
+
+```js
+    var spec = {
+        '/': {
+            page: 'home',
+            spec: {
+                component: 'cat'
+                data: [{
+                    li: 'hello kitty'
+                },
+                {
+                    li: 'item two'
+                }
+                ]
+            }
+        }
+    };
+```
+
+
+#Page with components and array of complex data
+
+
+
 #API
 
 ##Site
 
-###speclate.site.markup(siteSpec, callback)
+###speclate.site.markup(spec, callback)
 
-Given a site spec, Generate static html pages.
+Given a spec (a collection of pages) Generate static html pages.
 
 
 ```js
-var speclate = require('speclate');
-var spec = {
-    '/': {
-        page: 'home'
-    }
-};
-speclate.site.markup(spec, function(errors) {
-    if(!error) {
-        console.log('done generating site');
-    }
-});
+    var speclate = require('speclate');
+    var spec = {
+        '/': {
+            page: 'home'
+        }
+    };
+    speclate.site.markup(spec, function(errors) {
+        if(!error) {
+            console.log('done generating site');
+        }
+    });
 ```
-
-#Clientside Routing:
-
-see:
-https://github.com/simonmcmanus/speclate-router
 
 
 #Examples
@@ -155,3 +201,12 @@ https://github.com/lnug/lnug.github.io
 
 
 Speclate uses sizzle selectors with sizlate.
+
+These need to be moved into the spec folder and reworked to fit with the new api structure (sites, pages and components)
+
+
+#Examples
+
+For a full example please see:
+
+https://github.com/lnug/lnug.github.io
