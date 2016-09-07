@@ -16,7 +16,7 @@
     "license": "ISC",
     "dependencies": {
         "async": "^2.0.1",
-        "speclate-fetch": "^1.5.0",
+        "speclate-fetch": "^1.6.0",
         "lodash": "^4.5.1",
         "sizlate": "1.x.x"
     },
