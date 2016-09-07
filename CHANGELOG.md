@@ -1,5 +1,29 @@
 
 
+# 6.3.0
+
+remove watchify commands [view commit](http://github.com/$3/$packageName/commit/bd5c88d69d981aeed53eac36dad9c501ff6b4860) 
+
+Merge pull request #13 from simonmcmanus/greenkeeper-speclate-fetch-1.6.0 [view commit](http://github.com/$3/$packageName/commit/dee222db1685c01495c06b6c8edf805f922db39e) 
+
+basic settings in the settings.json - not commited by accident! [view commit](http://github.com/$3/$packageName/commit/65e2c8410186663f73f6c7eb15b2783ed703adf7) 
+
+folders resloved as part of the get-path [view commit](http://github.com/$3/$packageName/commit/32f8497dc524cbf71ac15921dd6eee9f88e3c24c) 
+
+adding get-path to handing resolving the folders [view commit](http://github.com/$3/$packageName/commit/c645f6c6cd4fc53da7b874001502a3fbb476d901) 
+
+chore(package): update speclate-fetch to version 1.6.0 [view commit](http://github.com/$3/$packageName/commit/6697d7d06556a0ef23eab4650462e7e35ceb043d) 
+
+Merge pull request #12 from simonmcmanus/greenkeeper-standard-8.0.0 [view commit](http://github.com/$3/$packageName/commit/8dfbf5e86420cf0756229f0e5e1ed9521add2b5f) 
+
+chore(package): update standard to version 8.0.0 [view commit](http://github.com/$3/$packageName/commit/250eacfba8300cd4b7341f0ce13386e58ec61df4) 
+
+Merge pull request #11 from simonmcmanus/greenkeeper-karma-chrome-launcher-2.0.0 [view commit](http://github.com/$3/$packageName/commit/c3b78dadaafa8b7f372161c228db4394b5603dfe) 
+
+chore(package): update karma-chrome-launcher to version 2.0.0 [view commit](http://github.com/$3/$packageName/commit/a13802457efe1a6f001c0790d6a674b5f8b1d78f) 
+
+ 
+
 # 6.2.4
 
 fix version patch [view commit](http://github.com/$3/$packageName/commit/684ae7ded025fa78579ef903c42e0b86cf55b23e) 
