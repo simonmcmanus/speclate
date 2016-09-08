@@ -2,6 +2,7 @@
 exports.site = {
   markup: require('./lib/site/generate-markup'),
   api: require('./lib/site/generate-api'),
+  files: require('./lib/site/files'),
   appCache: require('./lib/site/app-cache')
 }
 
