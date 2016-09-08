@@ -1,7 +1,6 @@
-'use strict';
+'use strict'
 
-var speclateFetch = require('speclate-fetch');
-
+var speclateFetch = require('speclate-fetch')
 
 // override readfile with request to fetch.
-exports.readFile = speclateFetch.readFile;
+exports.readFile = speclateFetch.readFile
