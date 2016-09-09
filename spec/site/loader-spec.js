@@ -1,5 +1,5 @@
 
-var speclate = require('../../client')
+var speclate = require('../../')
 
 describe('page - loader', function () {
   var out
