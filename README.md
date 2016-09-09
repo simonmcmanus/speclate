@@ -165,29 +165,19 @@ Get the cat component and append it to the li, changing the innerHTML to helllo 
 #Page with components and array of complex data
 
 
+#CLI
 
-#API
+speclate --all
 
-##Site
+Will generate a site given a spec.json in the current directory.
 
-###speclate.site.markup(spec, callback)
+--all runs the following commands which you can run on their own
 
-Given a spec (a collection of pages) Generate static html pages.
+* validate - validate the schema
+* markup - generate the site markup
+* api - generate the json api files
+* files - move files listed in spec.options.files into spec.options.outputDir
 
-
-```js
-    var speclate = require('speclate');
-    var spec = {
-        '/': {
-            page: 'home'
-        }
-    };
-    speclate.site.markup(spec, function(errors) {
-        if(!error) {
-            console.log('done generating site');
-        }
-    });
-```
 
 
 #Examples
