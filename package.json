@@ -15,9 +15,10 @@
   "license": "ISC",
   "dependencies": {
     "async": "^2.0.1",
+    "joi": "^9.0.4",
     "lodash": "^4.5.1",
     "mkdir": "0.0.2",
-    "sizlate": "1.2.4",
+    "sizlate": "1.2.3",
     "speclate-fetch": "^1.6.0"
   },
   "browser": {
