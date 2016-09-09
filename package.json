@@ -8,10 +8,8 @@
     "test-client": "NODE_ENV=test ./node_modules/karma/bin/karma  start  --single-run",
     "test-server": "NODE_ENV=test jasmine"
   },
-  "bin": {
-    "speclate": "./bin/generate-site.js"
-  },
-  "author": "",
+  "bin": "./bin/speclate.js",
+  "author": "Simon McManus",
   "license": "ISC",
   "dependencies": {
     "async": "^2.0.1",
@@ -20,7 +18,8 @@
     "lodash.isobject": "^3.0.2",
     "lodash.isstring": "^4.0.1",
     "sizlate": "1.2.4",
-    "speclate-fetch": "^1.6.0"
+    "speclate-fetch": "^1.6.0",
+    "speclate-cli": "1.x.x"
   },
   "browser": {
     "fs": "./client/read-file-override.js"
