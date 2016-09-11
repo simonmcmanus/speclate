@@ -7,3 +7,7 @@ exports.page = {
 exports.components = {
   load: require('./lib/page/load-components')
 }
+
+exports.site = {
+  loader: require('./lib/site/loader')
+}
