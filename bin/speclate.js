@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-var package = require(__dirname + '/../package.json');
-var spec = require(process.cwd() + '/spec.js');
+var path = require('path')
+var pkg = require(path.join(__dirname, '/../package.json'))
+var spec = require(process.cwd() + '/spec.js')
 
-require('speclate-cli')(spec, package.version);
+require('speclate-cli')(spec, pkg.version)
