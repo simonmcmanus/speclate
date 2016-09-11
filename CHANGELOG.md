@@ -1,5 +1,11 @@
 
 
+# 7.0.1
+
+pass speclate into speclate-cli [view commit](http://github.com/$3/$packageName/commit/f26b997698f452cdbe19e8bcabfed25ba9bb1611) 
+
+ 
+
 # 7.0.0
 
 linting fixes [view commit](http://github.com/$3/$packageName/commit/36a08a3f88678053c9e4f9fdb895501ef87f042c) 
