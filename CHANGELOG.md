@@ -1,5 +1,11 @@
 
 
+# 7.0.4
+
+only pin down the major version of speclate-cli [view commit](http://github.com/$3/$packageName/commit/7147a88cea46e4f252b7385ea8e3248fc006ed43) 
+
+ 
+
 # 7.0.3
 
 fix to cli v 1.1.1 [view commit](http://github.com/$3/$packageName/commit/94d8268a46241701f4f65932f66907c705efd714) 
