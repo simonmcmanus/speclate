@@ -1,5 +1,11 @@
 
 
+# 7.0.3
+
+fix to cli v 1.1.1 [view commit](http://github.com/$3/$packageName/commit/94d8268a46241701f4f65932f66907c705efd714) 
+
+ 
+
 # 7.0.2
 
 exporting the site loader again [view commit](http://github.com/$3/$packageName/commit/cfa8effbb32af1f3828301258c2fda0823191025) 
