@@ -1,5 +1,43 @@
 
 
+# 7.0.0
+
+linting fixes [view commit](http://github.com/$3/$packageName/commit/36a08a3f88678053c9e4f9fdb895501ef87f042c) 
+
+send version to speclate cli [view commit](http://github.com/$3/$packageName/commit/27d1a924f64d848551620ed04ccd265b52589b93) 
+
+readme updates [view commit](http://github.com/$3/$packageName/commit/7625bea8dcda6734b04238065b35eb8c82e5eb31) 
+
+using speclate-cli [view commit](http://github.com/$3/$packageName/commit/74a6d2766bbbdab6614d281ee5904242f88f4461) 
+
+removing client from test [view commit](http://github.com/$3/$packageName/commit/5b734b20c96e193b7c3613a8dd62b5197fb3be7c) 
+
+moving build files into speclate-cli [view commit](http://github.com/$3/$packageName/commit/d41eadd533890de17629342add56ed7d79d03234) 
+
+add joi to package [view commit](http://github.com/$3/$packageName/commit/b6660308a4ca2041a178a563d35f5c38fb74262a) 
+
+include layout in files to copy [view commit](http://github.com/$3/$packageName/commit/e8d016a5ae3885cee472eb5d39cda4373f5c660a) 
+
+speclate.site.files copies over files in spec [view commit](http://github.com/$3/$packageName/commit/668f30b05abab8972bd5de2ce7525a59a88f6bbf) 
+
+use output dir [view commit](http://github.com/$3/$packageName/commit/ac5a221e34eec3fc244fb9f0f7ab3e1e2dee92e1) 
+
+adding write file [view commit](http://github.com/$3/$packageName/commit/e50f63ee6ab631bfe8545441afd1f37c7e76d5b7) 
+
+clone the spec so that we can delete the options [view commit](http://github.com/$3/$packageName/commit/ec23c27cdcedf69ceed817e49f0a40567512a6fe) 
+
+adding simple joi schema for options [view commit](http://github.com/$3/$packageName/commit/c7c36f8ff512a99c3bf9e5597da49f5992a687cf) 
+
+delete options from the spec [view commit](http://github.com/$3/$packageName/commit/c1c4842595cadee08eb88184c0435fe06072ebda) 
+
+chore(package): update sizlate to version 1.2.4 [view commit](http://github.com/$3/$packageName/commit/761f3c069bb2aedba1b45de07d92c6b9c4527301) 
+
+pass get files utf-8 in options [view commit](http://github.com/$3/$packageName/commit/18a9ec5a1955191b14208f442f4a4f11ee64b86d) 
+
+chore(package): update sizlate to version 1.2.3 [view commit](http://github.com/$3/$packageName/commit/2a10f87116b96ff332cb0fa2d302418e4ccd8f4c) 
+
+ 
+
 # 6.3.0
 
 remove watchify commands [view commit](http://github.com/$3/$packageName/commit/bd5c88d69d981aeed53eac36dad9c501ff6b4860) 
