@@ -1,66 +1,66 @@
 {
-    "name": "speclate",
-    "version": "7.0.5",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "npm run test-server && npm run test-client && standard",
-        "test-client": "NODE_ENV=test ./node_modules/karma/bin/karma  start  --single-run",
-        "test-server": "NODE_ENV=test jasmine"
-    },
-    "bin": "./bin/speclate.js",
-    "author": "Simon McManus",
-    "license": "ISC",
-    "dependencies": {
-        "async": "^2.0.1",
-        "lodash.clone": "^4.5.0",
-        "lodash.isarray": "^4.0.0",
-        "lodash.isobject": "^3.0.2",
-        "lodash.isstring": "^4.0.1",
-        "sizlate": "1.2.4",
-        "speclate-fetch": "^1.6.0",
-        "speclate-cli": "1.x.x"
-    },
-    "browser": {
-        "fs": "./client/read-file-override.js"
-    },
-    "devDependencies": {
-        "browserify": "^13.1.0",
-        "jasmine": "^2.4.1",
-        "karma": "^1.1.2",
-        "karma-browserify": "^5.1.0",
-        "karma-chrome-launcher": "^2.0.0",
-        "karma-firefox-launcher": "^1.0.0",
-        "karma-jasmine": "^1.0.2",
-        "karma-jquery": "^0.1.0",
-        "karma-opera-launcher": "^1.0.0",
-        "karma-phantomjs-launcher": "^1.0.1",
-        "karma-serve-static": "^1.0.12",
-        "mocha": "^3.0.1",
-        "standard": "^8.0.0"
-    },
-    "standard": {
-        "ignore": [
-            "client",
-            "testRunner",
-            "test"
-        ],
-        "globals": [
-            "describe",
-            "before",
-            "beforeEach",
-            "expect",
-            "it"
-        ]
-    },
-    "bundledDependencies": [
-        "async",
-        "lodash.clone",
-        "lodash.isarray",
-        "lodash.isobject",
-        "lodash.isstring",
-        "sizlate",
-        "speclate-fetch",
-        "speclate-cli"
+  "name": "speclate",
+  "version": "7.0.6",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test-server && npm run test-client && standard",
+    "test-client": "NODE_ENV=test ./node_modules/karma/bin/karma  start  --single-run",
+    "test-server": "NODE_ENV=test jasmine"
+  },
+  "bin": "./bin/speclate.js",
+  "author": "Simon McManus",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.1",
+    "lodash.clone": "^4.5.0",
+    "lodash.isarray": "^4.0.0",
+    "lodash.isobject": "^3.0.2",
+    "lodash.isstring": "^4.0.1",
+    "sizlate": "1.2.4",
+    "speclate-fetch": "^1.6.0",
+    "speclate-cli": "1.x.x"
+  },
+  "browser": {
+    "fs": "./client/read-file-override.js"
+  },
+  "devDependencies": {
+    "browserify": "^13.1.0",
+    "jasmine": "^2.4.1",
+    "karma": "^1.1.2",
+    "karma-browserify": "^5.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-firefox-launcher": "^1.0.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-jquery": "^0.1.0",
+    "karma-opera-launcher": "^1.0.0",
+    "karma-phantomjs-launcher": "^1.0.1",
+    "karma-serve-static": "^1.0.12",
+    "mocha": "^3.0.1",
+    "standard": "^8.0.0"
+  },
+  "standard": {
+    "ignore": [
+      "client",
+      "testRunner",
+      "test"
+    ],
+    "globals": [
+      "describe",
+      "before",
+      "beforeEach",
+      "expect",
+      "it"
     ]
+  },
+  "bundledDependencies": [
+    "async",
+    "lodash.clone",
+    "lodash.isarray",
+    "lodash.isobject",
+    "lodash.isstring",
+    "sizlate",
+    "speclate-fetch",
+    "speclate-cli"
+  ]
 }
