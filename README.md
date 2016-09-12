@@ -7,13 +7,18 @@ Define websites using a spec.js file. Render each page at build time, in the bro
 
 Ensure the best rendering experience is always available to the widest possible audience.
 
+
+---
+
 * [Convensions](#conversations)
 * [Specs](#specs)
-* [Try it out](#try-it)
 * [Examples](#example)
 * [CLI](#cli)
+* [Try it out](#try-it)
 * [About](#about)
 
+
+---
 
 ###Conventions
 
