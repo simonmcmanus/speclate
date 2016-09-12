@@ -15,8 +15,12 @@ Please read the before starting to contribute, once you have read it we very muc
 https://github.com/simonmcmanus/speclate/issues
 
 
-#Pull Requests
+#Developing
 
+* NPM link is your friend
+
+#Pull Requests
+* Please ensure each pull requests adds just one feature of fixes just one bug with a clear description
 * Please ensure all tests pass including linting.
 * Please ensure new features have tests
 * Ensure we do not add uncessary code into the client bundle
