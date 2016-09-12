@@ -3,19 +3,14 @@
 
 #Speclate
 
-Define websites using a javascript spec. Render each page at build time, in the browser and offline.
+Define websites using a spec.js file. Render each page at build time, in the browser and offline.
 
-Ensure the best possible rendering experience is available to the widest possible audience.
-
-
-Allows the latest web technologies to be used as layered enhancements so you can give the best expereince to the widest possible audience.
+Ensure the best rendering experience is always available to the widest possible audience.
 
 
+#Conventions
 
-#Conventions - (Folder Structure)
-
-
-Layout, page, component files should only contain valid HTML.
+Layout, page and component files should only contain valid HTML.
 
 Speclate relies on some convensions, these will eventually be configurable.
 
@@ -31,7 +26,7 @@ All sites need an outer page layout:
 
 This should include anything you want to share accross all pages. CSS, JS, nav, header, footer. Anything that doesn't change. You can still use selectors to update the layout between pages. eg adding an active class.
 
-/pages/layout.html needs to contain a html element with an id of container:
+The layout needs to contain a html element with an id of container:
 
 ```html
 <div id="container">
