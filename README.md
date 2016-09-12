@@ -3,11 +3,35 @@
 
 #Speclate
 
-Define your website using a javascript spec, render it anywhere.
+Define websites using a javascript spec. Render each page at build time, in the browser and offline.
 
-Portable specs that can render at build time, on the server or in the browser.
+Ensure the best possible rendering experience is available to the widest possible audience.
 
-This was originally built to support the LNUG website.
+
+Allows the latest web technologies to be used as layered enhancements so you can give the best expereince to the widest possible audience.
+
+Take this simple Spec:
+
+
+
+##Example:
+
+```bash
+npm install speclate
+git clone git@github.com:simonmcmanus/speclate-example.git
+cd speclate-example
+npm run build
+```
+
+###What just happened?
+
+The NPM run build command does a couple of things, firstly it generates our client side router, and service worker file, then it runs speclate --all which does the following:
+
+1. Generate a completely static version of all pages defined in the spec. Speclate puts it in /docs if your don't specify a different folder.
+2. Generetate a JSON file for each page on the site: /docs/api/speclate, this contains just the data that changes between pages.
+3. Move the layouts pages and components into the appropriate place so that the pages can be rendered from the browser (/docs)
+
+Now you have a functioning site that will serve static html on first page load, it will reuse that layout on subsequnet page changes and its all available offline.
 
 
 ##Specs
@@ -186,12 +210,27 @@ For a full example please see:
 https://github.com/lnug/lnug.github.io
 
 
+
+
+
+#Local Development
+
+For testing purposes you can run a local server by running the command:
+
+```bash
+speclate --debug
+```
+
+That will start a server running at https://localhost:5002
+
+
+
 #About
 
 
-Speclate uses sizzle selectors with sizlate.
+Speclate was originally built to support the LNUG website.
 
-These need to be moved into the spec folder and reworked to fit with the new api structure (sites, pages and components)
+Speclate uses sizzle selectors with sizlate.
 
 
 #Examples
