@@ -69,15 +69,15 @@ A very simple spec looks like this:
 
 ```js
 module.exports = {
-  '/': {
-      page: 'home'
-  }
+    '/': {
+        page: 'home'
+    }
 };
 ```
 
 Take the home page (**/pages/home/home.html**) and append it to #container domNode in the layout.html.
 
-[Test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/simple-page-spec.js)
+[View the test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/simple-page-spec.js)
 
 
 ###Page with selectors
@@ -105,9 +105,9 @@ Replace any h1 innerHTML text and set the title to hellow.
 ```js
 module.exports = {
     '/': {
-      page: function(callback) {
-          callback('<div> Some info about us </div>');
-      }
+        page: function(callback) {
+            callback('<div> Some info about us </div>');
+        }
     }
 };
 ```
@@ -165,7 +165,7 @@ Take the **/pages/pets/pets.html** and append it to the #container div in the la
 
 Get the cat component and append it to the pets li, changing the innerHTML to **Bob** and **Jane**.
 
-##Example:
+##Try it:
 
 
 ###Install
@@ -175,6 +175,7 @@ Get the cat component and append it to the pets li, changing the innerHTML to **
 npm install speclate
 git clone git@github.com:simonmcmanus/speclate-example.git
 cd speclate-example
+npm install
 ```
 
 ###Build
@@ -182,6 +183,7 @@ cd speclate-example
 
 ```bash
 npm run build
+speclate --debug
 ```
 
 ###What just happened?
@@ -192,6 +194,7 @@ The NPM run build command does a couple of things, firstly it generates our clie
 2. Generetate a JSON file for each page on the site: **/docs/api/speclate**, this contains just the data that changes between pages and will be used to check the server for changes.
 3. Move the layouts pages and components defined in the spec into the appropriate place so that the pages can be rendered in the browser.
 
+The speclate **speclate --debug** command creates a server so you can test your site [locally](https://127.0.0.1:5002).
 
 ##CLI
 
@@ -236,6 +239,8 @@ Please see the [contributing guide](https://github.com/simonmcmanus/speclate/blo
 
 ##About
 
-Speclate was originally built to support the LNUG website.
+Speclate was originally built to support [the LNUG website](https://lnug.org).
 
-Speclate uses sizzle selectors with sizlate.
+Speclate uses [Sizzle](https://sizzlejs.com/) selectors with [Sizlate](github.com/simonmcmanus/sizlate).
+
+
