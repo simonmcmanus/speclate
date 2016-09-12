@@ -10,42 +10,64 @@ Ensure the best possible rendering experience is available to the widest possibl
 
 Allows the latest web technologies to be used as layered enhancements so you can give the best expereince to the widest possible audience.
 
-Take this simple Spec:
 
 
+#Conventions - (Folder Structure)
 
-##Example:
 
-```bash
-npm install speclate
-git clone git@github.com:simonmcmanus/speclate-example.git
-cd speclate-example
-npm run build
+Layout, page, component files should only contain valid HTML.
+
+Speclate relies on some convensions, these will eventually be configurable.
+
+All paths are relative to the spec.js file.
+
+##Layout
+
+All sites need an outer page layout:
+
+```js
+/pages/layout.html
 ```
 
-###What just happened?
+This should include anything you want to share accross all pages. CSS, JS, nav, header, footer. Anything that doesn't change. You can still use selectors to update the layout between pages. eg adding an active class.
 
-The NPM run build command does a couple of things, firstly it generates our client side router, and service worker file, then it runs speclate --all which does the following:
+/pages/layout.html needs to contain a html element with an id of container:
 
-1. Generate a completely static version of all pages defined in the spec. Speclate puts it in /docs if your don't specify a different folder.
-2. Generetate a JSON file for each page on the site: /docs/api/speclate, this contains just the data that changes between pages.
-3. Move the layouts pages and components into the appropriate place so that the pages can be rendered from the browser (/docs)
+```html
+<div id="container">
+</div>
+```
 
-Now you have a functioning site that will serve static html on first page load, it will reuse that layout on subsequnet page changes and its all available offline.
-
-
-##Specs
-
-Specs that can render at build time, on the server and/or in the browser.
+This is used to append the page content to.
 
 
-##Folder Structure
+##Pages
 
-You need a a outer page layout:
+If you want to use a 'contact' page in a spec you need to create the page at:
 
-/pages/layout.html
+```js
+/pages/contact/contact.html
+```
 
-#Page with selectors
+A page can be used by multiple routes, using the spec and selectors to change its appearance.
+
+##Components
+
+If you want to call a component 'contact' you need to create a html file at:
+
+```js
+/component/contact/contact.html
+```
+
+Components allow small chunks of html to be reused within pages (iterating over a list) and also allow pieces of HTML to be re-used between pages.
+
+
+
+
+#Specs
+
+
+##Page with selectors
 
 
 ```js
@@ -59,14 +81,6 @@ You need a a outer page layout:
         }
     };
 ```
-
-/pages/home/home.html
-
-and components use the same structure:
-
-/components/contact/contact.html
-
-##Specs
 
 ###Site Spec
 
@@ -158,11 +172,6 @@ var petsPageSpec = {
 Get the cat component and append it to the li for each item in the data array.
 
 
-#Clientside Routing:
-Take the /pages/home/home.html and append it to the #container div in the layout.html.
-
-Get the cat component and append it to the li, changing the innerHTML to helllo kitty.
-
 
 #Page with components and array of data
 
@@ -188,6 +197,29 @@ Get the cat component and append it to the li, changing the innerHTML to helllo 
 #Page with components and array of complex data
 
 
+
+##Example:
+
+```bash
+npm install speclate
+git clone git@github.com:simonmcmanus/speclate-example.git
+cd speclate-example
+npm run build
+```
+
+###What just happened?
+
+The NPM run build command does a couple of things, firstly it generates our client side router, and service worker file, then it runs speclate --all which does the following:
+
+1. Generate a completely static version of all pages defined in the spec. Speclate puts it in /docs if your don't specify a different folder.
+2. Generetate a JSON file for each page on the site: /docs/api/speclate, this contains just the data that changes between pages.
+3. Move the layouts pages and components into the appropriate place so that the pages can be rendered from the browser (/docs)
+
+Now you have a functioning site that will serve static html on first page load, it will reuse that layout on subsequnet page changes and its all available offline.
+
+Speclate uses spes to define how the pieces of a websit should fit together. It relies on some convensions:
+
+
 #CLI
 
 speclate --all
@@ -198,17 +230,20 @@ Will generate a site given a spec.json in the current directory.
 
 * validate - validate the schema
 * markup - generate the site markup
-* api - generate the json api files
+* specs - generate the json spec files for each page
 * files - move files listed in spec.options.files into spec.options.outputDir
-
 
 
 #Examples
 
-For a full example please see:
-
+https://github.com/simonmcmanus/speclate-example
 https://github.com/lnug/lnug.github.io
 
+
+#Clientside Routing:
+Take the /pages/home/home.html and append it to the #container div in the layout.html.
+
+Get the cat component and append it to the li, changing the innerHTML to helllo kitty.
 
 
 
