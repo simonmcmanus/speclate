@@ -165,9 +165,6 @@ Take the **/pages/pets/pets.html** and append it to the #container div in the la
 
 Get the cat component and append it to the pets li, changing the innerHTML to **Bob** and **Jane**.
 
-
-###Page with components and array of complex data
-
 #Example:
 
 
@@ -233,6 +230,9 @@ That will start a server running at https://localhost:5002
 
 You will need to run the **speclate --all** command separately to build the files.
 
+#Contributing
+
+Please see the [contributing guide](https://github.com/simonmcmanus/speclate/blob/master/CONTRIBUTE.md)
 
 #About
 
