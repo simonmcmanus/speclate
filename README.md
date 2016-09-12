@@ -68,9 +68,9 @@ Components allow small chunks of html to be reused between pages and when loopin
 A very simple spec looks like this:
 
 ```js
-var siteSpec = {
+module.exports = {
   '/': {
-    page: 'home'
+      page: 'home'
   }
 };
 ```
@@ -83,79 +83,85 @@ Take the home page (**/pages/home/home.html**) and append it to #container domNo
 ###Page with selectors
 
 ```js
-    module.exports = {
-        '/': {
-            page: 'home',
-            selectors: {
-                h1: 'welcome',
-                title: 'hellow'
-            }
+module.exports = {
+    '/': {
+        page: 'home',
+        selectors: {
+            h1: 'welcome',
+            title: 'hellow'
         }
-    };
+    }
+};
 ```
 
 Take **/pages/home/home.html** and add it to the layout #container.
 Replace any h1 innerHTML text and set the title to hellow.
 
-[Test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/selectors-spec.js)
+[View the test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/selectors-spec.js)
 
 
 ###Page as a function
 
 ```js
-var aboutPageSpec = {
-    page: function(callback) {
-        callback('<div> Some info about us </div>');
+module.exports = {
+    '/': {
+      page: function(callback) {
+          callback('<div> Some info about us </div>');
+      }
     }
 };
 ```
 
 Provide a function that when called generates the markup required for the page.
 
-[Test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/page-as-function-spec.js)
+[View the test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/page-as-function-spec.js)
 
 
 ###Page with simple component
 
 ```js
-var pageSpec = {
-    page: 'home',
-    spec: {
-        '#bacon': {
-            component: 'cat'
+module.exports = {
+    '/': {
+        page: 'home',
+        spec: {
+            '#bacon': {
+                component: 'cat'
+            }
         }
     }
 };
 ```
 
-Take the /pages/home/home.html and append it to the #container div in the layout.html.
+Take the **/pages/home/home.html** and append it to the #container div in the layout.html.
 
-[Test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/simple-component-spec.js)
+[View the test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/simple-component-spec.js)
 
 
 ###Page with component and array of data
 
 ```js
-var petsPageSpec = {
-    page: 'pets',
-    spec: {
-        '#pets': {
-            component: 'cat'
-            data: [
-                {
-                    li: 'Bob'
-                },
-                {
-                    li: 'Jane'
-                }
-            ]
+module.exports = {
+    '/': {
+        page: 'pets',
+        spec: {
+            '#pets': {
+                component: 'cat'
+                data: [
+                    {
+                        li: 'Bob'
+                    },
+                    {
+                        li: 'Jane'
+                    }
+                ]
+            }
         }
     }
 };
 ```
 
 
-Take the /pages/pets/pets.html and append it to the #container div in the layout.html.
+Take the **/pages/pets/pets.html** and append it to the #container div in the layout.html.
 
 Get the cat component and append it to the pets li, changing the innerHTML to **Bob** and **Jane**.
 
@@ -172,7 +178,6 @@ Get the cat component and append it to the pets li, changing the innerHTML to **
 npm install speclate
 git clone git@github.com:simonmcmanus/speclate-example.git
 cd speclate-example
-npm run build
 ```
 
 ##Build
@@ -184,11 +189,11 @@ npm run build
 
 ###What just happened?
 
-The NPM run build command does a couple of things, firstly it generates our client side router and service worker file, then it runs speclate --all which does the following:
+The NPM run build command does a couple of things, firstly it generates our client side router and service worker file, then it runs **speclate --all** which does the following:
 
-1. Generate a completely static version of all pages defined in the spec. Speclate puts it in /docs if your don't specify a different folder.
-2. Generetate a JSON file for each page on the site: /docs/api/speclate, this contains just the data that changes between pages.
-3. Move the layouts pages and components into the appropriate place so that the pages can be rendered from the browser (/docs)
+1. Generate a completely static version of all pages defined in the spec. These will be used for the inital page load and will be served to crawlers or anyone who doesn't have javascript enabled.
+2. Generetate a JSON file for each page on the site: **/docs/api/speclate**, this contains just the data that changes between pages and will be used to check the server for changes.
+3. Move the layouts pages and components defined in the spec into the appropriate place so that the pages can be rendered in the browser.
 
 
 #CLI
