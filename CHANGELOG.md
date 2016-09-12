@@ -1,5 +1,11 @@
 
 
+# 7.0.5
+
+readme tweak (should pull in speclate-cli) [view commit](http://github.com/$3/$packageName/commit/8a7e1aaaa1635a673c405d9b3f83a3a373700e12) 
+
+ 
+
 # 7.0.4
 
 only pin down the major version of speclate-cli [view commit](http://github.com/$3/$packageName/commit/7147a88cea46e4f252b7385ea8e3248fc006ed43) 
