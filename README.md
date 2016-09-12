@@ -7,7 +7,6 @@ Define websites using a spec.js file. Render each page at build time, in the bro
 
 Ensure the best rendering experience is always available to the widest possible audience.
 
-
 #Conventions
 
 Layout, page and component files should only contain valid HTML.
@@ -56,11 +55,7 @@ If you want to call a component 'contact' you need to create a html file at:
 
 Components allow small chunks of html to be reused within pages (iterating over a list) and also allow pieces of HTML to be re-used between pages.
 
-
-
-
 #Specs
-
 
 ##Page with selectors
 
@@ -143,6 +138,18 @@ var pageSpec = {
 
 Take the /pages/home/home.html and append it to the #container div in the layout.html.
 
+
+
+
+Take the /pages/home/home.html and append it to the #container div in the layout.html.
+
+Get the cat component and append it to the li, changing the innerHTML to helllo kitty.
+
+
+
+
+
+
 #Page with component and array of data
 
 ```js
@@ -186,7 +193,13 @@ Get the cat component and append it to the li for each item in the data array.
             }
         }
     };
+
+
 ```
+
+Take the /pages/home/home.html and append it to the #container div in the layout.html.
+
+Get the cat component and append it to the li, changing the innerHTML to helllo kitty.
 
 
 #Page with components and array of complex data
@@ -214,31 +227,27 @@ Now you have a functioning site that will serve static html on first page load, 
 
 Speclate uses spes to define how the pieces of a websit should fit together. It relies on some convensions:
 
-
 #CLI
 
+```bash
 speclate --all
+```
 
 Will generate a site given a spec.json in the current directory.
 
---all runs the following commands which you can run on their own
+to get a full list of commands type:
 
-* validate - validate the schema
-* markup - generate the site markup
-* specs - generate the json spec files for each page
-* files - move files listed in spec.options.files into spec.options.outputDir
-
+```bash
+speclate --help
+```
 
 #Examples
 
-https://github.com/simonmcmanus/speclate-example
-https://github.com/lnug/lnug.github.io
+* https://github.com/simonmcmanus/speclate-example
+* https://github.com/lnug/lnug.github.io
 
 
 #Clientside Routing:
-Take the /pages/home/home.html and append it to the #container div in the layout.html.
-
-Get the cat component and append it to the li, changing the innerHTML to helllo kitty.
 
 
 
@@ -254,17 +263,8 @@ speclate --debug
 That will start a server running at https://localhost:5002
 
 
-
 #About
-
 
 Speclate was originally built to support the LNUG website.
 
 Speclate uses sizzle selectors with sizlate.
-
-
-#Examples
-
-For a full example please see:
-
-https://github.com/lnug/lnug.github.io
