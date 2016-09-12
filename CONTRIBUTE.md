@@ -1,6 +1,6 @@
 Hello,
 
-Please read the before starting to contribute, once you have read it we very much welcome your contributions
+Please read the before starting to contribute, once you have read it we very much welcome your contributions.
 
 * list of things that needs doing
 * Look at the issue list for each repo.
