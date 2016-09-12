@@ -7,7 +7,7 @@ Define websites using a spec.js file. Render each page at build time, in the bro
 
 Ensure the best rendering experience is always available to the widest possible audience.
 
-#Conventions
+###Conventions
 
 Layout, page and component files only contain valid HTML.
 
@@ -15,7 +15,7 @@ Speclate relies on some convensions, these will eventually be configurable.
 
 All paths are relative to the spec.js file.
 
-##Layout
+###Layout
 
 All sites need an outer page layout:
 
@@ -36,7 +36,7 @@ This is used to append the page content to.
 
 [Example Layout](https://github.com/simonmcmanus/speclate-example/blob/master/pages/layout.html)
 
-##Pages
+###Pages
 
 If you want to use a `contact` page in a spec you need to create the page at:
 
@@ -48,7 +48,7 @@ A **page** can be used by multiple routes, using the page specs and selectors to
 
 [Example Contact Page](https://github.com/simonmcmanus/speclate-example/blob/master/pages/contact/contact.html)
 
-##Components
+###Components
 
 If you want to call a component `contact` you need to create a html file at:
 
@@ -60,7 +60,7 @@ Components allow small chunks of html to be reused between pages and when loopin
 
 
 
-#Specs
+##Specs
 
 
 ###Simple page spec
@@ -165,10 +165,10 @@ Take the **/pages/pets/pets.html** and append it to the #container div in the la
 
 Get the cat component and append it to the pets li, changing the innerHTML to **Bob** and **Jane**.
 
-#Example:
+##Example:
 
 
-##Install
+###Install
 
 
 ```bash
@@ -177,7 +177,7 @@ git clone git@github.com:simonmcmanus/speclate-example.git
 cd speclate-example
 ```
 
-##Build
+###Build
 
 
 ```bash
@@ -193,7 +193,7 @@ The NPM run build command does a couple of things, firstly it generates our clie
 3. Move the layouts pages and components defined in the spec into the appropriate place so that the pages can be rendered in the browser.
 
 
-#CLI
+##CLI
 
 ```bash
 speclate --all
@@ -207,18 +207,18 @@ to get a full list of commands type:
 speclate --help
 ```
 
-#Examples
+##Examples
 
 * https://github.com/simonmcmanus/speclate-example
 * https://github.com/lnug/lnug.github.io
 
 
-#Clientside Routing:
+##Clientside Routing:
 
 * https://github.com/simonmcmanus/speclate-router
 
 
-#Local Development
+##Local Development
 
 For testing purposes you can run a local server by running the command:
 
@@ -230,11 +230,11 @@ That will start a server running at https://localhost:5002
 
 You will need to run the **speclate --all** command separately to build the files.
 
-#Contributing
+##Contributing
 
 Please see the [contributing guide](https://github.com/simonmcmanus/speclate/blob/master/CONTRIBUTE.md)
 
-#About
+##About
 
 Speclate was originally built to support the LNUG website.
 
