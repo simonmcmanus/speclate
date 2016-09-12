@@ -1,5 +1,37 @@
 
 
+# 7.0.6
+
+lines [view commit](http://github.com/$3/$packageName/commit/5a5fdca178c0725c0260868d212cc8e7685cb499) 
+
+adding nav [view commit](http://github.com/$3/$packageName/commit/db2d67486d203b3e7145b57b75a07d1c68a51dbc) 
+
+more tweaks [view commit](http://github.com/$3/$packageName/commit/d68466335a8590283c0fa0aecd3fd05ec8108509) 
+
+fixing headings [view commit](http://github.com/$3/$packageName/commit/c1a2584311331ce72c2b70460950a0ab66e9c634) 
+
+adding a link to the contributors guide [view commit](http://github.com/$3/$packageName/commit/639e39e14fd59c28b92ec945c3091377ef48c263) 
+
+more readme tweaks [view commit](http://github.com/$3/$packageName/commit/03adb0deaf29f53b29a984cc169f394018718e5d) 
+
+adding links to the tests [view commit](http://github.com/$3/$packageName/commit/14d434abe37f7ec54485e2faba4ec57fe9c787c6) 
+
+more readme tidyup [view commit](http://github.com/$3/$packageName/commit/95f10302d5ee3a42c77f4b79a5d86203c5862a80) 
+
+readme tweaks [view commit](http://github.com/$3/$packageName/commit/f64f5b30fd11e177293a16ffcda619581b8646e1) 
+
+README improvements [view commit](http://github.com/$3/$packageName/commit/8217ff5e9f385c374f4f24a40cac174e57585809) 
+
+readme updates [view commit](http://github.com/$3/$packageName/commit/f0a1c347c522302d24d92e607d7681e0e5fe20da) 
+
+contributer tweaks [view commit](http://github.com/$3/$packageName/commit/2771e3bf23a54cafc943a017f16af72d88e02025) 
+
+contrinute tweak [view commit](http://github.com/$3/$packageName/commit/ec278c9d451257e03b54c5af19bd6bfe25dd4c98) 
+
+adding basic contributing guidelines [view commit](http://github.com/$3/$packageName/commit/c8e217c6b162157ed54a249eb523b6a62b965a77) 
+
+ 
+
 # 7.0.5
 
 readme tweak (should pull in speclate-cli) [view commit](http://github.com/$3/$packageName/commit/8a7e1aaaa1635a673c405d9b3f83a3a373700e12) 
