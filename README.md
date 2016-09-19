@@ -110,7 +110,6 @@ Replace any h1 innerHTML text and set the title to hellow.
 
 [View the test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/selectors-spec.js)
 
-
 ###Page as a function
 
 ```js
@@ -227,7 +226,7 @@ speclate --help
 * https://github.com/lnug/lnug.github.io
 
 
-##Clientside Routing:
+##Clientside Router:
 
 * https://github.com/simonmcmanus/speclate-router
 
