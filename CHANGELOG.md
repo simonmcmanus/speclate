@@ -1,5 +1,11 @@
 
 
+# 7.2.0
+
+pin down cli version to 1.4 [view commit](http://github.com/$3/$packageName/commit/6880b622ff63e7a148175d45f4ce88ab47aa0f65) 
+
+ 
+
 # 7.1.0
 
 readme tweaks [view commit](http://github.com/$3/$packageName/commit/7378d6d170261cf0ace17d607884011a9ab809d4) 
