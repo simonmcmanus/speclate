@@ -56,7 +56,6 @@
         ]
     },
     "bundledDependencies": [
-        "async",
         "lodash.clone",
         "lodash.isarray",
         "lodash.isobject",
