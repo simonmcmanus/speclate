@@ -4,12 +4,19 @@ var speclate = require('../../')
 describe('page - loader', function () {
   var out
 
+
+
+  var speclateOptions = {
+    container: '#container'
+  }
+
   describe('Given a simple spec which only defines the page', function () {
     beforeEach(function (next) {
       var pageSpec = {
         page: 'home'
       }
-      speclate.page.load(pageSpec, function (err, data) {
+
+      speclate.page.load(pageSpec, speclateOptions, function (err, data) {
         if (err) {
           console.log('ERR:', err)
         }
@@ -32,7 +39,7 @@ describe('page - loader', function () {
         }
       }
 
-      speclate.page.load(pageSpec, function (err, data) {
+      speclate.page.load(pageSpec, speclateOptions, function (err, data) {
         if (err) {
           console.log(err)
         }
