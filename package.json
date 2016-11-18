@@ -10,7 +10,7 @@
   },
   "bin": "./bin/speclate.js",
   "author": "Simon McManus",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "async.eachof": "0.5.2",
     "async.map": "0.5.2",
