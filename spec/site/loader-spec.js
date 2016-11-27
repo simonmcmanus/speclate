@@ -4,8 +4,6 @@ var speclate = require('../../')
 describe('page - loader', function () {
   var out
 
-
-
   var speclateOptions = {
     container: '#container'
   }
