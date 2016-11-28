@@ -14,13 +14,13 @@ module.exports = function (config) {
     // list of files / patterns to load in the browser
     files: [
       'spec/*/*-spec.js',
-       { pattern: 'spec/sample/*/**.html', included: false, served: true },
-       { pattern: 'spec/sample/*/*/*.html', included: false, served: true }
+       { pattern: 'spec/samples/*/*/**.html', included: false, served: true },
+       { pattern: 'spec/samples/*/*/*/*.html', included: false, served: true }
     ],
 
     proxies: {
-      '/pages': '/base/spec/sample/pages',
-      '/components': '/base/spec/sample/components'
+      '/pages': '/base/spec/samples/simple/pages',
+      '/components': '/base/spec/samples/simple/components'
     },
 
     // list of files to exclude
