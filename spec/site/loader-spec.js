@@ -5,7 +5,8 @@ describe('page - loader', function () {
   var out
 
   var speclateOptions = {
-    container: '#container'
+    container: '#container',
+    layout: '/pages/layout.html'
   }
 
   describe('Given a simple spec which only defines the page', function () {
