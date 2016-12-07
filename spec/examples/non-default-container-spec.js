@@ -1,4 +1,4 @@
-var loader = require('../../').site.loader
+var loader = require('../../lib/site/loader')
 
 describe('example - non default container ', function () {
   describe('given a simple index.html page', function () {

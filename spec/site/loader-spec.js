@@ -1,5 +1,5 @@
 
-var speclate = require('../../')
+var pageLoader = require('../../lib/page/loader')
 
 describe('page - loader', function () {
   var out
@@ -15,7 +15,7 @@ describe('page - loader', function () {
         page: 'home'
       }
 
-      speclate.page.load(pageSpec, speclateOptions, function (err, data) {
+      pageLoader(pageSpec, speclateOptions, function (err, data) {
         if (err) {
           console.log('ERR:', err)
         }
@@ -38,7 +38,7 @@ describe('page - loader', function () {
         }
       }
 
-      speclate.page.load(pageSpec, speclateOptions, function (err, data) {
+      pageLoader(pageSpec, speclateOptions, function (err, data) {
         if (err) {
           console.log(err)
         }
