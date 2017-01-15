@@ -38,7 +38,8 @@
     "karma-phantomjs-launcher": "^1.0.1",
     "karma-serve-static": "^1.0.12",
     "mocha": "^3.0.1",
-    "standard": "^8.2.0"
+    "standard": "^8.2.0",
+    "watchify": "^3.8.0"
   },
   "standard": {
     "ignore": [
