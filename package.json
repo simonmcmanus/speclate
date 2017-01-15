@@ -19,7 +19,7 @@
     "lodash.isobject": "3.0.2",
     "lodash.isstring": "4.0.1",
     "sizlate": "1.2.4",
-    "speclate-cli": "2.1.3",
+    "speclate-cli": "2.1.4",
     "speclate-fetch": "^1.6.0"
   },
   "browser": {
