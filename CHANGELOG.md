@@ -1,5 +1,73 @@
 
 
+# 
+
+go back to last released version [view commit](http://github.com/$3/$packageName/commit/3c549be1b68810567360f02844959bb14197193b) 
+
+speclate cli 2.1.0 [view commit](http://github.com/$3/$packageName/commit/08abc07c4a1607ecd88a567a547d4c17630f1215) 
+
+ignore dsstores [view commit](http://github.com/$3/$packageName/commit/d217f74baf6de2988b0b7e03fb739facea1bce97) 
+
+foobar - not the real commit - this commit will be reset [skip ci] [view commit](http://github.com/$3/$packageName/commit/85fb4ecf42ea311e776215aa6b57dcc211229c9f) 
+
+$newVersion - adding CHANGELOG.md file - (this commit message should get squashed) [skip ci] [view commit](http://github.com/$3/$packageName/commit/f4406b8a70308d0443f1c7871d2610aec20e6ef2) 
+
+speclate-cli@2.x.x [view commit](http://github.com/$3/$packageName/commit/df32b0d9130bed535e4d2aceb3f4d111ca8d2276) 
+
+tests using the files from the lib [view commit](http://github.com/$3/$packageName/commit/cb264d667ea215706f4792e41c38d172d10eec96) 
+
+remove the main index.js [view commit](http://github.com/$3/$packageName/commit/b8992009e09a1ecbc128b3da25dcb685a900c0b5) 
+
+export default options on index.js [view commit](http://github.com/$3/$packageName/commit/541a1bb65524e6361f413ea6f73cd577056e1ca9) 
+
+speclate-cli@1.5.x adds layout to schema [view commit](http://github.com/$3/$packageName/commit/c84679e72dd4a2abf1847b5dd321b6952785ce92) 
+
+adding test for non-default-container [view commit](http://github.com/$3/$packageName/commit/0d416869e1589181bcfab5a56aa5ca6828aa7976) 
+
+adding page holder [view commit](http://github.com/$3/$packageName/commit/2f0586e195c5254d46dc1c161c78d5b3eb30f41d) 
+
+adding layout to page tests [view commit](http://github.com/$3/$packageName/commit/e2eea9630080a2d9e003382e4582c6d0d56fc666) 
+
+default options for layout and container [view commit](http://github.com/$3/$packageName/commit/6698975ce20d72d025e6a527968f758ceadf47f5) 
+
+improved docs and readability [view commit](http://github.com/$3/$packageName/commit/d40bd776ce586b83089e7a6e25e3ec45dea78afc) 
+
+changing directory structure to support multiple sample files [view commit](http://github.com/$3/$packageName/commit/cbe2a07222031e447dde01b31ad411f2d7ad2cf8) 
+
+travis can use firefox still [view commit](http://github.com/$3/$packageName/commit/1181123b7b7676ca4b8714af077b0dbe4d70912d) 
+
+linting [view commit](http://github.com/$3/$packageName/commit/741b3650af4b12babfec8dfa11cc587da4343b9f) 
+
+use chrome from karma tests [view commit](http://github.com/$3/$packageName/commit/d77aca4e974d8ecdfbed4ee3b9f29fae2ddffe3e) 
+
+using MIT licence [view commit](http://github.com/$3/$packageName/commit/3bb967d783f415073c5afd39ef635b03f5a2c6ea) 
+
+site loader now passes speclate options along [view commit](http://github.com/$3/$packageName/commit/5933fc45df785fc406e42247c8ae01ad703cb9be) 
+
+Merge pull request #16 from simonmcmanus/greenkeeper-standard-8.2.0 [view commit](http://github.com/$3/$packageName/commit/ed86f3ce6071b48023fb2f2944cad59c33320cb9) 
+
+valid package.json [view commit](http://github.com/$3/$packageName/commit/7b1edb85130d52c8100d5166320b705c9be70e4e) 
+
+fixed conflicts [view commit](http://github.com/$3/$packageName/commit/ba690eb823ed8666dba0832cb907f53bee00125e) 
+
+lowercase of [view commit](http://github.com/$3/$packageName/commit/5d07aa790cd03d5d973c906442176f01224f6efc) 
+
+removing carrots [view commit](http://github.com/$3/$packageName/commit/2f0949e8c1dfad70f59cfc9d3b50b32f9432d04f) 
+
+Merge branch 'master' of github.com:simonmcmanus/speclate into asy [view commit](http://github.com/$3/$packageName/commit/a6d85d0e26a3992e0117eca1c71336dc5a63dc40) 
+
+remove async from bundled deps [view commit](http://github.com/$3/$packageName/commit/f9d50c676acdf8cb72485319b550871229908acd) 
+
+dont pull in the whole async package [view commit](http://github.com/$3/$packageName/commit/a376c9bde783c06e784a1676d04e5d8a81a2cb78) 
+
+Merge pull request #20 from simonmcmanus/greenkeeper/remove-node-0.10 [view commit](http://github.com/$3/$packageName/commit/52b85aa8c53756b51f702792f2e9f7a4b9b2dbc0) 
+
+adding ISC licence [view commit](http://github.com/$3/$packageName/commit/a908c917d6ac93654318d84b176b36f66ca3e46a) 
+
+chore: drop support for Node.js 0.10 [view commit](http://github.com/$3/$packageName/commit/01754ec4a0613c402a749a004169aaae6d5f5633) 
+
+ 
+
 # 8.0.0
 
 speclate-cli@2.x.x [view commit](http://github.com/$3/$packageName/commit/df32b0d9130bed535e4d2aceb3f4d111ca8d2276) 
