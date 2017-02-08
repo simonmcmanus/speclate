@@ -33,7 +33,7 @@ describe('page - loader', function () {
     beforeEach(function (next) {
       var pageSpec = {
         page: 'home',
-        selectors: {
+        spec: {
           h1: 'welcome'
         }
       }
