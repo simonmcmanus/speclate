@@ -34,7 +34,7 @@ All sites need an outer page layout:
 /pages/layout.html
 ```
 
-This should include anything you want to share accross all pages. css, js, nav, header, footer. Anything that doesn't change. You can still use selectors to update the layout between pages. eg adding an active class.
+This should include anything you want to share accross all pages. css, js, nav, header, footer. Anything that doesn't change. You can still use the spec to update the layout between pages. eg adding an active class.
 
 The **layout** needs to contain a html element with an id of container:
 
@@ -55,7 +55,7 @@ If you want to use a `contact` page in a spec you need to create the page at:
 /pages/contact/contact.html
 ```
 
-A **page** can be used by multiple routes, using the page specs and selectors to change the appearance.
+A **page** can be used by multiple routes, using the page specs to change the appearance.
 
 [Example Contact Page](https://github.com/simonmcmanus/speclate-example/blob/master/pages/contact/contact.html)
 
@@ -91,15 +91,15 @@ Take the home page (**/pages/home/home.html**) and append it to #container domNo
 [View the test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/simple-page-spec.js)
 
 
-###Page with selectors
+###Page with simple selectors
 
 ```js
 module.exports = {
     '/': {
         page: 'home',
-        selectors: {
+        spec: {
             h1: 'welcome',
-            title: 'hellow'
+            title: 'hello'
         }
     }
 };
