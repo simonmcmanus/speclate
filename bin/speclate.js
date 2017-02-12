@@ -10,4 +10,4 @@ speclateCli(spec, pkg.version, function (err) {
     console.log('got an error', JSON.stringify(err))
     process.exit(1)
   }
-});
+})

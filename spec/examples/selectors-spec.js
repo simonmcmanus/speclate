@@ -7,7 +7,7 @@ describe('example / toplevel selectors', function () {
       var spec = {
         'index.html': {
           page: 'home',
-          selectors: {
+          spec: {
             '#container': 'HTMLOVERRIDE'
           }
         }
