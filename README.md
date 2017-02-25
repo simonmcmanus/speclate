@@ -3,6 +3,8 @@
 
 #Speclate
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/simonmcmanus/speclate.svg)](https://greenkeeper.io/)
+
 Define websites using a spec.js file. Render each page at build time, in the browser and offline.
 
 Ensure the best rendering experience is always available to the widest possible audience.
