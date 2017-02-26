@@ -20,7 +20,7 @@
     "lodash.isstring": "4.0.x",
     "sizlate": "1.2.x",
     "speclate-cli": "4.1.x",
-    "speclate-fetch": "^2.0.x"
+    "speclate-fetch": "2.0.x"
   },
   "browser": {
     "fs": "./client/read-file-override.js"
