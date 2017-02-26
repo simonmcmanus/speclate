@@ -5,7 +5,13 @@ var spec = require(process.cwd() + '/spec.js')
 
 var speclateCli = require('speclate-cli')
 
-speclateCli(spec, pkg.version, function (err) {
+var speclate = {
+  version: pkg.version,
+  page: require('../lib/page/loader'),
+  site: require('../lib/site/loader')
+}
+
+speclateCli(spec, speclate, function (err) {
   if (err) {
     console.log('got an error', JSON.stringify(err))
     process.exit(1)
