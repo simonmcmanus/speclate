@@ -36,5 +36,5 @@ describe('nested component selector ', function () {
     it('the first items markup should contain the rendered component', function () {
       expect(out[0].markup.replace(/\n/g, '')).toContain('<div id="bacon"><li class="bacon">    Hello i am a cat.</li><img class="cat"></div>')
     })
-  });
+  })
 })
