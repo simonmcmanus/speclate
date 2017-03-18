@@ -129,7 +129,7 @@ Provide a function that when called generates the markup required for the page.
 [View the test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/page-as-function-spec.js)
 
 
-###Page with simple component
+### Page with simple component
 
 ```js
 module.exports = {
@@ -184,7 +184,6 @@ Get the cat component and append it to the pets li, changing the innerHTML to **
 
 
 ```bash
-npm install speclate
 git clone git@github.com:simonmcmanus/speclate-example.git
 cd speclate-example
 npm install
@@ -211,7 +210,7 @@ The speclate **speclate --debug** command creates a server so you can test your 
 ## CLI
 
 ```bash
-speclate --all
+speclate --build
 ```
 
 Will generate a site given a spec.json in the current directory.
