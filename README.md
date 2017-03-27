@@ -22,13 +22,13 @@ Ensure the best rendering experience is always available to the widest possible 
 
 ---
 
-###Conventions
+### Conventions
 
 Layout, page and component files only contain valid HTML.
 
 All paths are relative to the spec.js file.
 
-###Layout
+### Layout
 
 All sites need an outer page layout:
 
@@ -49,7 +49,7 @@ This is used to append the page content to.
 
 [Example Layout](https://github.com/simonmcmanus/speclate-example/blob/master/pages/layout.html)
 
-###Pages
+### Pages
 
 If you want to use a `contact` page in a spec you need to create the page at:
 
@@ -61,7 +61,7 @@ A **page** can be used by multiple routes, using the page specs to change the ap
 
 [Example Contact Page](https://github.com/simonmcmanus/speclate-example/blob/master/pages/contact/contact.html)
 
-###Components
+### Components
 
 If you want to call a component `contact` you need to create a html file at:
 
@@ -73,10 +73,10 @@ Components allow small chunks of html to be reused between pages and when loopin
 
 
 
-##Specs
+## Specs
 
 
-###Simple page spec
+### Simple page spec
 
 A very simple spec looks like this:
 
@@ -93,7 +93,7 @@ Take the home page (**/pages/home/home.html**) and append it to #container domNo
 [View the test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/simple-page-spec.js)
 
 
-###Page with simple selectors
+### Page with simple selectors
 
 ```js
 module.exports = {
@@ -112,7 +112,7 @@ Replace any h1 innerHTML text and set the title to hellow.
 
 [View the test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/selectors-spec.js)
 
-###Page as a function
+### Page as a function
 
 ```js
 module.exports = {
@@ -129,7 +129,7 @@ Provide a function that when called generates the markup required for the page.
 [View the test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/page-as-function-spec.js)
 
 
-###Page with simple component
+### Page with simple component
 
 ```js
 module.exports = {
@@ -149,7 +149,7 @@ Take the **/pages/home/home.html** and append it to the #container div in the la
 [View the test](https://github.com/simonmcmanus/speclate/blob/master/spec/examples/simple-component-spec.js)
 
 
-###Page with component and array of data
+### Page with component and array of data
 
 ```js
 module.exports = {
@@ -177,20 +177,19 @@ Take the **/pages/pets/pets.html** and append it to the #container div in the la
 
 Get the cat component and append it to the pets li, changing the innerHTML to **Bob** and **Jane**.
 
-##Try it:
+## Try it:
 
 
-###Install
+### Install
 
 
 ```bash
-npm install speclate
 git clone git@github.com:simonmcmanus/speclate-example.git
 cd speclate-example
 npm install
 ```
 
-###Build
+### Build
 
 
 ```bash
@@ -198,7 +197,7 @@ npm run build
 speclate --debug
 ```
 
-###What just happened?
+### What just happened?
 
 The NPM run build command does a couple of things, firstly it generates our client side router and service worker file, then it runs **speclate --all** which does the following:
 
@@ -208,10 +207,10 @@ The NPM run build command does a couple of things, firstly it generates our clie
 
 The speclate **speclate --debug** command creates a server so you can test your site [locally](https://127.0.0.1:5002).
 
-##CLI
+## CLI
 
 ```bash
-speclate --all
+speclate --build
 ```
 
 Will generate a site given a spec.json in the current directory.
@@ -222,18 +221,18 @@ to get a full list of commands type:
 speclate --help
 ```
 
-##Examples
+## Examples
 
 * https://github.com/simonmcmanus/speclate-example
 * https://github.com/lnug/lnug.github.io
 
 
-##Clientside Router:
+## Clientside Router:
 
 * https://github.com/simonmcmanus/speclate-router
 
 
-##Local Development
+## Local Development
 
 For testing purposes you can run a local server by running the command:
 
@@ -245,11 +244,11 @@ That will start a server running at https://localhost:5002
 
 You will need to run the **speclate --all** command separately to build the files.
 
-##Contributing
+## Contributing
 
 Please see the [contributing guide](https://github.com/simonmcmanus/speclate/blob/master/CONTRIBUTE.md)
 
-##About
+## About
 
 Speclate was originally built to support [the LNUG website](https://lnug.org).
 

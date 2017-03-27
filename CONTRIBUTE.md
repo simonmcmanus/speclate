@@ -5,7 +5,7 @@ Please read the before starting to contribute, once you have read it we very muc
 * list of things that needs doing
 * Look at the issue list for each repo.
 
-#Bugs
+# Bugs
 
 * Please review existing open issues before creating a new one.
 * Please ensure you include version numbers when reporting new issues.
@@ -15,17 +15,17 @@ Please read the before starting to contribute, once you have read it we very muc
 https://github.com/simonmcmanus/speclate/issues
 
 
-#Developing
+# Developing
 
 * NPM link is your friend
 
-#Pull Requests
+# Pull Requests
 * Please ensure each pull requests adds just one feature of fixes just one bug with a clear description
 * Please ensure all tests pass including linting.
 * Please ensure new features have tests
 * Ensure we do not add uncessary code into the client bundle
 
-#Help
+# Help
 
 * Feel free to reach out for help, you can always ask me questions at @simonmcmanus on twitter.
 
