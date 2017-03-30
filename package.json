@@ -1,6 +1,6 @@
 {
   "name": "speclate",
-  "version": "12.3.0",
+  "version": "12.3.1",
   "description": "",
   "scripts": {
     "test": "npm run test-server && npm run test-client && standard",
