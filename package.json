@@ -18,8 +18,8 @@
     "lodash.isarray": "4.0.x",
     "lodash.isobject": "3.0.x",
     "lodash.isstring": "4.0.x",
-    "sizlate": "1.2.x",
-    "speclate-cli": "6.0.3",
+    "sizlate": "1.3.x",
+    "speclate-cli": "7.x.x",
     "speclate-fetch": "2.0.x"
   },
   "browser": {
