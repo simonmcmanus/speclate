@@ -31,7 +31,7 @@
     "jasmine": "2.5.x",
     "karma": "1.5.x",
     "karma-browserify": "5.1.x",
-    "karma-chrome-launcher": "2.0.x",
+    "karma-chrome-launcher": "~2.2.0",
     "karma-firefox-launcher": "1.0.x",
     "karma-jasmine": "1.1.x",
     "karma-jquery": "0.2.x",
