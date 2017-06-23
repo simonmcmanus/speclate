@@ -34,7 +34,7 @@
     "karma-chrome-launcher": "2.0.x",
     "karma-firefox-launcher": "1.0.x",
     "karma-jasmine": "1.1.x",
-    "karma-jquery": "0.2.x",
+    "karma-jquery": "~0.2.2",
     "karma-opera-launcher": "1.0.x",
     "karma-phantomjs-launcher": "1.0.x",
     "karma-serve-static": "1.0.x",
