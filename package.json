@@ -20,7 +20,7 @@
     "lodash.isstring": "4.0.x",
     "lodash.merge": "4.x.x",
     "sizlate": "2.x.x",
-    "speclate-cli": "9.x.x",
+    "speclate-cli": "^10.0.0",
     "speclate-fetch": "2.0.x"
   },
   "browser": {
