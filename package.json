@@ -30,7 +30,7 @@
     "browserify": "14.x.x",
     "jasmine": "2.5.x",
     "karma": "~1.6.0",
-    "karma-browserify": "5.1.x",
+    "karma-browserify": "~5.1.3",
     "karma-chrome-launcher": "2.0.x",
     "karma-firefox-launcher": "1.0.x",
     "karma-jasmine": "1.1.x",
