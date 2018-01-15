@@ -27,7 +27,7 @@
     "fs": "./client/read-file-override.js"
   },
   "devDependencies": {
-    "browserify": "14.x.x",
+    "browserify": "^15.2.0",
     "jasmine": "2.5.x",
     "karma": "~1.6.0",
     "karma-browserify": "5.1.x",
