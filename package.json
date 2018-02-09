@@ -27,20 +27,20 @@
     "fs": "./client/read-file-override.js"
   },
   "devDependencies": {
-    "browserify": "14.x.x",
-    "jasmine": "2.5.x",
-    "karma": "~1.6.0",
+    "browserify": "^15.2.0",
+    "jasmine": "~2.9.0",
+    "karma": "~2.0.0",
     "karma-browserify": "5.1.x",
-    "karma-chrome-launcher": "2.0.x",
-    "karma-firefox-launcher": "1.0.x",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-firefox-launcher": "~1.1.0",
     "karma-jasmine": "1.1.x",
     "karma-jquery": "0.2.x",
     "karma-opera-launcher": "1.0.x",
     "karma-phantomjs-launcher": "1.0.x",
     "karma-serve-static": "1.0.x",
-    "mocha": "3.2.x",
+    "mocha": "~5.0.0",
     "standard": "10.x.x",
-    "watchify": "3.9.x"
+    "watchify": "~3.10.0"
   },
   "standard": {
     "ignore": [
