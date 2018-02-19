@@ -39,7 +39,7 @@
     "karma-phantomjs-launcher": "1.0.x",
     "karma-serve-static": "1.0.x",
     "mocha": "~5.0.0",
-    "standard": "10.x.x",
+    "standard": "^11.0.0",
     "watchify": "~3.10.0"
   },
   "standard": {
