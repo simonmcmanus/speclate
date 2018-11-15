@@ -33,7 +33,7 @@
     "karma-browserify": "~5.3.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-firefox-launcher": "~1.1.0",
-    "karma-jasmine": "1.1.x",
+    "karma-jasmine": "~2.0.0",
     "karma-jquery": "0.2.x",
     "karma-opera-launcher": "1.0.x",
     "karma-phantomjs-launcher": "1.0.x",
