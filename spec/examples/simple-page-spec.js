@@ -1,8 +1,6 @@
 var loader = require('../../lib/site/loader')
 
-
 describe('server render', () => {
-
   describe('example - simple ', function () {
     describe('given a simple spec', function () {
       var out
@@ -17,21 +15,19 @@ describe('server render', () => {
           next()
         })
       })
-  
+
       it('the first item returned should have a name property of index.html', function () {
         expect(out[0].name).toEqual('/')
       })
-  
+
       it('the first item returned should have a markup property containing the outer layout and the page layout ', function () {
         expect(out[0].markup).toContain('<div id="container"><h1>Homepage</h1>\n<div id="bacon">\n</div>\n</div>')
       })
-  
-      it('should add the attributes', function () {
-        expect(out[0].markup).toContain('<html data-speclate-page="home" data-speclate-url="/">')
-      })
-      
+      if (typeof document === 'undefined') {
+        it('should add the attributes', function () {
+          expect(out[0].markup).toContain('<html data-speclate-page="home" data-speclate-url="/">')
+        })
+      }
     })
   })
-  
-
 })

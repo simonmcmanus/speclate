@@ -14,8 +14,8 @@ module.exports = function (config) {
     // list of files / patterns to load in the browser
     files: [
       'spec/*/*-spec.js',
-       { pattern: 'spec/samples/*/*/**.html', included: false, served: true },
-       { pattern: 'spec/samples/*/*/*/*.html', included: false, served: true }
+      { pattern: 'spec/samples/*/*/**.html', included: false, served: true },
+      { pattern: 'spec/samples/*/*/*/*.html', included: false, served: true }
     ],
 
     proxies: {
