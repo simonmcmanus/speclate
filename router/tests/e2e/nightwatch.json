@@ -1,0 +1,52 @@
+{
+  "src_folders" : ["tests/e2e/tests"],
+  "output_folder" : "test-reports",
+  "custom_commands_path" : "",
+  "custom_assertions_path" : "",
+  "globals_path" : "",
+  "selenium" : {
+    "start_process" : true,
+    "server_path" : "./tests/e2e/selenium-server-standalone-2.44.0.jar",
+    "host" : "127.0.0.1",
+    "port" : 4444,
+    "cli_args" : {
+            "webdriver.chrome.driver": "./tests/e2e/chromedriver"
+    }
+  },
+  "test_settings" : {
+    "default" : {
+      "launch_url" : "http://localhost:3000",
+      "selenium_port"  : 4444,
+      "selenium_host"  : "localhost",
+      "pathname": "/wd/hub",
+      "silent" : true,
+      "disable_colors": false,
+      "firefox_profile" : false,
+      "screenshots" : {
+        "enabled" : false,
+        "path" : ""
+      },
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    },
+     "firefox" : {
+      "desiredCapabilities": {
+        "browserName":  "firefox",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    },
+    "chrome" : {
+
+      "baseURL": "http: //chromedriver.storage.googleapis.com",
+      "desiredCapabilities": {
+        "browserName":  "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    }
+  }
+}

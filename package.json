@@ -53,7 +53,9 @@
       "before",
       "beforeEach",
       "expect",
-      "it"
+      "it",
+      "test",
+      "fixture"
     ]
   }
 }

@@ -1,0 +1,51 @@
+{
+  "name": "speclate-router",
+  "version": "9.1.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test-setup": "npm run test-server",
+    "test": "npm run unit && npm run testcafe && npm run lint",
+    "unit": "jasmine",
+    "lint": "standard",
+    "test-build-client-side": "./node_modules/browserify/bin/cmd.js tests/sample/client/router.js > tests/sample/client/router-compiled.js",
+    "test-server": "npm run test-build-client-side && cd tests/sample/ && ../../../bin/speclate.js --build && ../../../bin/speclate.js --dev 5004",
+    "nightwatch": "tests/e2e/nightwatch.js --config tests/e2e/nightwatch.json",
+    "testcafe": "./node_modules/.bin/testcafe chrome tests/testcafe/index-test.js",
+    "testcafe-all": "./node_modules/.bin/testcafe chrome,firefox tests/testcafe/index-test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async.parallel": "0.5.2",
+    "sizlate": "2.x.x",
+    "speclate-fetch": "2.x.x"
+  },
+  "devDependencies": {
+
+    "testcafe": "^0.18.6",
+    "browserify": "^15.0.0",
+    "jasmine": "^2.9.0",
+    "jquery": "3.4.x",
+    "nightwatch": "x.x.x",
+    "standard": "10.x.x" 
+  },
+  "standard": {
+    "globals": [
+      "$",
+      "fetch",
+      "describe",
+      "before",
+      "beforeEach",
+      "expect",
+      "it",
+      "test",
+      "fixture"
+    ],
+    "ignore": [
+      "client",
+      "testRunner",
+      "test"
+    ]
+  }
+}
