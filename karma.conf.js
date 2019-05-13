@@ -13,21 +13,21 @@ module.exports = function (config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'spec/*/*-spec.js',
-      { pattern: 'spec/samples/*/*/**.html', included: false, served: true },
-      { pattern: 'spec/samples/*/*/*/*.html', included: false, served: true }
+      'tests/spec/*/*-spec.js',
+      { pattern: 'tests/spec/samples/*/*/**.html', included: false, served: true },
+      { pattern: 'tests/spec/samples/*/*/*/*.html', included: false, served: true }
     ],
 
     proxies: {
-      '/pages': '/base/spec/samples/simple/pages',
-      '/components': '/base/spec/samples/simple/components'
+      '/pages': '/base/tests/spec/samples/simple/pages',
+      '/components': '/base/tests/spec/samples/simple/components'
     },
 
     // list of files to exclude
     exclude: [
     ],
     preprocessors: {
-      'spec/*/*-spec.js': 'browserify'
+      'tests/spec/*/*-spec.js': 'browserify'
     },
     plugins: [
       'karma-browserify',
