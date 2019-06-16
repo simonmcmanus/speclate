@@ -3,7 +3,7 @@
 
 exports.load = function (str) {
   var template = document.createElement('template')
-  var html = str.trim()
+  var html = str
   template.innerHTML = html
   return template.content
 }
