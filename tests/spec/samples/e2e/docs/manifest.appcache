@@ -1,0 +1,17 @@
+CACHE MANIFEST
+/
+/pages/layout.html
+./client/router-compiled.js
+
+/index.html
+/pages/home/home.html
+//index.json
+/contact.html
+/pages/contact/contact.html
+//contact.json
+/slides/bacon.html
+/pages/slides/bacon/slides/bacon.html
+//slides/bacon.json
+# v-1560875257172
+NETWORK:
+*
