@@ -3,9 +3,15 @@
   "version": "18.3.0",
   "description": "",
   "scripts": {
-    "test": "npm run test-server && npm run test-client && standard",
-    "test-client": "NODE_ENV=test ./node_modules/karma/bin/karma  start  --single-run",
-    "test-server": "NODE_ENV=test jasmine"
+    "test": "standard && npm run test:client && npm run test:server && npm run test:e2e",
+    "test:client": "NODE_ENV=test ./node_modules/karma/bin/karma  start  --single-run",
+    "test:server": "NODE_ENV=test jasmine --config=./tests/spec/support/jasmine.json",
+    "test:e2e": "npm run run:e2e:server && ./node_modules/.bin/testcafe chrome router/tests/testcafe/index-test.js",
+    "run:e2e:server": "npm run e2e:run:build:client-side && cd tests/spec/samples/e2e && speclate --build && speclate --dev 5004 &",
+    
+    "e2e:run:build:client-side": "./node_modules/browserify/bin/cmd.js router/tests/sample/client/router.js > router/tests/sample/client/router-compiled.js",
+    "e2e:run": "npm run e2e:run:build:client-side && cd router/tests/sample/ && ../../../bin/speclate.js --build && ../../../bin/speclate.js --dev 5004",
+    "e2e:test:chrome": "./node_modules/.bin/testcafe chrome,firefox router/tests/testcafe/index-test.js"
   },
   "bin": "./bin/speclate.js",
   "author": "Simon McManus",
@@ -28,6 +34,7 @@
   },
   "devDependencies": {
     "browserify": "^15.2.0",
+    "testcafe": "^0.18.6",
     "jasmine": "~3.1.0",
     "karma": "~2.0.0",
     "karma-browserify": "~5.3.0",
@@ -53,7 +60,9 @@
       "before",
       "beforeEach",
       "expect",
-      "it"
+      "it",
+      "test",
+      "fixture"
     ]
   }
 }
