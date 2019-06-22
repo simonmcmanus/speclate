@@ -31,6 +31,6 @@ module.exports = {
       .url('http://localhost:5004')
       .waitForElementVisible('body', 1000)
       .end()
-  },
+  }
 
 }
