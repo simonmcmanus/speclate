@@ -1,3 +1,4 @@
+
 var loader = require('../../../lib/site/loader')
 
 describe('example - simple ', function () {

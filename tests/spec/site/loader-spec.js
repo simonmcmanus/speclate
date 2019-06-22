@@ -52,22 +52,22 @@ describe('page - loader', function () {
     })
   })
 
-//   describe('Given a page spec which defines a title selector', function () {
-//     beforeEach(function (next) {
-//       var pageSpec = {
-//         page: 'home',
-//         selectors: {
-//           title: 'welcome'
-//         }
-//       }
-//       speclate.page.load(pageSpec, (err, data) => {
-//         if (err) {
-//           console.log(err)
-//         }
-//         out = data
-//         next()
-//       })
-//     })
+  //   describe('Given a page spec which defines a title selector', function () {
+  //     beforeEach(function (next) {
+  //       var pageSpec = {
+  //         page: 'home',
+  //         selectors: {
+  //           title: 'welcome'
+  //         }
+  //       }
+  //       speclate.page.load(pageSpec, (err, data) => {
+  //         if (err) {
+  //           console.log(err)
+  //         }
+  //         out = data
+  //         next()
+  //       })
+  //     })
 
 //     it('should update the page title', function () {
 //       if (typeof document !== 'undefined') {
