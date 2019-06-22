@@ -25,3 +25,5 @@ test('click on contact and ensure page is updated', async t => {
     .expect(Selector('html').getAttribute('data-speclate-url')).eql('/contact.html')
     .expect(Selector('html').getAttribute('data-speclate-page')).eql('contact')
 })
+
+
