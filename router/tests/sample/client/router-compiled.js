@@ -1108,7 +1108,6 @@ module.exports = function (oldValue, newValue) {
     if (typeof newValue === 'object' && newValue.regex && newValue.value) {
         return oldValue.replace(newValue.regex, newValue.value);
     } else if (typeof newValue === 'function') {
-        console.log('new value is func')
         return newValue(oldValue);
     }
     return newValue;
