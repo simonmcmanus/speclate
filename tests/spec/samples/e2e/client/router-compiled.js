@@ -11966,7 +11966,6 @@ var sizlate = require('sizlate')
  *        }
  */
 module.exports = function (page, layout, renderedComponents) {
-  console.log('dsl')
   var componentSelectors = {}
   var simpleSelectors = {}
 
