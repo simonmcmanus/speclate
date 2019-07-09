@@ -1,7 +1,7 @@
 'use strict'
 
 var asyncParallel = require('async.parallel')
-var sizlate = require('../../../sizlate')
+var sizlate = require('sizlate')
 
 var getFile = require('speclate-fetch').readFile
 
