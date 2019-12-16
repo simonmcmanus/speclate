@@ -10,7 +10,8 @@ describe('server render', () => {
             page: 'home'
           }
         }
-        loader(spec, function (noterror, site) {
+        var lists = {}
+        loader(spec, lists, function (noterror, site) {
           out = site
           next()
         })

@@ -12,7 +12,8 @@ describe('example / toplevel selectors', function () {
           }
         }
       }
-      loader(spec, function (e, d) {
+      var lists = {}
+      loader(spec, lists, function (e, d) {
         out = d
         next()
       })

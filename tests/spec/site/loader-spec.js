@@ -14,8 +14,8 @@ describe('page - loader', function () {
       var pageSpec = {
         page: 'home'
       }
-
-      pageLoader(pageSpec, speclateOptions, function (err, data) {
+      var lists = {}
+      pageLoader(pageSpec, speclateOptions, lists, function (err, data) {
         if (err) {
           console.log('ERR:', err)
         }
@@ -37,8 +37,8 @@ describe('page - loader', function () {
           h1: 'welcome'
         }
       }
-
-      pageLoader(pageSpec, speclateOptions, function (err, data) {
+      var lists = {}
+      pageLoader(pageSpec, speclateOptions, lists, function (err, data) {
         if (err) {
           console.log(err)
         }
