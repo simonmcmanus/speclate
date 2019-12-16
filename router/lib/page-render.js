@@ -11,7 +11,7 @@ var loadComponents = require('../../lib/page/load-components')
 /**
  * used for client side render.
  */
-module.exports = function (elements, selectors, page, options, active, callback) {
+module.exports = function (elements, selectors, page, options, active, lists, callback) {
   asyncParallel({
     pageLayout: function (next) {
       var pageLayoutPath = '/pages/' + page.page + '/' + page.page + '.html'
@@ -19,7 +19,7 @@ module.exports = function (elements, selectors, page, options, active, callback)
     },
     components: function (next) {
       if (page.spec) {
-        loadComponents(page.spec, next)
+        loadComponents(page.spec, lists, next)
       } else {
         next()
       }

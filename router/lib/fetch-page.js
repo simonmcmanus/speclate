@@ -2,7 +2,7 @@
 var fetchJson = require('speclate-fetch').json
 var pageRender = require('./page-render')
 
-module.exports = function (specPath, elements, selectors, loadingClass, routerOptions) {
+module.exports = function (specPath, elements, selectors, loadingClass, lists, routerOptions) {
   var active = true
 
   fetchJson(specPath, function (err, pageSpec) {
@@ -20,7 +20,7 @@ module.exports = function (specPath, elements, selectors, loadingClass, routerOp
       elements.html.classList.remove(loadingClass)
     }
 
-    pageRender(elements, selectors, pageSpec, routerOptions, active, loaded)
+    pageRender(elements, selectors, pageSpec, routerOptions, active, lists, loaded)
   })
 
   return {
