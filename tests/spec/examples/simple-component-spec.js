@@ -4,6 +4,7 @@ describe('example/component', function () {
   describe('given a simple index.html page', function () {
     var out
     beforeEach(function (next) {
+      var lists = {}
       var spec = {
         'index.html': {
           page: 'home',
@@ -14,7 +15,7 @@ describe('example/component', function () {
           }
         }
       }
-      loader(spec, function (e, d) {
+      loader(spec, lists, function (e, d) {
         out = d
         next()
       })

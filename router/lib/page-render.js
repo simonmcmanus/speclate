@@ -19,7 +19,7 @@ module.exports = function (elements, selectors, page, options, active, lists, ca
     },
     components: function (next) {
       if (page.spec) {
-        loadComponents(page.spec, lists, next)
+        loadComponents(page, lists, next)
       } else {
         next()
       }
