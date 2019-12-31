@@ -6,7 +6,7 @@ var speclateFetch = require('speclate-fetch')
 // override readfile with request to fetch.
 exports.readFile = speclateFetch.readFile
 
-},{"speclate-fetch":30}],2:[function(require,module,exports){
+},{"speclate-fetch":31}],2:[function(require,module,exports){
 (function (process){
 'use strict'
 
@@ -28,7 +28,15 @@ module.exports = function (url) {
 }
 
 }).call(this,require('_process'))
-},{"_process":21,"path":20}],3:[function(require,module,exports){
+},{"_process":22,"path":21}],3:[function(require,module,exports){
+var fetchJson = require('speclate-fetch').json
+
+module.exports = function (listName, callback) {
+  var url = `/lists/${listName}.json`
+  fetchJson(url, callback)
+}
+
+},{"speclate-fetch":31}],4:[function(require,module,exports){
 'use strict'
 
 var loadFile = require('fs').readFile
@@ -44,7 +52,7 @@ module.exports = function (component, callback) {
   loadFile(path, 'utf-8', callback)
 }
 
-},{"./file/get-path":2,"fs":1}],4:[function(require,module,exports){
+},{"./file/get-path":2,"fs":1}],5:[function(require,module,exports){
 var sizlate = require('sizlate')
 
 /**
@@ -77,7 +85,7 @@ module.exports = function (page, layout, renderedComponents) {
   return sizlate.render(out, simpleSelectors)
 }
 
-},{"sizlate":29}],5:[function(require,module,exports){
+},{"sizlate":30}],6:[function(require,module,exports){
 'use strict'
 
 var forEachOf = require('async.eachof')
@@ -116,39 +124,44 @@ function renderComponent (component, template) {
   }
 }
 
-module.exports = function (pageSpec, callback) {
+module.exports = function (page, lists, callback) {
   var out = {}
   // for each component in the spec.
-  forEachOf(pageSpec, function (item, selector, next) {
+  forEachOf(page.spec, function (item, selector, next) {
     if (typeof item.component === 'undefined') {
       return next()
     } else if (!out[item.component]) {
       out[item.component] = {}
     }
-    // Go and fetch the component
+
     loadComponent(item.component, function (err, template) {
       if (err) {
-        return callback(err)
+        return next(err)
       }
 
-      // data can be a function.
-      if (typeof item.data === 'function') {
-        // call it
-        item.data(function (error, data) {
-          if (error) {
-            return callback(error)
+      if (item.lists) {
+        // combine the lists
+        item.lists.forEach((listName) => {
+          if (!item.data) {
+            item.data = []
           }
-
-          out[item.component][selector] = renderComponent({
-            data: data,
-            component: item.component
-          }, template)
-          next()
+          item.data = item.data.concat(lists.lists[listName])
         })
-      } else {
-        out[item.component][selector] = renderComponent(item, template)
-        next()
+
+        // filter the data
+        if (item.filters) {
+          item.filters.forEach((filter) => {
+            item.data = item.data.filter(lists.filters[filter])
+          })
+        }
+        // map to selectors
+        if (item.mapper) {
+          item.data = item.data.map(lists.mappers[item.mapper])
+        }
+        delete item.lists
       }
+      out[item.component][selector] = renderComponent(item, template)
+      next()
     })
   }, function (e, d) {
     if (e) {
@@ -158,7 +171,7 @@ module.exports = function (pageSpec, callback) {
   })
 }
 
-},{"../load-component":3,"async.eachof":6,"lodash.isarray":17,"lodash.isobject":18,"lodash.isstring":19,"sizlate":29}],6:[function(require,module,exports){
+},{"../load-component":4,"async.eachof":7,"lodash.isarray":18,"lodash.isobject":19,"lodash.isstring":20,"sizlate":30}],7:[function(require,module,exports){
 'use strict';
 
 var once = require('async.util.once');
@@ -193,7 +206,7 @@ module.exports = function eachOf(object, iterator, callback) {
     }
 };
 
-},{"async.util.keyiterator":10,"async.util.noop":12,"async.util.once":13,"async.util.onlyonce":14}],7:[function(require,module,exports){
+},{"async.util.keyiterator":11,"async.util.noop":13,"async.util.once":14,"async.util.onlyonce":15}],8:[function(require,module,exports){
 'use strict';
 
 var eachOf = require('async.eachof');
@@ -203,14 +216,14 @@ module.exports = function parallel(tasks, cb) {
     return _parallel(eachOf, tasks, cb);
 };
 
-},{"async.eachof":6,"async.util.parallel":15}],8:[function(require,module,exports){
+},{"async.eachof":7,"async.util.parallel":16}],9:[function(require,module,exports){
 'use strict';
 
 module.exports = Array.isArray || function isArray(obj) {
     return Object.prototype.toString.call(obj) === '[object Array]';
 };
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';
 
 var isArray = require('async.util.isarray');
@@ -224,7 +237,7 @@ module.exports = function isArrayLike(arr) {
     );
 };
 
-},{"async.util.isarray":8}],10:[function(require,module,exports){
+},{"async.util.isarray":9}],11:[function(require,module,exports){
 'use strict';
 
 var _keys = require('async.util.keys');
@@ -250,7 +263,7 @@ module.exports = function keyIterator(coll) {
     }
 };
 
-},{"async.util.isarraylike":9,"async.util.keys":11}],11:[function(require,module,exports){
+},{"async.util.isarraylike":10,"async.util.keys":12}],12:[function(require,module,exports){
 'use strict';
 
 module.exports = Object.keys || function keys(obj) {
@@ -263,12 +276,12 @@ module.exports = Object.keys || function keys(obj) {
     return _keys;
 };
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 'use strict';
 
 module.exports = function noop () {};
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 'use strict';
 
 module.exports = function once(fn) {
@@ -279,7 +292,7 @@ module.exports = function once(fn) {
     };
 };
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 'use strict';
 
 module.exports = function only_once(fn) {
@@ -290,7 +303,7 @@ module.exports = function only_once(fn) {
     };
 };
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 'use strict';
 
 var noop = require('async.util.noop');
@@ -314,7 +327,7 @@ module.exports = function parallel(eachfn, tasks, cb) {
     });
 };
 
-},{"async.util.isarraylike":9,"async.util.noop":12,"async.util.restparam":16}],16:[function(require,module,exports){
+},{"async.util.isarraylike":10,"async.util.noop":13,"async.util.restparam":17}],17:[function(require,module,exports){
 'use strict';
 module.exports = function restParam(func, startIndex) {
     startIndex = startIndex == null ? func.length - 1 : +startIndex;
@@ -333,7 +346,7 @@ module.exports = function restParam(func, startIndex) {
     };
 };
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 /**
  * lodash 4.0.0 (Custom Build) <https://lodash.com/>
  * Build: `lodash modularize exports="npm" -o ./`
@@ -370,7 +383,7 @@ var isArray = Array.isArray;
 
 module.exports = isArray;
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 /**
  * lodash 3.0.2 (Custom Build) <https://lodash.com/>
  * Build: `lodash modern modularize exports="npm" -o ./`
@@ -409,7 +422,7 @@ function isObject(value) {
 
 module.exports = isObject;
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 /**
  * lodash 4.0.1 (Custom Build) <https://lodash.com/>
  * Build: `lodash modularize exports="npm" -o ./`
@@ -506,7 +519,7 @@ function isString(value) {
 
 module.exports = isString;
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 (function (process){
 // .dirname, .basename, and .extname methods are extracted from Node.js v8.11.1,
 // backported and transplited with Babel, with backwards-compat fixes
@@ -812,7 +825,7 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 }).call(this,require('_process'))
-},{"_process":21}],21:[function(require,module,exports){
+},{"_process":22}],22:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -998,7 +1011,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 'use strict';
 
 exports.load = function (str) {
@@ -1028,7 +1041,7 @@ exports.get = function (item) {
     return $(item);
 };
 
-},{}],23:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 /**
  * In the case of input we should update the value and not just set the innerHTML property.
  * @param  {Object} $node sizzle object
@@ -1052,7 +1065,7 @@ module.exports = function ($node, data) {
 	return $node;
 };
 
-},{}],24:[function(require,module,exports){
+},{}],25:[function(require,module,exports){
 'use strict';
 
 module.exports = function (data, options) {
@@ -1071,7 +1084,7 @@ module.exports = function (data, options) {
     return retArray;
 };
 
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 'use strict';
 
 var dom = require('../server/dom.js');
@@ -1100,7 +1113,7 @@ module.exports = function (str, selectors) {
     }
 };
 
-},{"../server/dom.js":22,"./update-node":28}],26:[function(require,module,exports){
+},{"../server/dom.js":23,"./update-node":29}],27:[function(require,module,exports){
 'use strict';
 
 // given a regex or function updates the value.
@@ -1113,7 +1126,7 @@ module.exports = function (oldValue, newValue) {
     return newValue;
 };
 
-},{}],27:[function(require,module,exports){
+},{}],28:[function(require,module,exports){
 'use strict';
 
 var newValue = require('./new-value');
@@ -1175,7 +1188,7 @@ module.exports = function ($node, obj) {
     return $node;
 };
 
-},{"../server/dom":22,"./new-value":26}],28:[function(require,module,exports){
+},{"../server/dom":23,"./new-value":27}],29:[function(require,module,exports){
 'use strict';
 var checkForInputs = require('./check-for-inputs');
 var updateNodeWithObject = require('./update-node-with-object');
@@ -1226,11 +1239,11 @@ function updateNode($node, selector, data, $) {
 
 module.exports = updateNode;
 
-},{"./check-for-inputs":23,"./update-node-with-object":27}],29:[function(require,module,exports){
+},{"./check-for-inputs":24,"./update-node-with-object":28}],30:[function(require,module,exports){
 exports.render = require('./lib/do-render');
 exports.classifyKeys = require('./lib/classify-keys');
 
-},{"./lib/classify-keys":24,"./lib/do-render":25}],30:[function(require,module,exports){
+},{"./lib/classify-keys":25,"./lib/do-render":26}],31:[function(require,module,exports){
 'use strict';
 
 
@@ -1292,12 +1305,28 @@ exports.text = function(file, callback) {
 };
 
 
-},{}],31:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 'use strict'
 
 var FetchPage = require('./lib/fetch-page')
 var SpecFromRoute = require('./lib/spec-from-route')
+
+var fetchList = require('../lib/lists/fetchList')
 var requests = []
+
+var lists = {}
+var loadLists = function () {
+  fetchList('posts', function (err, posts) {
+    if (err) throw err
+    lists.posts = posts
+  })
+  fetchList('links', function (err, links) {
+    if (err) throw err
+    lists.links = links
+  })
+}
+// this is just manual for testing purposes - the list of lists will be generated in the future
+loadLists()
 
 var onClick = function (selectors, elements, routerOptions) {
   return function (e) {
@@ -1328,12 +1357,11 @@ var pageChange = function (newLocation, selectors, elements, routerOptions) {
     requests = []
   }
 
-  requests.push(new FetchPage(specPath, elements, selectors, loadingClass, routerOptions))
+  requests.push(new FetchPage(specPath, elements, selectors, loadingClass, lists, routerOptions))
 }
 var setupLinks = function (routerOptions, selectors, elements) {
   var links = document.getElementsByTagName('a')
   for (var i = 0; i < links.length; i++) {
-    // TODO: handle touch events here.
     // TODO:  could check here if the link is listed in the spec
     links[i].addEventListener('click', onClick(selectors, elements, routerOptions), { capture: false })
   }
@@ -1364,12 +1392,12 @@ module.exports = function (routerOptions, speclateOptions) {
   // TODO: add mechanism to remove listeners
 }
 
-},{"./lib/fetch-page":32,"./lib/spec-from-route":34}],32:[function(require,module,exports){
+},{"../lib/lists/fetchList":3,"./lib/fetch-page":33,"./lib/spec-from-route":35}],33:[function(require,module,exports){
 
 var fetchJson = require('speclate-fetch').json
 var pageRender = require('./page-render')
 
-module.exports = function (specPath, elements, selectors, loadingClass, routerOptions) {
+module.exports = function (specPath, elements, selectors, loadingClass, lists, routerOptions) {
   var active = true
 
   fetchJson(specPath, function (err, pageSpec) {
@@ -1387,7 +1415,7 @@ module.exports = function (specPath, elements, selectors, loadingClass, routerOp
       elements.html.classList.remove(loadingClass)
     }
 
-    pageRender(elements, selectors, pageSpec, routerOptions, active, loaded)
+    pageRender(elements, selectors, pageSpec, routerOptions, active, lists, loaded)
   })
 
   return {
@@ -1397,11 +1425,12 @@ module.exports = function (specPath, elements, selectors, loadingClass, routerOp
   }
 }
 
-},{"./page-render":33,"speclate-fetch":30}],33:[function(require,module,exports){
+},{"./page-render":34,"speclate-fetch":31}],34:[function(require,module,exports){
 'use strict'
 
 var asyncParallel = require('async.parallel')
 var sizlate = require('sizlate')
+
 var getFile = require('speclate-fetch').readFile
 
 var doSizlate = require('../../lib/page/do-sizlate')
@@ -1410,7 +1439,7 @@ var loadComponents = require('../../lib/page/load-components')
 /**
  * used for client side render.
  */
-module.exports = function (elements, selectors, page, options, active, callback) {
+module.exports = function (elements, selectors, page, options, active, lists, callback) {
   asyncParallel({
     pageLayout: function (next) {
       var pageLayoutPath = '/pages/' + page.page + '/' + page.page + '.html'
@@ -1418,7 +1447,7 @@ module.exports = function (elements, selectors, page, options, active, callback)
     },
     components: function (next) {
       if (page.spec) {
-        loadComponents(page.spec, next)
+        loadComponents(page, lists, next)
       } else {
         next()
       }
@@ -1452,7 +1481,7 @@ module.exports = function (elements, selectors, page, options, active, callback)
   })
 }
 
-},{"../../lib/page/do-sizlate":4,"../../lib/page/load-components":5,"async.parallel":7,"sizlate":29,"speclate-fetch":30}],34:[function(require,module,exports){
+},{"../../lib/page/do-sizlate":5,"../../lib/page/load-components":6,"async.parallel":8,"sizlate":30,"speclate-fetch":31}],35:[function(require,module,exports){
 module.exports = function (pathname) {
   var routeName
 
@@ -1469,10 +1498,10 @@ module.exports = function (pathname) {
   return routeName + '.json'
 }
 
-},{}],35:[function(require,module,exports){
+},{}],36:[function(require,module,exports){
 'use strict'
 
 var router = require('../../../')
 router()
 
-},{"../../../":31}]},{},[35]);
+},{"../../../":32}]},{},[36]);
