@@ -44,7 +44,6 @@ describe('given a dynamic route route', () => {
     beforeAll((done) => {
       loader(spec, lists, (e, pages) => {
         if (e) throw e
-        console.log(pages)
         generatedMarkup = pages[0].markup
         done()
       })
