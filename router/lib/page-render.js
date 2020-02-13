@@ -8,6 +8,8 @@ var getFile = require('speclate-fetch').readFile
 var doSizlate = require('../../lib/page/do-sizlate')
 var loadComponents = require('../../lib/page/load-components')
 
+var renderComponents = require('../../lib/page/render-components')
+
 /**
  * used for client side render.
  */
@@ -44,7 +46,9 @@ module.exports = function (elements, selectors, page, options, active, lists, ca
 
     sizlate.render(elements.html, renderSelectors)
 
-    var markup = doSizlate(page, elements.html, data.components)
+    var renderedComponents = renderComponents(page, lists, data.components)
+
+    var markup = doSizlate(page, elements.html, renderedComponents)
 
     if (options.after) {
       options.after(null, markup, page)

@@ -2,7 +2,40 @@
 
 var FetchPage = require('./lib/fetch-page')
 var SpecFromRoute = require('./lib/spec-from-route')
+
+var fetchList = require('../lib/lists/fetchList')
+var fetchJs = require('../lib/lists/fetchJs')
 var requests = []
+
+var lists = {}
+
+var listsFromSpec = {
+  lists: ['links', 'posts', 'categories'], // todo - lookup
+  filters: ['byTitleSlug', 'mostRecent', 'byTags', 'byDate'],
+  mappers: ['posts', 'post', 'links', 'category']
+}
+
+var loadLists = function () {
+  listsFromSpec.mappers.forEach((mapper) => {
+    fetchJs('/lists/mappers/' + mapper + '.js', function () {
+      console.log('loaded ' + mapper + ' mapper')
+    })
+  })
+
+  listsFromSpec.filters.forEach((filter) => {
+    fetchJs('/lists/filters/' + filter + '.js', function () {
+      console.log('loaded ' + filter + ' filter')
+    })
+  })
+
+  listsFromSpec.lists.forEach((list) => {
+    fetchJs('/lists/' + list + '.js', function () {
+      console.log('loaded ' + list + ' list')
+    })
+  })
+}
+// this is just manual for testing purposes - the list of lists will be generated in the future
+loadLists()
 
 var onClick = function (selectors, elements, routerOptions) {
   return function (e) {
@@ -20,6 +53,7 @@ var onClick = function (selectors, elements, routerOptions) {
 }
 
 var pageChange = function (newLocation, selectors, elements, routerOptions) {
+  console.log('page change')
   var loadingClass = routerOptions.loadingClass || 'loading'
   elements.html.classList.add(loadingClass)
   routerOptions.preFetch && routerOptions.preFetch(elements.container)
@@ -33,12 +67,11 @@ var pageChange = function (newLocation, selectors, elements, routerOptions) {
     requests = []
   }
 
-  requests.push(new FetchPage(specPath, elements, selectors, loadingClass, routerOptions))
+  requests.push(new FetchPage(specPath, elements, selectors, loadingClass, window.speclate.lists, routerOptions))
 }
 var setupLinks = function (routerOptions, selectors, elements) {
   var links = document.getElementsByTagName('a')
   for (var i = 0; i < links.length; i++) {
-    // TODO: handle touch events here.
     // TODO:  could check here if the link is listed in the spec
     links[i].addEventListener('click', onClick(selectors, elements, routerOptions), { capture: false })
   }
