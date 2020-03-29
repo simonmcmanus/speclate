@@ -1,7 +1,7 @@
 # speclate-router
 
 
-Client side router for speclate.
+Client side route handling for speclate.
 
 Given a speclate spec (github.com/simonmcmanus/speclate) Generates a page.js router:
 

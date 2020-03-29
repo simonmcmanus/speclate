@@ -2,9 +2,8 @@
 var SpecFromRoute = require('./spec-from-route')
 var fetchJson = require('speclate-fetch').json
 var pageRender = require('./page-render')
-var setupLinks = require('./setup-links')
 
-var pageChange = module.exports = function (newLocation, selectors, elements, routerOptions, requests) {
+module.exports = function (newLocation, selectors, elements, routerOptions) {
   var FetchPage = function (specPath, elements, selectors, loadingClass, lists, routerOptions) {
     var active = true
 
@@ -21,7 +20,6 @@ var pageChange = module.exports = function (newLocation, selectors, elements, ro
 
       var loaded = function () {
         elements.html.classList.remove(loadingClass)
-        setupLinks(routerOptions, selectors, elements, [], pageChange)
       }
 
       pageRender(elements, selectors, pageSpec, routerOptions, active, lists, loaded)
@@ -29,7 +27,6 @@ var pageChange = module.exports = function (newLocation, selectors, elements, ro
 
     return {
       cancel: function (isActive) {
-        console.log('do cancel')
         active = false
       }
     }
@@ -40,14 +37,11 @@ var pageChange = module.exports = function (newLocation, selectors, elements, ro
   routerOptions.preFetch && routerOptions.preFetch(elements.container)
   var specPath = SpecFromRoute(newLocation)
   elements.html.setAttribute('data-speclate-url', newLocation)
-  if (requests) {
-    console.log('got some requests to cancel', requests)
-    requests.forEach(function (req) {
+  if (window.requests) {
+    window.requests.forEach(function (req) {
       req.cancel()
     })
-    requests = []
+    window.requests = []
   }
-  requests.push(new FetchPage(specPath, elements, selectors, loadingClass, window.speclate.lists, routerOptions))
-  console.log('request', requests)
-  return requests
+  window.requests.push(new FetchPage(specPath, elements, selectors, loadingClass, window.speclate.lists, routerOptions))
 }
