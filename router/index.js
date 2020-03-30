@@ -5,24 +5,10 @@ var pageChange = require('./lib/page-change')
 var fetchJs = require('../lib/lists/fetchJs')
 window.requests = []
 
-var listsFromSpec = {
-  lists: ['links', 'posts', 'categories'], // todo - lookup
-  filters: ['byTitleSlug', 'mostRecent', 'byTags', 'byDate'],
-  mappers: ['posts', 'post', 'links', 'category']
-}
-
-var loadLists = function () {
-  listsFromSpec.mappers.forEach((mapper) => {
-    fetchJs('/lists/mappers/' + mapper + '.js')
-  })
-
-  listsFromSpec.filters.forEach((filter) => {
-    fetchJs('/lists/filters/' + filter + '.js')
-  })
-
-  listsFromSpec.lists.forEach((list) => {
-    fetchJs('/lists/' + list + '.js')
-  })
+var loadLists = function (requiredLists) {
+  requiredLists.mappers.forEach((mapper) => fetchJs('/lists/mappers/' + mapper + '.js'))
+  requiredLists.filters.forEach((filter) => fetchJs('/lists/filters/' + filter + '.js'))
+  requiredLists.lists.forEach((list) => fetchJs('/lists/' + list + '.js'))
 }
 
 var doPopState = function (routerOptions, selectors, elements) {
@@ -31,8 +17,8 @@ var doPopState = function (routerOptions, selectors, elements) {
   }
 }
 
-module.exports = function (routerOptions, speclateOptions) {
-  loadLists()
+module.exports = function (routerOptions, speclateOptions, requiredLists) {
+  loadLists(requiredLists)
   speclateOptions = speclateOptions || {}
   routerOptions = routerOptions || {}
   const selectors = {

@@ -135,7 +135,6 @@ module.exports = function ($node, obj) {
       case 'innerHTML' :
         // if we need to apply something the each value we need to iterate over each dom node.
         if (obj[key] && obj[key].regex || typeof obj[key] === 'function') {
-          console.log('2')
           $node.each(function (i, node) {
             var $domNode = dom.get(this)
             $domNode.innerHTML = obj[key]
