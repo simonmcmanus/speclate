@@ -34,13 +34,14 @@ module.exports = function (routerOptions, speclateOptions, requiredLists) {
 
   return {
     clickHandler: function (event) {
-      event.preventDefault()
       const link = event.currentTarget
       const newLocation = link.getAttribute('href')
-      // check if its a link in the spec
-      var state = {}
-      window.history.pushState(state, null, newLocation)
-      pageChange(newLocation, selectors, elements, routerOptions)
+      if (newLocation.slice(0, 4) !== 'http') { // should check if its a link in the spec
+        event.preventDefault()
+        var state = {}
+        window.history.pushState(state, null, newLocation)
+        pageChange(newLocation, selectors, elements, routerOptions)
+      }
     }
   }
 }
