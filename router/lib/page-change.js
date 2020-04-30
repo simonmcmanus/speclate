@@ -3,7 +3,7 @@ var SpecFromRoute = require('./spec-from-route')
 var fetchJson = require('speclate-fetch').json
 
 export default function (newLocation, selectors, elements, routerOptions) {
-  var FetchPage = function (specPath, elements, selectors, loadingClass, lists, routerOptions) {
+  var FetchPage = function (specPath, elements, selectors, loadingClass, speclate, routerOptions) {
     var active = true
 
     fetchJson(specPath, function (err, pageSpec) {
@@ -21,7 +21,7 @@ export default function (newLocation, selectors, elements, routerOptions) {
         elements.html.classList.remove(loadingClass)
       }
 
-      pageRender(elements, selectors, pageSpec, routerOptions, active, lists, loaded)
+      pageRender(elements, selectors, pageSpec, routerOptions, active, speclate, loaded)
     })
 
     return {
@@ -42,5 +42,5 @@ export default function (newLocation, selectors, elements, routerOptions) {
     })
     window.requests = []
   }
-  window.requests.push(new FetchPage(specPath, elements, selectors, loadingClass, window.speclate.lists, routerOptions))
+  window.requests.push(new FetchPage(specPath, elements, selectors, loadingClass, window.speclate, routerOptions))
 }
