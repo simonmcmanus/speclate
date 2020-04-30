@@ -1,9 +1,8 @@
-
+import pageRender from './page-render'
 var SpecFromRoute = require('./spec-from-route')
 var fetchJson = require('speclate-fetch').json
-var pageRender = require('./page-render')
 
-module.exports = function (newLocation, selectors, elements, routerOptions) {
+export default function (newLocation, selectors, elements, routerOptions) {
   var FetchPage = function (specPath, elements, selectors, loadingClass, lists, routerOptions) {
     var active = true
 

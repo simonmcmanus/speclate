@@ -1,7 +1,8 @@
+
 'use strict'
+import sizlate from 'sizlate'
 
 var asyncParallel = require('async.parallel')
-var sizlate = require('sizlate')
 
 var getFile = require('speclate-fetch').readFile
 
@@ -13,7 +14,7 @@ var renderComponents = require('../../lib/page/render-components')
 /**
  * used for client side render.
  */
-module.exports = function (elements, selectors, page, options, active, lists, callback) {
+export default async(elements, selectors, page, options, active, lists, callback) {
   asyncParallel({
     pageLayout: function (next) {
       var pageLayoutPath = '/pages/' + page.page + '/' + page.page + '.html'

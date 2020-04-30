@@ -1,8 +1,8 @@
 'use strict'
 
-// console.log('sup3', setupLinks)
-var pageChange = require('./lib/page-change')
-var fetchJs = require('../lib/lists/fetchJs')
+import pageChange from './lib/page-change'
+import fetchJs from '../lib/lists/fetchJs.js'
+
 window.requests = []
 
 var loadLists = function (requiredLists) {
@@ -16,8 +16,8 @@ var doPopState = function (routerOptions, selectors, elements) {
     pageChange(document.location.pathname, selectors, elements, routerOptions)
   }
 }
-
-module.exports = function (routerOptions, speclateOptions, requiredLists) {
+export const client = function (routerOptions, speclateOptions, requiredLists) {
+  console.log('router loaded')
   loadLists(requiredLists)
   speclateOptions = speclateOptions || {}
   routerOptions = routerOptions || {}
@@ -34,6 +34,7 @@ module.exports = function (routerOptions, speclateOptions, requiredLists) {
 
   return {
     clickHandler: function (event) {
+      console.log('handling click')
       const link = event.currentTarget
       const newLocation = link.getAttribute('href')
       if (newLocation.slice(0, 4) !== 'http') { // should check if its a link in the spec
