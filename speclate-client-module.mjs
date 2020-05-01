@@ -11,71 +11,8 @@ function SpecFromRoute (pathname) {
   } else if (pathname === '') {
     routeName = '/index';
   }
-  return routeName + '.json'
+  return routeName + '.mjs'
 }
-
-function loadXMLDoc(url, type, callback) {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
-           if (xmlhttp.status == 200) {
-               var out = xmlhttp.responseText;
-               if (type === 'json') {
-                out = JSON.parse(xmlhttp.responseText);
-               }
-               callback(null, out);
-           }
-           else {
-               callback(new Error('Not Found'));
-           }
-        }
-    };
-
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-}
-
-
-var doFetch = function(url, type, callback) {
-
-    if(typeof window.fetch === 'undefined') {
-        return loadXMLDoc(url, type, callback);
-    }
-
-    fetch(url, {
-        method: 'get'
-    }).then(function(response) {
-
-        if (!response.ok) {
-            throw Error(response.statusText);
-        }
-        return response[type]();
-    }).then(function(text) {
-        callback(null, text);
-    }).catch(function(err) {
-        console.error(err, url);
-        callback(err);
-    });
-};
-
-
-var readFile = function(file, options, callback) {
-    doFetch(file, 'text', callback);
-};
-
-var json = function(file, callback) {
-    doFetch(file, 'json', callback);
-};
-
-var text = function(file, callback) {
-    doFetch(file, 'text', callback);
-};
-
-var speclateFetch = {
-	readFile: readFile,
-	json: json,
-	text: text
-};
 
 function createCommonjsModule(a,b){return b={exports:{}},a(b,b.exports),b.exports}var checkForInputs=function(a,b){return "INPUT"===dom.getTag(a)?dom.setAttribute(a,"value",b):dom.setMarkup(a,b),a},newValue=function(a,b){if("object"==typeof b&&b.regex&&b.value)return a.replace(b.regex,b.value);return "function"==typeof b?b(a):b},updateNodeWithObject=function(a,b){for(var c in b)switch(c){case"selectors":var d=b[c];for(var e in d){var f=dom.query(a,e);dom.setMarkup(f,d[e]);}break;case"className":dom.addClass(a,b[c]);break;case"innerHTML":b[c]&&b[c].regex||"function"==typeof b[c]?a.each(function(){var a=dom.get(this);a.innerHTML=b[c];}):dom.setMarkup(a,b[c]);break;case"innerText":b[c]&&b[c].regex||"function"==typeof b[c]?dom.newValue(a,b[c]):a.text(b[c]);break;default:if(b[c]&&b[c].regex||"function"==typeof b[c]){var g=newValue(dom.getAttribute(a,c),b[c]);dom.setAttribute(a,c,g);}else dom.setAttribute(a,c,b[c]);}return a};function updateNode(a,b,d){if(".id"===b)return a.attr("id",d),a;switch(typeof d){case"string":""!==d&&(a=checkForInputs(a,d));break;case"number":a=checkForInputs(a,d);break;case"boolean":if(!1===d)return a.remove();break;case"object":if(d&&d.length){var e=dom.parent(a);if(1===d.length&&!1===d[0])return e.remove();var f=dom.clone(a);d.forEach(function(g,h){var c=dom.clone(f);0===h&&a.remove();var i=updateNode(c,b,d[h]);dom.append(e,i);});}else a=updateNodeWithObject(a,d);}return a}var updateNode_1=updateNode,dom=createCommonjsModule(function(a,b){b.load=function(a){var b=document.createElement("div");return b.innerHTML=a.trim(),b},b.init=function(a){return a},b.find=function(a,b){return a.querySelectorAll(b)},b.getMarkup=function(a){var b=document.createElement("div");return b.appendChild(a.cloneNode(!0)),b.innerHTML},b.setMarkup=function(a,b){a.innerHTML=b;},b.get=function(a){return a},b.setAttribute=function(a,b,c){a.setAttribute(b,c);},b.getAttribute=function(a,b){return a.getAttribute(b)},b.addClass=function(a,b){a.classList.add(b);},b.clone=function(a){return a.cloneNode()},b.append=function(a,b){return a.appendChild(b)},b.parent=function(a){return a.parentNode},b.getTag=function(a){return a.tagName.toUpperCase()},b.getText=function(a){return a.innerText},b.setText=function(a,b){return a.innerText=b,a},b.query=function(a,b){return a.querySelector(b)},b.updateNodes=function(a,b,c){a.forEach(function(a){updateNode_1(a,b,c);});},b.newValue=function(a,c){var d=newValue(b.getText(a),c);b.setText(a,d);};}),dom_1=dom.load,dom_2=dom.init,dom_3=dom.find,dom_4=dom.getMarkup,dom_5=dom.setMarkup,dom_6=dom.get,dom_7=dom.setAttribute,dom_8=dom.getAttribute,dom_9=dom.addClass,dom_10=dom.clone,dom_11=dom.append,dom_12=dom.parent,dom_13=dom.getTag,dom_14=dom.getText,dom_15=dom.setText,dom_16=dom.query,dom_17=dom.updateNodes,dom_18=dom.newValue,doRender=function(a,b){if(!b)return a;b="undefined"==typeof b[0]?[b]:b;var c=b.length;b=b.reverse();var d,e=null;for("string"==typeof a?(d=dom.load(a),e="string"):(d=a,e="dom");c--;)Object.keys(b[c]).forEach(function(a){var e=dom.find(d,a);dom.updateNodes(e,a,b[c][a]);});if(dom.getMarkup){if("string"===e)return d.innerHTML;if("dom"===e)return d}else return d.html()},classifyKeys=function(a,b){if(!b.classifyKeys||"undefined"==typeof a)return a;for(var d=a.length,e=[];d--;){var f={};for(var g in a[d])f["."+g]=a[d][g];e.push(f);}return e},render=doRender,classifyKeys$1=classifyKeys,sizlate={render:render,classifyKeys:classifyKeys$1};
 
@@ -123,102 +60,6 @@ var doSizlate = function (page, layout, renderedComponents) {
 };
 
 /**
- * lodash 4.0.1 (Custom Build) <https://lodash.com/>
- * Build: `lodash modularize exports="npm" -o ./`
- * Copyright 2012-2016 The Dojo Foundation <http://dojofoundation.org/>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright 2009-2016 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
- * Available under MIT license <https://lodash.com/license>
- */
-
-/** `Object#toString` result references. */
-var stringTag = '[object String]';
-
-/** Used for built-in method references. */
-var objectProto = Object.prototype;
-
-/**
- * Used to resolve the [`toStringTag`](http://ecma-international.org/ecma-262/6.0/#sec-object.prototype.tostring)
- * of values.
- */
-var objectToString = objectProto.toString;
-
-/**
- * Checks if `value` is classified as an `Array` object.
- *
- * @static
- * @memberOf _
- * @type Function
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
- * @example
- *
- * _.isArray([1, 2, 3]);
- * // => true
- *
- * _.isArray(document.body.children);
- * // => false
- *
- * _.isArray('abc');
- * // => false
- *
- * _.isArray(_.noop);
- * // => false
- */
-var isArray = Array.isArray;
-
-/**
- * Checks if `value` is object-like. A value is object-like if it's not `null`
- * and has a `typeof` result of "object".
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
- * @example
- *
- * _.isObjectLike({});
- * // => true
- *
- * _.isObjectLike([1, 2, 3]);
- * // => true
- *
- * _.isObjectLike(_.noop);
- * // => false
- *
- * _.isObjectLike(null);
- * // => false
- */
-function isObjectLike(value) {
-  return !!value && typeof value == 'object';
-}
-
-/**
- * Checks if `value` is classified as a `String` primitive or object.
- *
- * @static
- * @memberOf _
- * @category Lang
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is correctly classified, else `false`.
- * @example
- *
- * _.isString('abc');
- * // => true
- *
- * _.isString(1);
- * // => false
- */
-function isString(value) {
-  return typeof value == 'string' ||
-    (!isArray(value) && isObjectLike(value) && objectToString.call(value) == stringTag);
-}
-
-var lodash_isstring = isString;
-
-/**
  * lodash 4.0.0 (Custom Build) <https://lodash.com/>
  * Build: `lodash modularize exports="npm" -o ./`
  * Copyright 2012-2016 The Dojo Foundation <http://dojofoundation.org/>
@@ -250,9 +91,9 @@ var lodash_isstring = isString;
  * _.isArray(_.noop);
  * // => false
  */
-var isArray$1 = Array.isArray;
+var isArray = Array.isArray;
 
-var lodash_isarray = isArray$1;
+var lodash_isarray = isArray;
 
 /**
  * lodash 3.0.2 (Custom Build) <https://lodash.com/>
@@ -325,6 +166,12 @@ var loadListData = (item, lists, page) => {
   return item
 };
 
+var isString = (value) => typeof value === 'string';
+
+
+
+
+
 var renderComponents = function renderPageComponents (page, lists, components) {
   var spec = page.spec;
 
@@ -349,6 +196,7 @@ var renderComponents = function renderPageComponents (page, lists, components) {
           // out[component][selector] = components[emptyState.component]
           let emptyItem = {};
           if (lists.mappers[emptyState.mapper]) {
+            console.log('->', lists.mappers[emptyState.mapper]);
             var selectors = lists.mappers[emptyState.mapper].bind({ params: page.params });
             emptyItem.data = selectors();
           }
@@ -362,7 +210,7 @@ var renderComponents = function renderPageComponents (page, lists, components) {
   return out
 };
 function renderComponent (item, template) {
-  if (lodash_isstring(item.data)) {
+  if (isString(item.data)) {
     console.log('String passed into data, should be an array or object');
   } else if (lodash_isarray(item.data)) {
     var outArr = [];
@@ -385,8 +233,6 @@ function renderComponent (item, template) {
 }
 
 var pageRender = async (elements, selectors, page, options, active, speclate, callback) => {
-  console.log('hin here');
-
   if (!active) {
     return false
   }
@@ -401,7 +247,6 @@ var pageRender = async (elements, selectors, page, options, active, speclate, ca
     innerHTML: speclate.pages[page.page]
   };
 
-  console.log('->', elements.html, renderSelectors);
   sizlate.render(elements.html, renderSelectors);
 
   var renderedComponents = renderComponents(page, speclate.lists, speclate.components);
@@ -412,52 +257,49 @@ var pageRender = async (elements, selectors, page, options, active, speclate, ca
     options.after(null, markup, page);
   }
   callback && callback();
-  console.log('done');
 };
 
-var fetchJson = speclateFetch.json;
+var FetchPage = function (specPath, elements, selectors, loadingClass, speclate, routerOptions) {
+  var active = true;
 
-function pageChange (newLocation, selectors, elements, routerOptions) {
-  var FetchPage = function (specPath, elements, selectors, loadingClass, speclate, routerOptions) {
-    var active = true;
-
-    fetchJson(specPath, function (err, pageSpec) {
-    // should carry on rendering without waiting for json to come back.
-      if (!active) {
+  import(specPath)
+    .then((pageSpecModule) => {
+      if(!active){ // this request has been cancelled so we do not need to handle the response.
         return
       }
-      if (err) {
-        elements.html.classList.remove(loadingClass);
-        return routerOptions.error(err, elements.container)
-      }
+      const pageSpec = pageSpecModule.default;
       elements.html.setAttribute('data-speclate-page', pageSpec.page);
-
       var loaded = function () {
         elements.html.classList.remove(loadingClass);
       };
-
       pageRender(elements, selectors, pageSpec, routerOptions, active, speclate, loaded);
-    });
+    }).catch((err) => { 
+    // handle errors
+    elements.html.classList.remove(loadingClass);
+    return routerOptions.error(err, elements.container)
+  });
 
-    return {
-      cancel: function (isActive) {
-        active = false;
-      }
+  return {
+    cancel : function () { // allows request to be cancelled if a newer request means we do not need to deal with the response.
+      active = false;
     }
-  };
+  }
+};
 
+
+var requests = [];
+function pageChange (newLocation, selectors, elements, routerOptions) {
   var loadingClass = routerOptions.loadingClass || 'loading';
   elements.html.classList.add(loadingClass);
   routerOptions.preFetch && routerOptions.preFetch(elements.container);
   var specPath = SpecFromRoute(newLocation);
   elements.html.setAttribute('data-speclate-url', newLocation);
-  if (window.requests) {
-    window.requests.forEach(function (req) {
-      req.cancel();
-    });
-    window.requests = [];
-  }
-  window.requests.push(new FetchPage(specPath, elements, selectors, loadingClass, window.speclate, routerOptions));
+  requests.forEach((request) => {
+    request.cancel();
+  });
+  requests = [];
+  const fetchPageRequest = new FetchPage(specPath, elements, selectors, loadingClass, speclate, routerOptions);
+  requests.push(fetchPageRequest);
 }
 
 window.speclate = {
@@ -470,9 +312,6 @@ window.speclate = {
     lists: {}
   }
 };
-
-window.requests = [];
-
 
 const fetchText = async (url) => {
   return fetch(url).then(function (response) {
@@ -500,13 +339,13 @@ var loadRequiredFiles = async (requiredLists) => {
   });
   
   requiredLists.mappers.forEach(async (mapper) => {
-    window.speclate.lists.mappers[mapper] = await import('/lists/mappers/' + mapper + '.mjs');    
+    window.speclate.lists.mappers[mapper] = await import('/lists/mappers/' + mapper + '.mjs').default;    
   });
   requiredLists.filters.forEach(async (filter) => {
-    window.speclate.lists.filters[filter] = await import('/lists/filters/' + filter + '.mjs');    
+    window.speclate.lists.filters[filter] = await import('/lists/filters/' + filter + '.mjs').default;    
   });
   requiredLists.lists.forEach(async (list) => {
-    window.speclate.lists.lists[list] = await import('/lists/' + list + '.mjs');    
+    window.speclate.lists.lists[list] = await import('/lists/' + list + '.mjs').default;    
   });
 };
 
@@ -534,7 +373,6 @@ const client = function (routerOptions, speclateOptions, requiredFiles) {
 
   return {
     clickHandler: function (event) {
-      console.log('handling click');
       const link = event.currentTarget;
       const newLocation = link.getAttribute('href');
       if (newLocation.slice(0, 4) !== 'http') { // should check if its a link in the spec

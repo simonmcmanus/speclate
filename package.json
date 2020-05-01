@@ -15,10 +15,10 @@
     "e2e:test:chrome": "./node_modules/.bin/testcafe chrome,firefox router/tests/testcafe/*-test.js"
   },
   "bin": "./bin/speclate.js",
-  "main": "./router/index-compiled.js",
-  "module": "./router/index.js",
-  "browser": "./speclate-module-min.mjs",
-  "unpkg": "./speclate-module-min.mjs",
+  "main": "./client/index-compiled.js",
+  "module": "./client/index.js",
+  "browser": "./speclate-client-module-min.mjs",
+  "unpkg": "./speclate-client-module-min.mjs",
   "author": "Simon McManus",
   "license": "MIT",
   "dependencies": {
@@ -33,6 +33,7 @@
     "lodash.isobject": "3.0.x",
     "lodash.isstring": "4.0.x",
     "lodash.merge": "4.x.x",
+    "mkdirp": "^1.0.4",
     "rollup": "^2.6.1",
     "sizlate": "^3.0.3",
     "speclate-cli": "^14.1.1",

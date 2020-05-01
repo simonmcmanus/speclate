@@ -3,7 +3,7 @@
   "spec_files": [
     "tests/spec/lists/*[sS]pec.js",
     "tests/spec/**/*[sS]pec.js",
-    "./router/*/**[sS]pec.js"
+    "./client/*/**[sS]pec.js"
   ],
   "helpers": [
     "helpers/**/*.js"
