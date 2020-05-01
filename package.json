@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "build:client": "pwd && rollup  -c ./rollup.config.js",
+    "build:client:watch": "npm run build:client -- --watch",
     "test": "standard && npm run test:client && npm run test:server && npm run test:e2e",
     "test:client": "NODE_ENV=test ./node_modules/karma/bin/karma  start  --single-run ",
     "test:server": "NODE_ENV=test jasmine --config=./tests/spec/support/jasmine.json",

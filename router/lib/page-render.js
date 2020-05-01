@@ -3,30 +3,10 @@
 
 import sizlate from 'sizlate'
 var doSizlate = require('../../lib/page/do-sizlate')
-var loadComponents = require('./load-components')
 
 var renderComponents = require('../../lib/page/render-components')
 
-/**
- * used for client side render.
- */
-
-const fetchText = async (url) => {
-  return fetch(url).then(function (response) {
-    if (!response.ok) {
-      throw Error(response.statusText)
-    }
-    return response.text()
-  }).then(function (text) {
-    return text
-  }).catch(function (err) {
-    console.error(err, url)
-  })
-}
-
 export default async (elements, selectors, page, options, active, speclate, callback) => {
-  console.log('hin here')
-
   if (!active) {
     return false
   }
@@ -41,7 +21,6 @@ export default async (elements, selectors, page, options, active, speclate, call
     innerHTML: speclate.pages[page.page]
   }
 
-  console.log('->', elements.html, renderSelectors)
   sizlate.render(elements.html, renderSelectors)
 
   var renderedComponents = renderComponents(page, speclate.lists, speclate.components)
@@ -52,5 +31,4 @@ export default async (elements, selectors, page, options, active, speclate, call
     options.after(null, markup, page)
   }
   callback && callback()
-  console.log('done')
 }

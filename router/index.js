@@ -1,7 +1,6 @@
 'use strict'
 
 import pageChange from './lib/page-change'
-import fetchJs from '../lib/lists/fetchJs.js'
 
 window.speclate = {
   requests: [], 
@@ -13,9 +12,6 @@ window.speclate = {
     lists: {}
   }
 }
-
-window.requests = [];
-
 
 const fetchText = async (url) => {
   return fetch(url).then(function (response) {
@@ -43,13 +39,13 @@ var loadRequiredFiles = async (requiredLists) => {
   })
   
   requiredLists.mappers.forEach(async (mapper) => {
-    window.speclate.lists.mappers[mapper] = await import('/lists/mappers/' + mapper + '.mjs');    
+    window.speclate.lists.mappers[mapper] = await import('/lists/mappers/' + mapper + '.mjs').default;    
   })
   requiredLists.filters.forEach(async (filter) => {
-    window.speclate.lists.filters[filter] = await import('/lists/filters/' + filter + '.mjs');    
+    window.speclate.lists.filters[filter] = await import('/lists/filters/' + filter + '.mjs').default;    
   })
   requiredLists.lists.forEach(async (list) => {
-    window.speclate.lists.lists[list] = await import('/lists/' + list + '.mjs');    
+    window.speclate.lists.lists[list] = await import('/lists/' + list + '.mjs').default;    
   })
 }
 
@@ -77,7 +73,6 @@ export const client = function (routerOptions, speclateOptions, requiredFiles) {
 
   return {
     clickHandler: function (event) {
-      console.log('handling click')
       const link = event.currentTarget
       const newLocation = link.getAttribute('href')
       if (newLocation.slice(0, 4) !== 'http') { // should check if its a link in the spec
