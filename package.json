@@ -24,7 +24,7 @@
     "lodash.isobject": "3.0.x",
     "lodash.isstring": "4.0.x",
     "lodash.merge": "4.x.x",
-    "sizlate": "2.x.x",
+    "sizlate": "^4.0.1",
     "speclate-cli": "^14.1.1",
     "speclate-fetch": "2.0.x"
   },
