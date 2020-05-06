@@ -356,7 +356,6 @@ var doPopState = function (routerOptions, selectors, elements) {
 const client = function (routerOptions, speclateOptions, requiredFiles) {
   
   loadRequiredFiles(requiredFiles); // this needs to happen later. its loading all the files for all the pages here. 
-  console.log('router loaded',  window.speclate.components);
   speclateOptions = speclateOptions || {};
   routerOptions = routerOptions || {};
   const selectors = {
