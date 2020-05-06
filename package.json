@@ -1,6 +1,6 @@
 {
   "name": "speclate",
-  "version": "19.3.0",
+  "version": "20.0.0",
   "description": "",
   "scripts": {
     "build:client": "pwd && rollup  -c ./rollup.config.js",
@@ -36,7 +36,6 @@
     "mkdirp": "^1.0.4",
     "rollup": "^2.6.1",
     "sizlate": "^3.0.3",
-    "speclate-cli": "^14.1.1",
     "speclate-fetch": "2.0.x"
   },
   "devDependencies": {
