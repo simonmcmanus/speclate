@@ -11,5 +11,5 @@ export default function (pathname) {
   } else if (pathname === '') {
     routeName = '/index'
   }
-  return routeName + '.mjs'
+  return routeName + '.js'
 }

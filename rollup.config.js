@@ -44,7 +44,7 @@ export default [
   {
     input,
     output: {
-      file: '../links/docs/client/speclate-module.mjs',
+      file: '../links/docs/client/speclate-module.js',
       format: 'es'
     },
     plugins: esmPlugins

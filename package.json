@@ -17,8 +17,8 @@
   "bin": "./bin/speclate.js",
   "main": "./client/index-compiled.js",
   "module": "./client/index.js",
-  "browser": "./speclate-client-module-min.mjs",
-  "unpkg": "./speclate-client-module-min.mjs",
+  "browser": "./speclate-client-module-min.js",
+  "unpkg": "./speclate-client-module-min.js",
   "author": "Simon McManus",
   "license": "MIT",
   "dependencies": {
