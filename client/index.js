@@ -275,6 +275,10 @@ var FetchPage = function (specPath, elements, selectors, loadingClass, speclate,
       const pagePath = `/pages/${pageSpec.page}/${pageSpec.page}.html`
 
       const pageMarkup = fetchText(pagePath).then((pageMarkup) => {
+
+
+        // get components from page spec here. 
+        const components = pageSp
         
         elements.html.setAttribute('data-speclate-page', pageSpec.page);
         var loaded = function () {
