@@ -259,19 +259,41 @@ var pageRender = async (elements, selectors, page, options, active, speclate, ca
 };
 
 var FetchPage = function (specPath, elements, selectors, loadingClass, speclate, routerOptions) {
+  console.log('this is fetch page')
   var active = true;
 
   import(specPath)
     .then((pageSpecModule) => {
+      console.log('then')
       if(!active){ // this request has been cancelled so we do not need to handle the response.
         return
       }
       const pageSpec = pageSpecModule.default;
+      
+
+      const pagePath = `/pages/${pageSpec.page}/${pageSpec.page}.html`
+
+      console.log(pagePath)
+      const pageMarkup = fetch(pagePath).then((pageMarkup) => {
+        console.log('1', pageMarkup.text())
+        return pageMarkup.text()
+      }).then((markup) => {
+
+      console.log('page markup',markup)
+
+      })
+
+            // load page
+      // load // components 
+      
       elements.html.setAttribute('data-speclate-page', pageSpec.page);
       var loaded = function () {
         elements.html.classList.remove(loadingClass);
       };
-      pageRender(elements, selectors, pageSpec, routerOptions, active, speclate, loaded);
+      //pageRender(elements, selectors, pageSpec, routerOptions, active, speclate, loaded);
+
+
+ 
     }).catch((err) => { 
     // handle errors
     elements.html.classList.remove(loadingClass);
@@ -354,8 +376,8 @@ var doPopState = function (routerOptions, selectors, elements) {
   }
 };
 const client = function (routerOptions, speclateOptions, requiredFiles) {
-  
-  loadRequiredFiles(requiredFiles); // this needs to happen later. its loading all the files for all the pages here. 
+  // only send the required files for the page here?
+  //loadRequiredFiles(requiredFiles); // this needs to happen later. its loading all the files for all the pages here. 
   speclateOptions = speclateOptions || {};
   routerOptions = routerOptions || {};
   const selectors = {
