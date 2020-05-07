@@ -270,27 +270,20 @@ var FetchPage = function (specPath, elements, selectors, loadingClass, speclate,
       }
       const pageSpec = pageSpecModule.default;
       
+      console.log(pageSpec.page)
 
       const pagePath = `/pages/${pageSpec.page}/${pageSpec.page}.html`
 
-      console.log(pagePath)
-      const pageMarkup = fetch(pagePath).then((pageMarkup) => {
-        console.log('1', pageMarkup.text())
-        return pageMarkup.text()
-      }).then((markup) => {
-
-      console.log('page markup',markup)
-
+      const pageMarkup = fetchText(pagePath).then((pageMarkup) => {
+        
+        elements.html.setAttribute('data-speclate-page', pageSpec.page);
+        var loaded = function () {
+          elements.html.classList.remove(loadingClass);
+        }
+        speclate.pages[pageSpec.page] = pageMarkup;
+        pageRender(elements, selectors, pageSpec, routerOptions, active, speclate, loaded);
       })
 
-            // load page
-      // load // components 
-      
-      elements.html.setAttribute('data-speclate-page', pageSpec.page);
-      var loaded = function () {
-        elements.html.classList.remove(loadingClass);
-      };
-      //pageRender(elements, selectors, pageSpec, routerOptions, active, speclate, loaded);
 
 
  
