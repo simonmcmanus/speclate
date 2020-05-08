@@ -231,7 +231,7 @@ function renderComponent (item, template) {
   }
 }
 
-var pageRender = async (elements, selectors, page, options, active, speclate, callback) => {
+var pageRender = async (elements, selectors, page, options, active, pageAssets, callback) => {
   if (!active) {
     return false
   }
@@ -243,12 +243,12 @@ var pageRender = async (elements, selectors, page, options, active, speclate, ca
   const renderSelectors = {};
 
   renderSelectors[selectors.container] = {
-    innerHTML: speclate.pages[page.page]
+    innerHTML: pageAssets.pages[page.page]
   };
 
   sizlate.render(elements.html, renderSelectors);
 
-  var renderedComponents = renderComponents(page, speclate.lists, speclate.components);
+  var renderedComponents = renderComponents(page, pageAssets.lists, pageAssets.components);
 
   var markup = doSizlate(page, elements.html, renderedComponents);
 
@@ -258,51 +258,65 @@ var pageRender = async (elements, selectors, page, options, active, speclate, ca
   callback && callback();
 };
 
-var FetchPage = function (specPath, elements, selectors, loadingClass, speclate, routerOptions) {
-  console.log('this is fetch page')
-  var active = true;
+const fetchComponent = async (componentName) => {
+  const markup = await fetchText(`/components/${componentName}/${componentName}.html`)
+  return markup
+}
+var fetchPage = async (specPath, elements, selectors, loadingClass, speclate, routerOptions) => {
 
-  import(specPath)
-    .then((pageSpecModule) => {
-      console.log('then')
-      if(!active){ // this request has been cancelled so we do not need to handle the response.
-        return
-      }
-      const pageSpec = pageSpecModule.default;
-      
-      console.log(pageSpec.page)
-
-      const pagePath = `/pages/${pageSpec.page}/${pageSpec.page}.html`
-
-      const pageMarkup = fetchText(pagePath).then((pageMarkup) => {
-
-
-        // get components from page spec here. 
-        const components = pageSp
-        
-        elements.html.setAttribute('data-speclate-page', pageSpec.page);
-        var loaded = function () {
-          elements.html.classList.remove(loadingClass);
-        }
-        speclate.pages[pageSpec.page] = pageMarkup;
-        pageRender(elements, selectors, pageSpec, routerOptions, active, speclate, loaded);
-      })
-
-
-
- 
-    }).catch((err) => { 
-    // handle errors
-    elements.html.classList.remove(loadingClass);
-    return routerOptions.error(err, elements.container)
-  });
-
+  // what else does fetch page need to fetch.
+  // * lists/ filters // mappers
+  
+  const pageSpecModule = await import(specPath)
+  const pageSpec = pageSpecModule.default;
+  const components  = []
+  for (var selector in pageSpec.spec) {
+    if(pageSpec.spec[selector].component) {
+      components.push(pageSpec.spec[selector].component)
+    }
+  }
+  const assets = {
+    components: {},
+    pages: {},
+    lists: {}
+  }
+  const componentsMarkup = await Promise.all(components.map(component => fetchComponent(component, speclate)))
+  components.forEach((component, index) => {
+    assets.components[component] = componentsMarkup[index]
+  })
+  const pagePath = `/pages/${pageSpec.page}/${pageSpec.page}.html`
+  assets.pages[pageSpec.page] = await fetchText(pagePath)
   return {
-    cancel : function () { // allows request to be cancelled if a newer request means we do not need to deal with the response.
+    spec: pageSpec,
+    assets
+  }
+};
+
+
+var FetchInstance = function (specPath, elements, selectors, loadingClass, speclate, routerOptions)  {
+  var active = true;
+  if(!active){ // this request has been cancelled so we do not need to handle the response.
+    return
+  }
+  fetchPage(specPath, elements, selectors, loadingClass, speclate, routerOptions).then((page) => {
+    elements.html.setAttribute('data-speclate-page', page.page);
+    var loaded = function () {
+      elements.html.classList.remove(loadingClass);
+    }
+
+    console.log(page.assets)
+    pageRender(elements, selectors, page.spec, routerOptions, active, page.assets, loaded);
+  })
+  return {
+    active,
+    cancel: function () { // allows request to be cancelled if a newer request means we do not need to deal with the response.
       active = false;
     }
   }
-};
+
+}
+
+
 
 
 var requests = [];
@@ -316,7 +330,7 @@ function pageChange (newLocation, selectors, elements, routerOptions) {
     request.cancel();
   });
   requests = [];
-  const fetchPageRequest = new FetchPage(specPath, elements, selectors, loadingClass, speclate, routerOptions);
+  const fetchPageRequest = new FetchInstance(specPath, elements, selectors, loadingClass, speclate, routerOptions);
   requests.push(fetchPageRequest);
 }
 
