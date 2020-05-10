@@ -24,7 +24,6 @@ const client = function (routerOptions, speclateOptions, requiredFiles) {
 
   return {
     clickHandler: function (event) {
-      console.log('new click handler1')
       const link = event.currentTarget
       const newLocation = link.getAttribute('href')
       if (newLocation.slice(0, 4) !== 'http') { // should check if its a link in the spec

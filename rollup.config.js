@@ -6,7 +6,7 @@ import minify from 'rollup-plugin-babel-minify'
 import notify from 'rollup-plugin-notify'
 import pkg from './package.json'
 
-const input = './new-client/entry.js'
+const input = './client/entry.js'
 
 var esmPlugins =
   [
