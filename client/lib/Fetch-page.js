@@ -7,7 +7,7 @@ export default function (specPath, elements, selectors, loadingClass, routerOpti
     return
   }
   fetchPage(specPath, elements, selectors, loadingClass, routerOptions).then((page) => {
-    elements.html.setAttribute('data-speclate-page', page.page)
+    elements.html.setAttribute('data-speclate-page', page.spec.page)
     var loaded = function () {
       elements.html.classList.remove(loadingClass)
     }

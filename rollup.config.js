@@ -35,7 +35,7 @@ export default [
   {
     input,
     output: {
-      file: pkg.browser,
+      file: pkg.unpkg,
       format: 'es'
     },
     plugins: [...esmPlugins, minify({
