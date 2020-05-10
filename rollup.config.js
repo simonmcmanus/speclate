@@ -3,16 +3,17 @@ import resolve from '@rollup/plugin-node-resolve'
 import json from '@rollup/plugin-json'
 import alias from '@rollup/plugin-alias'
 import minify from 'rollup-plugin-babel-minify'
-
+import notify from 'rollup-plugin-notify'
 import pkg from './package.json'
 
-const input = 'client/index.js'
+const input = './new-client/entry.js'
 
 var esmPlugins =
   [
     alias({
 
     }),
+    notify(),
     resolve({
       customResolveOptions: {
         moduleDirectory: 'node_modules'
