@@ -6,7 +6,7 @@ var doSizlate = require('../../lib/page/do-sizlate')
 
 var renderComponents = require('../../lib/page/render-components')
 
-export default async (elements, selectors, page, options, active, speclate, callback) => {
+export default async (elements, selectors, page, options, active, assets, callback) => {
   if (!active) {
     return false
   }
@@ -18,12 +18,12 @@ export default async (elements, selectors, page, options, active, speclate, call
   const renderSelectors = {}
 
   renderSelectors[selectors.container] = {
-    innerHTML: speclate.pages[page.page]
+    innerHTML: assets.pages[page.page]
   }
 
   sizlate.render(elements.html, renderSelectors)
 
-  var renderedComponents = renderComponents(page, speclate.lists, speclate.components)
+  var renderedComponents = renderComponents(page, assets.lists, assets.components)
 
   var markup = doSizlate(page, elements.html, renderedComponents)
 

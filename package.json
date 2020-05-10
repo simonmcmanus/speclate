@@ -15,7 +15,7 @@
     "e2e:test:chrome": "./node_modules/.bin/testcafe chrome,firefox router/tests/testcafe/*-test.js"
   },
   "bin": "./bin/speclate.js",
-  "main": "./client/index.js",
+  "main": "./client/speclate-bundle.js",
   "module": "./client/index.js",
   "browser": "./client/index.js",
   "unpkg": "./speclate-client-module-min.js",

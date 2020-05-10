@@ -6,9 +6,9 @@ var speclateCli = require('../cli')
 var speclate = {
   version: pkg.version,
   page: require('../lib/page/loader'),
+  extractPageAssets: require('../lib/page/extract-assets'),
   site: require('../lib/site/loader')
 }
-
 
 
 const specPath = process.cwd() + '/spec.js'
