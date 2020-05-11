@@ -1,19 +1,24 @@
 #!/usr/bin/env node
 var path = require('path')
 var pkg = require(path.join(__dirname, '/../package.json'))
-var spec = require(process.cwd() + '/spec.js')
-
 var speclateCli = require('speclate-cli')
+
 
 var speclate = {
   version: pkg.version,
   page: require('../lib/page/loader'),
+  extractPageAssets: require('../lib/page/extract-assets'),
   site: require('../lib/site/loader')
 }
 
-speclateCli(spec, speclate, function (err) {
-  if (err) {
-    console.log('got an error', JSON.stringify(err))
-    process.exit(1)
-  }
+
+const specPath = process.cwd() + '/spec.js'
+import(specPath).then((spec) => {
+  speclateCli(spec.default, speclate, function (err) {
+    if (err) {
+      console.log('got an error', err)
+      process.exit(1)
+    }
+  })
+
 })
