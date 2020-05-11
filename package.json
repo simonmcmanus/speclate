@@ -1,6 +1,6 @@
 {
   "name": "speclate",
-  "version": "20.0.0-1",
+  "version": "20.0.0-2",
   "description": "",
   "scripts": {
     "build:client": "pwd && rollup  -c ./rollup.config.js",
