@@ -9,7 +9,7 @@
   },
   "bin": "./bin/speclate.js",
   "main": "./client/speclate-bundle.js",
-  "module": "./client/index.js",
+  "module": "./client/entry.js",
   "browser": "./speclate-client-module.js",
   "unpkg": "./speclate-client-module-min.js",
   "author": "Simon McManus",
