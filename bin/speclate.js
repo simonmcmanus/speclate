@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 var path = require('path')
 var pkg = require(path.join(__dirname, '/../package.json'))
-var speclateCli = require('../cli')
+var speclateCli = require('speclate-cli')
+
 
 var speclate = {
   version: pkg.version,
@@ -19,5 +20,5 @@ import(specPath).then((spec) => {
       process.exit(1)
     }
   })
-  
+
 })
