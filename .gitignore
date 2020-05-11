@@ -3,5 +3,4 @@ npm-debug.log
 dist
 .DS_Store
 router/tests/sample/client/router-compiled.js
-speclate-client-module-min.js
 client/index.js
