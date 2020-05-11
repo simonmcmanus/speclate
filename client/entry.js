@@ -7,8 +7,6 @@ var doPopState = function (routerOptions, selectors, elements) {
   }
 }
 const client = function (routerOptions, speclateOptions, requiredFiles) {
-  // only send the required files for the page here?
-  // loadRequiredFiles(requiredFiles); // this needs to happen later. its loading all the files for all the pages here.
   speclateOptions = speclateOptions || {}
   routerOptions = routerOptions || {}
   const selectors = {
