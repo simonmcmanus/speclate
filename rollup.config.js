@@ -41,13 +41,5 @@ export default [
     plugins: [...esmPlugins, minify({
       comments: false
     })]
-  },
-  {
-    input,
-    output: {
-      file: '../links/docs/client/speclate-module.js',
-      format: 'es'
-    },
-    plugins: esmPlugins
   }
 ]

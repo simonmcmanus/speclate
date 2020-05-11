@@ -21,7 +21,7 @@ const client = function (routerOptions, speclateOptions, requiredFiles) {
   window.addEventListener('popstate', doPopState(routerOptions, selectors, elements))
 
   return {
-    clickHandler: function (event) {
+    linkHandler: function (event) {
       const link = event.currentTarget
       const newLocation = link.getAttribute('href')
       if (newLocation.slice(0, 4) !== 'http') { // should check if its a link in the spec
