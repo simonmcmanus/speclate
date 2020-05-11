@@ -24,14 +24,11 @@
   "dependencies": {
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-node-resolve": "^7.1.3",
-    "async.eachof": "0.5.x",
+    
     "async.map": "0.5.x",
     "async.parallel": "0.5.x",
     "chokidar": "^3.3.1",
     "lodash.clone": "4.5.x",
-    "lodash.isarray": "4.0.x",
-    "lodash.isobject": "3.0.x",
-    "lodash.isstring": "4.0.x",
     "lodash.merge": "4.x.x",
     "mkdirp": "^1.0.4",
     "rollup": "^2.6.1",
@@ -42,22 +39,10 @@
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.0",
     "@rollup/plugin-json": "^4.0.3",
-    "jasmine": "~3.1.0",
-    "karma": "^4.1.0",
-    "karma-chrome-launcher": "~2.2.0",
-    "karma-firefox-launcher": "~1.1.0",
-    "karma-jasmine": "1.1.x",
-    "karma-jquery": "0.2.x",
-    "karma-opera-launcher": "1.0.x",
-    "karma-phantomjs-launcher": "1.0.x",
-    "karma-serve-static": "1.0.x",
-    "mocha": "~5.0.0",
     "rollup-plugin-babel-minify": "^10.0.0",
     "rollup-plugin-bundle-size": "^1.0.3",
     "rollup-plugin-notify": "^1.1.0",
-    "standard": "^11.0.1",
-    "testcafe": "^1.2.1",
-    "watchify": "^3.11.1"
+    "standard": "^11.0.1"
   },
   "standard": {
     "ignore": [
