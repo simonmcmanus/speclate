@@ -3,16 +3,9 @@
   "version": "20.0.0",
   "description": "",
   "scripts": {
-    "build:client": "pwd && rollup  -c ./rollup.config.js --watch",
+    "build:client": "pwd && rollup  -c ./rollup.config.js",
     "build:client:watch": "npm run build:client -- --watch",
-    "test:server": "NODE_ENV=test jasmine --config=./tests/spec/support/jasmine.json",
-    "test": "standard && npm run test:client && npm run test:server && npm run test:e2e",
-    "test:client": "NODE_ENV=test ./node_modules/karma/bin/karma  start  --single-run ",
-    "test:e2e": "npm run run:e2e:server && ./node_modules/.bin/testcafe chrome router/tests/testcafe/*.js",
-    "run:e2e:server": "npm run e2e:run:build:client-side && cd tests/spec/samples/e2e && speclate --build && speclate --dev 5004 &",
-    "e2e:run:build:client-side": "./node_modules/browserify/bin/cmd.js router/tests/sample/client/router.js > router/tests/sample/client/router-compiled.js",
-    "e2e:run": "npm run e2e:run:build:client-side && cd router/tests/sample/ && ../../../bin/speclate.js --build && ../../../bin/speclate.js --dev 5004",
-    "e2e:test:chrome": "./node_modules/.bin/testcafe chrome,firefox router/tests/testcafe/*-test.js"
+    "test": "standard"
   },
   "bin": "./bin/speclate.js",
   "main": "./client/speclate-bundle.js",
