@@ -23,7 +23,7 @@
     "lodash.clone": "4.5.x",
     "lodash.merge": "4.x.x",
     "mkdirp": "^1.0.4",
-    "rollup": "^2.6.1",
+    "rollup": "^2.10.3",
     "sizlate": "^3.0.3",
     "speclate-cli": "^15.0.2",
     "speclate-fetch": "2.0.x"
