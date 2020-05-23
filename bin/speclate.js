@@ -16,7 +16,7 @@ const specPath = process.cwd() + '/spec.js'
 import(specPath).then((spec) => {
   speclateCli(spec.default, speclate, function (err) {
     if (err) {
-      console.log('got an error', err)
+      console.log('Got an error', err)
       process.exit(1)
     }
   })
