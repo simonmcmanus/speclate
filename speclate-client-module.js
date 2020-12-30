@@ -138,90 +138,94 @@ var isObject = value => value != null && (typeof value === 'object' || typeof va
 
 
 
-var renderComponents = function renderPageComponents (page, lists, components) {
-  var spec = page.spec;
+var renderComponents = function renderPageComponents(page, lists, components) {
+    var spec = page.spec;
 
-  var out = {};
-  for (var selector in spec) {
-    var component = spec[selector].component;
-    var template = components[component];
-    if (component) {
-      if (!out[component]) {
-        out[component] = {};
-      }
-      let item = spec[selector];
-      item = loadListData(item, lists, page);
-      if (item.data.length === 0) { // empty state
-        if (item.states) {
-          const emptyState = item.states.empty;
 
-          // it has not actually loaded the component here.
+    var out = {};
+    for (var selector in spec) {
+        var component = spec[selector].component;
+        var template = components[component];
+        if (component) {
+            if (!out[component]) {
+                out[component] = {};
+            }
+            let item = spec[selector];
+            item = loadListData(item, lists, page);
+            if (item.data.length === 0) { // empty state
+                if (item.states) {
+                    const emptyState = item.states.empty;
 
-          // * where are components loaded from?
-          // can we make one source of truth for loading the components.
-          // out[component][selector] = components[emptyState.component]
-          let emptyItem = {};
-          if (lists.mappers[emptyState.mapper]) {
-            var selectors = lists.mappers[emptyState.mapper].bind({ params: page.params });
-            emptyItem.data = selectors();
-          }
-          out[component][selector] = renderComponent(emptyItem, components[emptyState.component]);
+                    // it has not actually loaded the component here.
+
+                    // * where are components loaded from?
+                    // can we make one source of truth for loading the components.
+                    // out[component][selector] = components[emptyState.component]
+                    let emptyItem = {};
+                    if (lists.mappers[emptyState.mapper]) {
+                        var selectors = lists.mappers[emptyState.mapper].bind({ params: page.params });
+                        emptyItem.data = selectors();
+                    }
+                    out[component][selector] = renderComponent(emptyItem, components[emptyState.component]);
+                }
+            } else {
+                out[component][selector] = renderComponent(item, template);
+            }
         }
-      } else {
-        out[component][selector] = renderComponent(item, template);
-      }
     }
-  }
-  return out
+    return out
 };
-function renderComponent (item, template) {
-  if (isString(item.data)) {
-    console.log('String passed into data, should be an array or object');
-  } else if (isArray(item.data)) {
-    var outArr = [];
-    item.data.reverse().forEach(function (item) {
-      var rendered = sizlate$1.render(template, item);
-      if (rendered.html) {
-        for (var tag in rendered) {
-          outArr.push(rendered[tag]);
-        }
-      } else {
-        outArr.push(rendered.innerHTML || rendered);
-      }
-    });
-    return outArr.join('')
-  } else if (isObject(item.data)) {
-    return sizlate$1.render(template, item.data)
-  } else {
-    return template
-  }
+
+function renderComponent(item, template) {
+
+    if (isString(item.data)) {
+        console.log('String passed into data, should be an array or object');
+    } else if (isArray(item.data)) {
+        var outArr = [];
+
+        item.data.slice().reverse().forEach(function(item) {
+            var rendered = sizlate$1.render(template, item);
+            if (rendered.html) {
+                for (var tag in rendered) {
+                    outArr.push(rendered[tag]);
+                }
+            } else {
+                outArr.push(rendered.innerHTML || rendered);
+            }
+        });
+        return outArr.join('')
+    } else if (isObject(item.data)) {
+        return sizlate$1.render(template, item.data)
+    } else {
+        return template
+    }
 }
 
-var pageRender = async (elements, selectors, page, options, active, assets, callback) => {
-  if (!active) {
-    return false
-  }
+var pageRender = async(elements, selectors, page, options, active, assets, callback) => {
+    if (!active) {
+        return false
+    }
 
-  if (options.before) {
-    options.before(null, null, page);
-  }
+    if (options.before) {
+        options.before(null, null, page);
+    }
 
-  const renderSelectors = {};
+    const renderSelectors = {};
 
-  renderSelectors[selectors.container] = {
-    innerHTML: assets.pages[page.page]
-  };
+    renderSelectors[selectors.container] = {
+        innerHTML: assets.pages[page.page]
+    };
 
-  sizlate.render(elements.html, renderSelectors);
+    sizlate.render(elements.html, renderSelectors);
 
-  var renderedComponents = renderComponents(page, assets.lists, assets.components);
+    var renderedComponents = renderComponents(page, assets.lists, assets.components);
 
-  var markup = doSizlate(page, elements.html, renderedComponents);
+    var markup = doSizlate(page, elements.html, renderedComponents);
 
-  if (options.after) {
-    options.after(null, markup, page);
-  }
-  callback && callback();
+    if (options.after) {
+        options.after(null, markup, page);
+    }
+    callback && callback();
 };
 
 // cancellable instance so we can abort the page load.
