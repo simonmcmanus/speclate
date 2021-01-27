@@ -2,7 +2,7 @@
 
 import sizlate from 'sizlate'
 var doSizlate = require('../../lib/page/do-sizlate')
-
+var clearLoading = require('./clear-loading')
 var renderComponents = require('../../lib/page/render-components')
 
 export default async(elements, selectors, page, options, active, assets, callback) => {
@@ -29,5 +29,9 @@ export default async(elements, selectors, page, options, active, assets, callbac
     if (options.after) {
         options.after(null, markup, page)
     }
+
+    var loadingClass = options.loadingClass || 'loading'
+    clearLoading(loadingClass)
+
     callback && callback()
 }
