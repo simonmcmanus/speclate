@@ -25,7 +25,7 @@
         "mkdirp": "^1.0.4",
         "rollup": "^2.6.1",
         "sizlate": "^3.0.3",
-        "speclate-cli": "^15.0.3",
+        "speclate-cli": "^17.0.0",
         "speclate-fetch": "2.0.x"
     },
     "devDependencies": {
